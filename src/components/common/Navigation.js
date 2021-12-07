@@ -65,12 +65,6 @@ const Navigation = () => {
             <NavDropdown.Item className="bg-danger border border-dark py-2 text-center" href="">Salud</NavDropdown.Item>
             <NavDropdown.Item className="bg-danger border border-dark py-2 text-center" href="">Fotografía</NavDropdown.Item>
           </NavDropdown>
-          <Link
-            className="px-3 nav-link btn btn-danger me-1 text-dark d-flex align-items-center border"
-            to=""
-          >
-            Login
-          </Link>
         </Nav>
       </Container>
     </Navbar>
