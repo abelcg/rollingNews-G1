@@ -13,36 +13,36 @@ const Navigation = () => {
           <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ms-auto">
                 <Link
-                  className="nav-link border justify-content-center my-2 rounded bg-danger mx-2 text-white d-flex align-items-center"
+                  className="nav-link border justify-content-center my-3 rounded bg-danger mx-2 text-white d-flex align-items-center"
                   to="/ingresar"
                 >
                   Ingresar
                 </Link>
                 <Link
-                  className="nav-link border justify-content-center my-2 rounded bg-danger mx-2 text-white d-flex align-items-center"
+                  className="nav-link border justify-content-center my-3 rounded bg-danger mx-2 text-white d-flex align-items-center"
                   to="/suscribite"
                 >
                   Suscribíte
                 </Link>
                 <Link
-                  className="nav-link border justify-content-center my-2 rounded bg-danger mx-2 text-white d-flex align-items-center"
+                  className="nav-link border justify-content-center my-3 rounded bg-danger mx-2 text-white d-flex align-items-center"
                   to="/actualidad"
                 >
                   Actualidad
                 </Link>
                 <Link
-                  className="nav-link border justify-content-center my-2 rounded bg-danger mx-2 text-white d-flex align-items-center"
+                  className="nav-link border justify-content-center my-3 rounded bg-danger mx-2 text-white d-flex align-items-center"
                   to="/espectaculos"
                 >
                   Espectáculos
                 </Link>
                 <Link
-                  className="nav-link border justify-content-center my-2 rounded bg-danger mx-2 text-white d-flex align-items-center"
+                  className="nav-link border justify-content-center my-3 rounded bg-danger mx-2 text-white d-flex align-items-center"
                   to="/tecnologia"
                 >
                   Tecnología
                 </Link>
-                <NavDropdown className='bg-danger nav-link border rounded text-center mx-2 my-2' title="Más" id="basic-nav-dropdown">
+                <NavDropdown className='bg-danger border rounded text-center mx-2 my-3' title="Más" id="basic-nav-dropdown">
                   <Link className='bg-danger nav-link border border-dark text-light text-center' to='/deportes'>
                     Deportes
                   </Link>
