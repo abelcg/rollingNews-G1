@@ -7,7 +7,7 @@ const App = () => {
   return (
     <Router>
       <Navigation></Navigation>
-    </Router>
+      </Router>
   );
 };
 

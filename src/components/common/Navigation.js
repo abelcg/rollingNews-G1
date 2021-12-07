@@ -4,70 +4,60 @@ import { Link } from "react-router-dom";
 
 const Navigation = () => {
   return (
-    <Navbar bg="dark" variant="dark">
-      <Navbar.Brand href="#home">
-        <img
-          src="/logo.png"
-          width="70"
-          className="ms-5 d-inline-block align-top border rounded-circle"
-          alt="RollingNews Logo"
-        />
-      </Navbar.Brand>
-      <Container>
-        <Nav className="ms-auto">
-          <Link
-            className="nav-link btn btn-danger me-1 text-dark d-flex align-items-center border"
-            to="/"
-          >
-            Ingresar
+      <Navbar bg="dark" variant='dark' expand="lg">
+        <Container>
+          <Link to='/inicio'>
+            <img className='border rounded-circle' src="logo.png" width="65" alt="RollingNews logo"></img>
           </Link>
-          <Link
-            className="nav-link btn btn-danger me-1 text-dark d-flex align-items-center border"
-            to=""
-          >
-            Suscribite
-          </Link>
-          <Link
-            className="nav-link btn btn-danger me-1 text-dark d-flex align-items-center border"
-            to=""
-          >
-            Actualidad
-          </Link>
-          <Link
-            className="nav-link btn btn-danger me-1 text-dark d-flex align-items-center border"
-            to=""
-          >
-            Espectáculos
-          </Link>
-          <Link
-            className="nav-link btn btn-danger me-1 text-dark d-flex align-items-center border"
-            to=""
-          >
-            Tecnología
-          </Link>
-          <Link
-            className="px-3 nav-link btn btn-danger me-1 text-dark d-flex align-items-center border"
-            to=""
-          >
-            Deportes
-          </Link>
-          <NavDropdown
-            className="bg-danger me-1 text-dark border rounded"
-            title="Más"
-            id="collasible-nav-dropdown"
-          >
-            <NavDropdown.Item className="bg-danger border border-dark py-2 text-center" href="">
-              Política
-            </NavDropdown.Item>
-            <NavDropdown.Item className="bg-danger border border-dark py-2 text-center" href="">
-              Economía
-            </NavDropdown.Item>
-            <NavDropdown.Item className="bg-danger border border-dark py-2 text-center" href="">Salud</NavDropdown.Item>
-            <NavDropdown.Item className="bg-danger border border-dark py-2 text-center" href="">Fotografía</NavDropdown.Item>
-          </NavDropdown>
-        </Nav>
-      </Container>
-    </Navbar>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+              <Nav className="ms-auto">
+                <Link
+                  className="nav-link border justify-content-center my-2 rounded bg-danger mx-2 text-white d-flex align-items-center"
+                  to="/ingresar"
+                >
+                  Ingresar
+                </Link>
+                <Link
+                  className="nav-link border justify-content-center my-2 rounded bg-danger mx-2 text-white d-flex align-items-center"
+                  to="/suscribite"
+                >
+                  Suscribíte
+                </Link>
+                <Link
+                  className="nav-link border justify-content-center my-2 rounded bg-danger mx-2 text-white d-flex align-items-center"
+                  to="/actualidad"
+                >
+                  Actualidad
+                </Link>
+                <Link
+                  className="nav-link border justify-content-center my-2 rounded bg-danger mx-2 text-white d-flex align-items-center"
+                  to="/espectaculos"
+                >
+                  Espectáculos
+                </Link>
+                <Link
+                  className="nav-link border justify-content-center my-2 rounded bg-danger mx-2 text-white d-flex align-items-center"
+                  to="/tecnologia"
+                >
+                  Tecnología
+                </Link>
+                <NavDropdown className='bg-danger nav-link border rounded text-center mx-2 my-2' title="Más" id="basic-nav-dropdown">
+                  <Link className='bg-danger nav-link border border-dark text-light text-center' to='/deportes'>
+                    Deportes
+                  </Link>
+                  <Link className='bg-danger nav-link border border-dark text-light text-center' to='/politica'>
+                    Política
+                  </Link>
+                  <Link className='bg-danger nav-link border border-dark text-light text-center' to='/economia'>
+                    Economía
+                  </Link>
+                  <Link className='bg-danger nav-link border border-dark text-light text-center' to='/salud'>Salud</Link>
+                </NavDropdown>
+              </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
   );
 };
 
