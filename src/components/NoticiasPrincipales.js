@@ -40,7 +40,7 @@ const NoticiasPrincipales = () => {
           </Card>
         </Col>
         <Col md={2}>
-          <img className='border border-2 border-danger' style={{width:'230px'}} src={publicidad1} alt="publicidad Mr.Clean" />
+          <img className='w-100 border border-2 border-danger mt-4' style={{height:'280px'}} src={publicidad1} alt="publicidad Mr.Clean" />
         </Col>
       </Row>
       <Row>

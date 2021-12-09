@@ -1,5 +1,7 @@
 import React from "react";
 import { Container, Card, Row, Col } from "react-bootstrap";
+import publicidad3 from '../img/publicidad3.jpg';
+import publicidad4 from '../img/publicidad4.jpg';
 
 const NoticiasXcategoria = () => {
   return (
@@ -95,12 +97,10 @@ const NoticiasXcategoria = () => {
       <Row>
         <hr />
         <Col md={6}>
-          <p>Publicidad</p>
-          <img src="logo192.png" alt="publicidad" />
+          <img className='w-100 my-2' style={{height:'190px'}} src={publicidad3} alt="publicidad" />
         </Col>
         <Col md={6}>
-          <p>Publicidad</p>
-          <img src="logo192.png" alt="publicidad" />
+          <img className='w-100 my-2' style={{height:'190px'}} src={publicidad4} alt="publicidad" />
         </Col>
       </Row>
     </Container>
