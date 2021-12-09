@@ -15,7 +15,6 @@ const InfoExtra = () => {
             <div className='col-sm-3 col-md-3 col-lg-3 border border-dark my-2'>
                 <p>Fecha</p>
             </div>
-            <hr className='my-2' />
         </section>
     );
 };
