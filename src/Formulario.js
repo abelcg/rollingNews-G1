@@ -83,20 +83,6 @@ const Formulario = () => {
                 component={() => <div className="error">{errors.correo}</div>}
               />
             </div>
-
-            <div>
-              <label>
-                <Field type="radio" name="sexo" value="Hombre" /> Hombre
-              </label>
-              <label>
-                <Field type="radio" name="sexo" value="Mujer" /> Mujer
-              </label>
-              <label>
-                <Field type="radio" name="sexo" value="Prefiero no decirlo" />{" "}
-                Prefiero no decirlo
-              </label>
-            </div>
-
             <div>
               <label htmlFor="mensaje">Consulta</label>
               <Field
