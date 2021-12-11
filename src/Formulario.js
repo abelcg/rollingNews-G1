@@ -5,12 +5,11 @@ const Formulario = () => {
   const [formularioEnv, cambiarFormularioEnv] = useState(false);
   return (
     <>
-	
       <Formik
         initialValues={{
           nombre: "",
           correo: "",
-          texto: "",
+          mensaje: "",
         }}
         validate={(valores) => {
           let errores = {};
@@ -20,6 +19,14 @@ const Formulario = () => {
             errores.nombre = "Ingrese un nombre.";
           } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valores.nombre)) {
             errores.nombre = "El nombre solo puede contener espacios y letras.";
+          }
+
+          //validacion mensaje
+          if (!valores.mensaje) {
+            errores.mensaje = "Ingrese un mensaje.";
+          } else if (!/^[A-Za-z0-9\s]+$/g.test(valores.mensaje)) {
+            errores.mensaje =
+              "El mensaje solo puede contener espacios, letras y numeros.";
           }
 
           //Validacion correo
@@ -44,7 +51,7 @@ const Formulario = () => {
         }}
       >
         {({ errors }) => (
-          <Form className="formulario container">
+          <Form className="formulario">
             <div>
               <h2>Contactenos</h2>
             </div>
@@ -77,21 +84,35 @@ const Formulario = () => {
               />
             </div>
 
-			<div>
-				<label>
-					<Field type="radio" name="sexo" value="Hombre"/> Hombre
-				</label>
-				<label>
-					<Field type="radio" name="sexo" value="Mujer"/> Mujer
-				</label>
-				<label>
-					<Field type="radio" name="sexo" value="Prefiero no decirlo" /> Prefiero no decirlo
-				</label>
-			</div>
+            <div>
+              <label>
+                <Field type="radio" name="sexo" value="Hombre" /> Hombre
+              </label>
+              <label>
+                <Field type="radio" name="sexo" value="Mujer" /> Mujer
+              </label>
+              <label>
+                <Field type="radio" name="sexo" value="Prefiero no decirlo" />{" "}
+                Prefiero no decirlo
+              </label>
+            </div>
 
-			<div>
-				<Field  name="mensaje" as="textarea" placeholder="Escriba aqui su mensaje."/>
-			</div>
+            <div>
+              <label htmlFor="mensaje">Consulta</label>
+              <Field
+			  	type="text"
+                id="mensaje"
+                name="mensaje"
+                as="textarea"
+                placeholder="Escriba aqui su mensaje."
+              />
+              <ErrorMessage
+                name="mensaje"
+                component={() => (
+                  <div className="error">{errors.mensaje}</div>
+                )}
+              />
+            </div>
 
             <button type="submit">Enviar</button>
             {formularioEnv && (
