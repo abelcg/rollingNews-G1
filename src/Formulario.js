@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Container } from "react-bootstrap";
 
 const Formulario = () => {
   const [formularioEnv, cambiarFormularioEnv] = useState(false);
@@ -51,7 +53,8 @@ const Formulario = () => {
         }}
       >
         {({ errors }) => (
-          <Form className="formulario">
+          <Container className="align-items-center py-5">
+          <Form className="formulario container-fluid col-sm-12 col-md-12">
             <div>
               <h2>Contactenos</h2>
             </div>
@@ -105,6 +108,7 @@ const Formulario = () => {
               <p className="exito">Su consulta fue enviada correctamente.</p>
             )}
           </Form>
+          </Container>
         )}
       </Formik>
     </>
