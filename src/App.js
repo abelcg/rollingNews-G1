@@ -8,7 +8,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const App = () => {
   return (
-    <div className="App">
       <Router>
         <Navigation></Navigation>
         <Routes>
@@ -16,7 +15,6 @@ const App = () => {
         </Routes>
         <Footer></Footer>
       </Router>
-    </div>
   );
 };
 
