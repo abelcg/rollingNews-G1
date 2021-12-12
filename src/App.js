@@ -10,6 +10,9 @@ const App = () => {
     <div className="App">
       <Router>
         <Navigation></Navigation>
+        <Routes>
+          <Route exact path='/' element={<PaginaPrincipal></PaginaPrincipal>}></Route>
+        </Routes>
         <Footer></Footer>
       </Router>
     </div>
