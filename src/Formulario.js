@@ -47,7 +47,6 @@ const Formulario = () => {
         }}
         onSubmit={(valores, { resetForm }) => {
           resetForm();
-          // console.log("Formulario enviado");
           cambiarFormularioEnv(true);
           setTimeout(() => cambiarFormularioEnv(false), 3500);
         }}
@@ -58,8 +57,6 @@ const Formulario = () => {
             <div>
               <h2>Contactenos</h2>
             </div>
-            {/* {console.log(errors)} */}
-            {/* {console.log(touched)} */}
             <div>
               <label htmlFor="nombre">Nombre</label>
               <Field
@@ -89,7 +86,7 @@ const Formulario = () => {
             <div>
               <label htmlFor="mensaje">Consulta</label>
               <Field
-			  	type="text"
+			  	      type="text"
                 id="mensaje"
                 name="mensaje"
                 as="textarea"
