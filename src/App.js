@@ -1,15 +1,18 @@
-import React from 'react';
+import "./App.css";
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Navigation from './components/common/Navigation';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Footer from './components/common/Footer';
+import Navigation from "./components/common/Navigation";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Footer from "./components/common/Footer";
 
 const App = () => {
   return (
-    <Router>
-      <Navigation></Navigation>
-      <Footer></Footer>
+    <div className="App">
+      <Router>
+        <Navigation></Navigation>
+        <Footer></Footer>
       </Router>
+    </div>
   );
 };
 
