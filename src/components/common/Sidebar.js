@@ -13,7 +13,6 @@ const Sidebar = (props) => {
   ];
   console.log(activeLink)
   return (
-    <div className="d-flex align-items-stretch">
       <div
         className={
           props.clicked ? "sidebar py-3 ms-0 show" : "sidebar py-3 ms-0 shrink"
@@ -48,7 +47,7 @@ const Sidebar = (props) => {
           <li id="sidebarMenu" onClick={() => setActive('3')}>
             <Link
               key="3"         
-              to="/CMS/noticias"
+              to="/CMS"
               role="button"
               aria-controls="cmsDropdown"
               aria-expanded={open}
@@ -87,48 +86,6 @@ const Sidebar = (props) => {
                         </Link>
                       </li>
                   )}
-               {/*  <li>
-                  <Link
-                    key="0"
-                    className={
-                      isActive === '0'
-                        ? "sidebar-link text-muted active"
-                        : "sidebar-link text-muted"
-                    }
-                    to="/CMS/noticias"
-                    onClick={() => setActive('0')}
-                  >
-                    Noticias
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                  key="1"
-                    className={
-                      isActive === '1'
-                        ? "sidebar-link text-muted active"
-                        : "sidebar-link text-muted"
-                    }
-                    to="/CMS/agregarNoticia"
-                    onClick={() => setActive('1')}
-                  >
-                    Agregar Noticia
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    key="2"
-                    className={
-                      isActive === '2'
-                        ? "sidebar-link text-muted active"
-                        : "sidebar-link text-muted"
-                    }
-                    to="/CMS/categorias"
-                    onClick={() => setActive('2')}
-                  >
-                    Categorias
-                  </Link>
-                </li> */}
               </ul>
             </Collapse>
           </li>
@@ -152,7 +109,6 @@ const Sidebar = (props) => {
           </li>
         </ul>
       </div>
-    </div>
   );
 };
 

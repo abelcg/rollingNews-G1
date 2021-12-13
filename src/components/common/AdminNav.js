@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import "../css/admin.css";
 import { Nav, Container } from "react-bootstrap";
-import Sidebar from "./Sidebar";
+import {Link} from 'react-router-dom'
+
+
+import Main from "./Main";
 
 const AdminNav = () => {
   const [clicked, setClicked] = useState(false);
@@ -31,9 +34,9 @@ const AdminNav = () => {
             >
               <box-icon name={(clicked) ? "menu" : "menu-alt-left"} id="btn"></box-icon>
             </button>
-            <h2 className="navbar-brand" style={{ color: "#4650dd" }}>
-              Dashboard
-            </h2>
+            <Link to="/admin" className="navbar-brand fs-5 fw-bold" >
+              ADMIN PANEL
+            </Link>
             <button
               className="btn"
               type="button"
@@ -44,7 +47,7 @@ const AdminNav = () => {
           </Container>
         </Nav>
       </header>
-      <Sidebar clicked={clicked}></Sidebar>
+      <Main clicked={clicked}></Main>
     </>
   );
 };
