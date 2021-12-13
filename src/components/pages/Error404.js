@@ -1,5 +1,6 @@
 import React from 'react';
-import diarior from "../../img/diarior.jpg";
+import diarior from "../img/diarior.jpg"
+import "../bootstrap/dist/css/bootstrap.min.css";
 
 const Error404 = () => {
     return (
