@@ -7,9 +7,7 @@ const PageContainer = (props) => {
   return (
     <div className="d-flex align-items-stretch">
       <Sidebar clicked={props.clicked}></Sidebar>
-      <PageHolder>
-          
-      </PageHolder>
+      <PageHolder></PageHolder>
       <AdminFooter></AdminFooter>
     </div>
   );

@@ -1,6 +1,7 @@
 import React from "react";
 import AdminError404 from "../pages/AdminError404";
 import { Routes, Route } from "react-router-dom";
+import AgregarNoticia from "../noticias/AgregarNoticia";
 
 const PageHolder = () => {
   return (
@@ -12,6 +13,12 @@ const PageHolder = () => {
             path="/error404"
             element={<AdminError404></AdminError404>}
           ></Route>
+          <Route
+            exact
+            path="/CMS/agregarNoticia"
+            element={<AgregarNoticia></AgregarNoticia>}
+          ></Route>
+          
         </Routes>
       </div>
     </div>
