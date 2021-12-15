@@ -3,6 +3,7 @@ import AdminError404 from "../pages/AdminError404";
 import { Routes, Route } from "react-router-dom";
 import AgregarNoticia from "../noticias/AgregarNoticia";
 import TablaNoticias from "../noticias/TablaNoticias";
+import Categorias from "../noticias/Categorias";
 
 const PageHolder = () => {
   return (
@@ -23,6 +24,11 @@ const PageHolder = () => {
             exact
             path="/CMS/agregarNoticia"
             element={<AgregarNoticia></AgregarNoticia>}
+          ></Route>
+          <Route
+            exact
+            path="/CMS/categorias"
+            element={<Categorias></Categorias>}
           ></Route>
         </Routes>
       </div>

@@ -41,36 +41,39 @@ const AgregarNoticia = () => {
           <div className="mb-4 mb-lg-0 col-xxl-9 col-lg-8">
             <Card>
               <Card.Body>
-                <label className="form-label" for="postTitle">
-                  Título
-                </label>
-                <input
+                <Form.Label>
+                  Título*
+                </Form.Label>
+                <Form.Control
                   type="text"
                   id="postTitle"
-                  className="mb-4 form-control"
+                  className="mb-4"
                   maxLength="80"
-                ></input>
-                <label className="form-label" for="postImg">
-                  URL de la imagen
-                </label>
-                <input
+                  required
+                ></Form.Control>
+                <Form.Label>
+                  URL de la imagen*
+                </Form.Label>
+                <Form.Control
                   type="text"
                   id="postImg"
                   className="mb-4 form-control"
                   maxLength="80"
-                ></input>
-                <label className="form-label" for="postImg">
-                  Descripción breve
-                </label>
+                  required
+                ></Form.Control>
+                <Form.Label>
+                  Descripción breve*
+                </Form.Label>
                 <Form.Control
                   className="mb-4"
                   as="textarea"
                   placeholder="Describa el post brevemente aqui..."
                   maxLength="150"
+                  required
                 />
-                <label className="form-label" for="postImg">
-                  Autor
-                </label>
+                <Form.Label>
+                  Autor*
+                </Form.Label>
                 <Form.Select className="mb-3">
                   <option value="">Seleccione un Autor</option>
                   <option value="Abel-Cordoba">Abel Córdoba González</option>
@@ -81,15 +84,16 @@ const AgregarNoticia = () => {
                   </option>
                   <option value="Esteban-Marquez">Esteban Marquez</option>
                 </Form.Select>
-                <label className="form-label" for="postImg">
-                  Contenido
-                </label>
+                <Form.Label>
+                  Contenido*
+                </Form.Label>
                 <ReactQuill
                   modules={modules}
                   theme="snow"
                   value={value}
                   onChange={setValue}
                   placeholder="El contenido va aqui..."
+                  required
                 />
               </Card.Body>
             </Card>
@@ -97,7 +101,7 @@ const AgregarNoticia = () => {
           <div className="col-xxl-3 col-lg-4">
             <Card className="shadow-sm mb-4">
               <Card.Header className="py-4 bg-white">
-                <h4 className="card-heading">Categorias</h4>
+                <h4 className="card-heading">Categorias*</h4>
               </Card.Header>
               <Card.Body>
                 <div className="mb-4">
@@ -105,46 +109,55 @@ const AgregarNoticia = () => {
                     className="form-check"
                     type="checkbox"
                     label="Actualidad"
+                    required
                   />
                   <Form.Check
                     className="form-check"
                     type="checkbox"
                     label="Espectáculos"
+                    required
                   />
                   <Form.Check
                     className="form-check"
                     type="checkbox"
                     label="Tecnología"
+                    required
                   />
                   <Form.Check
                     className="form-check"
                     type="checkbox"
                     label="Deportes"
+                    required
                   />
                   <Form.Check
                     className="form-check"
                     type="checkbox"
                     label="Deportes"
+                    required
                   />
                   <Form.Check
                     className="form-check"
                     type="checkbox"
                     label="Política"
+                    required
                   />
                   <Form.Check
                     className="form-check"
                     type="checkbox"
                     label="Economía"
+                    required
                   />
                   <Form.Check
                     className="form-check"
                     type="checkbox"
                     label="Salud"
+                    required
                   />
                   <Form.Check
                     className="form-check"
                     type="checkbox"
                     label="Fotografía"
+                    required
                   />
                 </div>
                 <Link
@@ -180,7 +193,7 @@ const AgregarNoticia = () => {
                 </div>
                 <hr className="bg-gray-500"></hr>
                 <div className="mb-3">
-                  <strong>Fecha de Publicación </strong>
+                  <strong>Fecha de Publicación*</strong>
                 </div>
                 <div className="py-3 row">
                   <div className="col-lg-6">
@@ -188,6 +201,7 @@ const AgregarNoticia = () => {
                       size="sm"
                       type="date"
                       placeholder="15/12/2020"
+                      required
                     />
                   </div>
                 </div>
