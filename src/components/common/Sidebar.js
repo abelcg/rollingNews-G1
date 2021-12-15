@@ -11,7 +11,7 @@ const Sidebar = (props) => {
     { text: "Agregar Noticia", route: "/CMS/agregarNoticia" },
     { text: "Categorias", route: "/CMS/categorias" }
   ];
-  console.log(activeLink)
+ 
   return (
       <div
         className={
@@ -47,7 +47,7 @@ const Sidebar = (props) => {
           <li id="sidebarMenu" onClick={() => setActive('3')}>
             <Link
               key="3"         
-              to="/CMS"
+              to="/CMS/noticias"
               role="button"
               aria-controls="cmsDropdown"
               aria-expanded={open}
