@@ -3,6 +3,11 @@ import ceodiario from "../img/ceo diario.jpg";
 import "bootstrap/dist/css/bootstrap.min.css";
 import editores from "../img/editores.jpg";
 import sobrenosotros from "../img/sobre nosotros.jpg";
+import garciaAndy from "../img/garciaAndy.png";
+import alanizJuan from "../img/alanizJuan.png";
+import cordobaAbel from "../img/cordobaAbel.png";
+import marquezEsteban from "../img/marquezEsteban.jpg";
+import barazzuttiGuillermo from "../img/barazzuttiGuillermo.png";
 
 const Sobrenosotros = () => {
   return (
@@ -95,6 +100,31 @@ const Sobrenosotros = () => {
           profesionalidad y experiencia a su servicio. Cuanto más cerca estemos
           del lector, más lejos estaremos de equivocarnos.
         </p>
+      </section>
+      <section class="container">
+      <h1 class="display-4 text-center font-bold title text-white my-5">Nuestros editores</h1>
+        <article class="d-flex flex-wrap justify-content-between">
+          <div class="col-sm-12 img-fluid col-md-6 col-lg-4 text-center">
+            <img src={alanizJuan} alt="" class="rounded-circle h-75"/>
+            <p class="lead text-white text-center my-2"><strong>JUAN JOSÉ ALANIZ</strong></p>
+          </div>
+          <div class="col-sm-12 img-fluid col-md-6 col-lg-4 text-center">
+            <img src={garciaAndy} alt="" class="rounded-circle h-75"/>
+            <p class="lead text-white text-center my-2"><strong>ANDRES URIEL GARCIA</strong></p>
+          </div>
+          <div class="col-sm-12 img-fluid col-md-6 col-lg-4 text-center">
+            <img src={cordobaAbel} alt="" class="rounded-circle h-75"/>
+            <p class="lead text-white text-center my-2"><strong>ABEL EZEQUIEL CÓRDOBA</strong></p>
+          </div>
+          <div class="col-sm-12 img-fluid col-md-6 col-lg-4 text-center">
+            <img src={marquezEsteban} alt="" class="rounded-circle h-75"/>
+            <p class="lead text-white text-center my-2"><strong>ESTEBAN MÁRQUEZ</strong></p>
+          </div>
+          <div class="img-fluid col-sm-12 col-md-6-text-center col-lg-4 text-center">
+            <img src={barazzuttiGuillermo} alt="" class="rounded-circle h-75"/>
+            <p class="lead text-white text-center my-2"><strong>GUILLERMO ENRIQUE BARAZZUTTI</strong></p>
+          </div>
+        </article>
       </section>
     </main>
   );
