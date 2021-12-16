@@ -1,11 +1,10 @@
 import React, { useRef, useEffect } from "react";
 import Card from "react-bootstrap/Card";
-import Button from 'react-bootstrap/Button';
-import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import { Link } from "react-router-dom";
 import { DataTable } from "simple-datatables";
 import "simple-datatables/dist/style.css";
 import Table from "react-bootstrap/Table";
+import ItemNoticia from "./ItemNoticia";
 
 const TablaNoticias = (props) => {
   const dataTableRef = useRef(false);
@@ -56,80 +55,7 @@ const TablaNoticias = (props) => {
             </thead>
             <tbody>
               {props.noticias.map((noticias) => (
-                <tr key={noticias.id}>
-                  <td>
-                    <div
-                      className="d-inline-block me-3"
-                      style={{ width: "100px" }}
-                    >
-                      <div
-                        style={{
-                          display: "block",
-                          overflow: "hidden",
-                          position: "relative",
-                          boxSizing: "border-box",
-                          margin: "0",
-                        }}
-                      >
-                        <div
-                          style={{
-                            display: "block",
-                            boxSizing: "border-box",
-                            paddingTop: "66%",
-                          }}
-                        ></div>
-                        <img
-                          alt={noticias.titulo}
-                          sizes="100px"
-                          srcset={noticias.imagen}
-                          decoding="async"
-                          data-nimg="true"
-                          className="img-fluid rounded"
-                          style={{
-                            position: "absolute",
-                            top: 0,
-                            left: 0,
-                            bottom: 0,
-                            right: 0,
-                            boxSizing: "border-box",
-                            padding: 0,
-                            border: "none",
-                            margin: "auto",
-                            display: "block",
-                            width: 0,
-                            height: 0,
-                            minWidth: "100%",
-                            maxWidth: "100%",
-                            minHeight: "100%",
-                            maxHeight: "100%",
-                          }}
-                        ></img>
-                      </div>
-                    </div>
-                    <strong className="d-block text-wrap">
-                      {noticias.titulo}
-                    </strong>
-                  </td>
-                  <td>{noticias.categoria}</td>
-                  <td>{noticias.autor}</td>
-                  <td>{noticias.fecha}</td>
-                  <td>
-                    <ButtonGroup>
-                    <Link
-                      className="btn btn-warning ms-2"
-                      to={`/noticias/editar/${props.noticias.id}`}
-                    >
-                      <i className="bi bi-pencil mb-2"></i>
-                    </Link>
-                    <Button
-                      className="ms-2"
-                      variant="danger"
-                    >
-                      <i className="bi bi-trash"></i>
-                    </Button>
-                    </ButtonGroup>
-                  </td>
-                </tr>
+               <ItemNoticia key={noticias.id} noticias={noticias} consultaAPI={props.consultaAPI}></ItemNoticia>
               ))}
             </tbody>
           </Table>
