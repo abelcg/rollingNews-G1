@@ -30,7 +30,7 @@ const AgregarNoticia = () => {
   const createMarkup = () => {
     return { __html: value };
   };
-
+  console.log(value);
   return (
     <>
       <div className="page-header">
@@ -93,6 +93,7 @@ const AgregarNoticia = () => {
                   value={value}
                   onChange={setValue}
                   placeholder="El contenido va aqui..."
+                  maxLength="15"
                   required
                 />
               </Card.Body>
@@ -121,12 +122,6 @@ const AgregarNoticia = () => {
                     className="form-check"
                     type="checkbox"
                     label="Tecnología"
-                    required
-                  />
-                  <Form.Check
-                    className="form-check"
-                    type="checkbox"
-                    label="Deportes"
                     required
                   />
                   <Form.Check
