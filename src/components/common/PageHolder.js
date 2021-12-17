@@ -40,7 +40,7 @@ const PageHolder = () => {
           <Route
             exact
             path="/CMS/agregarNoticia"
-            element={<AgregarNoticia></AgregarNoticia>}
+            element={<AgregarNoticia consultaAPI={consultaAPI}></AgregarNoticia>}
           ></Route>
           <Route
             exact

@@ -6,17 +6,34 @@ const campoRequerido = (valor) => {
   }
 };
 
-//valida numeros entero y decimales del 0 al 5000
-const rangoNumero = (valor) => {
+const validarFecha = (valor) => {
   // validar con expresion regular
+  let patron = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/;
 
-  let patron =
-    /^(?:0*(?:[0-9]|[1-9][0-9][0-9]?|[1-4][0-9][0-9][0-9])(?:[.][0-9])?|5000(?:[.]0)?)$/;
   if (patron.test(valor)) {
     return true;
   } else {
     return false;
   }
-};
+}
 
-export { campoRequerido, rangoNumero };
+const validarURL = (valor)=> {
+  // validar URL con una expresión regular
+
+  let patron = /^https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$/;
+  if (valor.trim().length != "" && patron.test(valor)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+const validarRichText = (valor)=> {
+
+  if (valor.trim().length != "") {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+export { campoRequerido, validarFecha, validarRichText, validarURL };

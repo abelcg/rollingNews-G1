@@ -8,6 +8,7 @@ const ItemNoticia = (props) => {
     const URL = process.env.REACT_APP_API_URL+'/'+props.noticias.id;
 
     const eliminarNoticia=  ()=> {
+      console.log('desde borrar')
         Swal.fire({
           title: '¿Esta seguro de eliminar esta noticia?',
           text: "No podrá recuperar la noticia una vez eliminada",
