@@ -15,9 +15,9 @@ const validarFecha = (valor) => {
   } else {
     return false;
   }
-}
+};
 
-const validarURL = (valor)=> {
+const validarURL = (valor) => {
   // validar URL con una expresión regular
 
   let patron = /^https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$/;
@@ -26,14 +26,14 @@ const validarURL = (valor)=> {
   } else {
     return false;
   }
-}
-const validarRichText = (valor)=> {
+};
 
-  if (valor.trim().length != "") {
+const validarRichText = (value) => {
+  if (value != "") {
     return true;
   } else {
     return false;
   }
-}
+};
 
 export { campoRequerido, validarFecha, validarRichText, validarURL };

@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import Alert from "react-bootstrap/Alert";
@@ -32,74 +33,99 @@ const modules = {
   ],
 };
 
-const AgregarNoticia = (props) => {
-  //const [value, setValue] = useState("");
+const EditarNoticia = (props) => {
+    const { id } = useParams();
+    // console.log(id);
   const [open, setOpen] = useState(false);
-  const [titulo, setTitulo] = useState("");
-  const [imagen, setImagen] = useState("");
-  const [descripcion, setDescripcion] = useState("");
-  const [contenido, setContenido] = useState("");
+  const [noticia, setNoticia] = useState({});
   const [autor, setAutor] = useState("");
   const [categoria, setCategoria] = useState("");
-  const [fecha, setFecha] = useState("");
   const [error, setError] = useState(false);
+  const [contenido, setContenido] = useState("");
 
-  const URL = process.env.REACT_APP_API_URL;
+  const URL = process.env.REACT_APP_API_URL + "/" + id;
   const navigation = useNavigate();
 
+
+   // crear variables ref
+   const tituloRef = useRef("");
+   const imagenRef = useRef("");
+   const descripcionRef = useRef("");
+   const contenidoRef = useRef("");
+   const fechaRef = useRef("");
+
+   useEffect(async () => {
+    // consultar a la API el producto que tiene el id
+    try {
+      // realizar una consulta GET
+      const respuesta = await fetch(URL);
+      console.log(respuesta);
+      if (respuesta.status === 200) {
+        const dato = await respuesta.json();
+        console.log(dato);
+        setNoticia(dato);
+        setCategoria(dato.categoria);
+        console.log(categoria);
+        setAutor(dato.autor);
+        console.log(autor);
+        setContenido(dato.contenido);
+      }
+    } catch (error) {
+      console.log(error);
+      //mostrar cartel error al usuario
+    }
+  }, []);
+
   const handleSubmit = async (e) => {
+      console.log('desde editar')
     e.preventDefault();
     //validar los datos del form
     if (
-      campoRequerido(titulo) &&
-      validarURL(imagen) &&
-      campoRequerido(descripcion) &&
+      campoRequerido(tituloRef.current.value) &&
+      validarURL(imagenRef.current.value) &&
+      campoRequerido(descripcionRef.current.value) &&
       validarRichText(contenido) &&
       campoRequerido(autor) &&
       campoRequerido(categoria) &&
-      validarFecha(fecha)
+      validarFecha(fechaRef.current.value)
     ) {
       console.log("desde submit");
       // reset el state de error
       setError(false);
-      // crear una noticia y enviar a la API
-      const noticiaNueva = {
-        titulo: titulo,
-        imagen: imagen,
-        descripcion: descripcion,
+      // construir el objeto a enviar a la API
+      const noticiaModificada = {
+        titulo: tituloRef.current.value,
+        imagen: imagenRef.current.value,
+        descripcion: descripcionRef.current.value,
         contenido: contenido,
         autor: autor,
         categoria: categoria,
-        fecha: fecha,
+        fecha: fechaRef.current.value,
       };
-      //console.log(noticiaNueva);
+      console.log(noticiaModificada);
       try {
-        const parametros = {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(noticiaNueva),
-        };
-        const respuesta = await fetch(URL, parametros);
-        console.log(respuesta);
-        if (respuesta.status === 201) {
-          console.log("la noticia se creo correctamente");
+          //consulta PUT para modificar valores en la API
+          const respuesta = await fetch(URL, {
+            method: "PUT",
+            headers: { "content-Type": "application/json" },
+            body: JSON.stringify(noticiaModificada),
+          });
+          console.log(respuesta);
+        if (respuesta.status === 200) {
+          console.log("la noticia se modifico correctamente");
           // mostrar cartel al usuario
           Swal.fire(
-            "Noticia Creada!",
+            "Noticia Modificada!",
             "La Noticia se creo correctamente",
             "success"
           );
-          // resetear el formulario
-          e.target.reset(); //el e.target en este caso por el submitt es el form
           // volver a pedir a la API
           props.consultaAPI();
           // redireccion a la pagina de lista de noticias
           navigation("/CMS/noticias");
-        } else {
-          console.log("mostrar cartel de error");
-        }
+          // volver a pedir a la API
+          props.consultaAPI();
+        } 
       } catch (error) {
         console.log(error);
       }
@@ -115,7 +141,7 @@ const AgregarNoticia = (props) => {
   return (
     <>
       <div className="page-header">
-        <h1 className="page-heading">Agregar nueva noticia</h1>
+        <h1 className="page-heading">Editar noticia</h1>
       </div>
       <section>
         <div className="mb-5 row">
@@ -130,7 +156,8 @@ const AgregarNoticia = (props) => {
                     className="mb-4"
                     maxLength="80"
                     required
-                    onChange={(e) => setTitulo(e.target.value)}
+                    defaultValue={noticia.titulo}
+                    ref={tituloRef}
                   ></Form.Control>
                   <Form.Label>URL de la imagen*</Form.Label>
                   <Form.Control
@@ -139,7 +166,8 @@ const AgregarNoticia = (props) => {
                     className="mb-4 form-control"
                     maxLength="80"
                     required
-                    onChange={(e) => setImagen(e.target.value)}
+                    defaultValue={noticia.imagen}
+                    ref={imagenRef}
                   ></Form.Control>
                   <Form.Label>Descripción breve*</Form.Label>
                   <Form.Control
@@ -148,7 +176,8 @@ const AgregarNoticia = (props) => {
                     placeholder="Describa el post brevemente aqui..."
                     maxLength="150"
                     required
-                    onChange={(e) => setDescripcion(e.target.value)}
+                    defaultValue={noticia.descripcion}
+                    ref={descripcionRef}
                   />
                   <Form.Label>Autor*</Form.Label>
                   <Form.Select
@@ -169,12 +198,13 @@ const AgregarNoticia = (props) => {
                   <ReactQuill
                     modules={modules}
                     theme="snow"
-                    value={contenido}
+                    value={`${contenido}`}
                     // onChange={(e) => setContenido(e.target.value)}
-                    onChange={setContenido}
+                     onChange={setContenido}
                     placeholder="El contenido va aqui..."
-                    maxLength="15"
                     required
+                    defaultValue={noticia.contenido}
+                    //ref={contenidoRef}
                   />
                 </Form>
               </Card.Body>
@@ -202,70 +232,6 @@ const AgregarNoticia = (props) => {
                     <option value="Salud">Salud</option>
                     <option value="Fotografía">Fotografía</option>
                   </Form.Select>
-                  {/* <Form.Check
-                    className="form-check"
-                    type="checkbox"
-                    label="Actualidad"
-                    form="formNews"
-                    value={categoria}
-                    onChange={(e) => setCategoria(e.target.value)}
-                  /> */}
-                  {/*  <Form.Check
-                    className="form-check"
-                    type="checkbox"
-                    label="Espectáculos"
-                    form="formNews"
-                    value={categoria}
-                    onChange={(e) => setCategoria(e.target.value)}
-                  /> */}
-                  {/*  <Form.Check
-                    className="form-check"
-                    type="checkbox"
-                    label="Tecnología"
-                    form="formNews"
-                    value={categoria}
-                    onChange={(e) => setCategoria(e.target.value)}
-                  /> */}
-                  {/*  <Form.Check
-                    className="form-check"
-                    type="checkbox"
-                    label="Deportes"
-                    form="formNews"
-                    value={categoria}
-                    onChange={(e) => setCategoria(e.target.value)}
-                  /> */}
-                  {/*  <Form.Check
-                    className="form-check"
-                    type="checkbox"
-                    label="Política"
-                    form="formNews"
-                    value={categoria}
-                    onChange={(e) => setCategoria(e.target.value)}
-                  /> */}
-                  {/*  <Form.Check
-                    className="form-check"
-                    type="checkbox"
-                    label="Economía"
-                    form="formNews"
-                    value={categoria}
-                    onChange={(e) => setCategoria(e.target.value)}
-                  /> */}
-                  {/* <Form.Check
-                    className="form-check"
-                    type="checkbox"
-                    label="Salud"
-                    form="formNews"
-                    value={categoria}
-                    onChange={(e) => setCategoria(e.target.value)}
-                  /> */}
-                  {/* <Form.Check
-                    className="form-check"
-                    type="checkbox"
-                    label="Fotografía"
-                    form="formNews"
-                    value={categoria}
-                    onChange={(e) => setCategoria(e.target.value)}
-                  /> */}
                 </div>
                 <Link
                   to="/CMS/categorias"
@@ -307,10 +273,11 @@ const AgregarNoticia = (props) => {
                     <Form.Control
                       size="sm"
                       type="date"
-                      placeholder="15/12/2020"
+                      placeholder="aaaa/mm/dd"
                       form="formNews"
                       required
-                      onChange={(e) => setFecha(e.target.value)}
+                      defaultValue={noticia.fecha}
+                      ref={fechaRef}
                     />
                   </div>
                 </div>
@@ -321,7 +288,7 @@ const AgregarNoticia = (props) => {
                   type="submit"
                   className="btn btn-primary"
                 >
-                  Publicar
+                  Publicar Edición
                 </button>
                 {error === true ? (
                   <Alert variant="danger">
@@ -350,4 +317,4 @@ const AgregarNoticia = (props) => {
   );
 };
 
-export default AgregarNoticia;
+export default EditarNoticia;

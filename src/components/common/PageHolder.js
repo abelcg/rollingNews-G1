@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import AgregarNoticia from "../noticias/AgregarNoticia";
 import TablaNoticias from "../noticias/TablaNoticias";
 import Categorias from "../noticias/Categorias";
+import EditarNoticia from "../noticias/EditarNoticia";
 
 const PageHolder = () => {
   const URL = process.env.REACT_APP_API_URL;
@@ -41,6 +42,11 @@ const PageHolder = () => {
             exact
             path="/CMS/agregarNoticia"
             element={<AgregarNoticia consultaAPI={consultaAPI}></AgregarNoticia>}
+          ></Route>
+          <Route
+            exact
+            path="/CMS/noticias/editar/:id"
+            element={<EditarNoticia consultaAPI={consultaAPI}></EditarNoticia>}
           ></Route>
           <Route
             exact

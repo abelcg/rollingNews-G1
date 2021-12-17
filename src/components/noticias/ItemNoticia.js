@@ -8,7 +8,7 @@ const ItemNoticia = (props) => {
     const URL = process.env.REACT_APP_API_URL+'/'+props.noticias.id;
 
     const eliminarNoticia=  ()=> {
-      console.log('desde borrar')
+     // console.log('desde borrar')
         Swal.fire({
           title: '¿Esta seguro de eliminar esta noticia?',
           text: "No podrá recuperar la noticia una vez eliminada",
@@ -113,7 +113,7 @@ const ItemNoticia = (props) => {
                     <ButtonGroup>
                     <Link
                       className="btn btn-warning ms-2"
-                      to={`/noticias/editar/${props.noticias.id}`}
+                      to={`/CMS/noticias/editar/${props.noticias.id}`}
                     >
                       <i className="bi bi-pencil mb-2"></i>
                     </Link>
