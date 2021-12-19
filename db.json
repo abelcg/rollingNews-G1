@@ -110,5 +110,47 @@
       "fecha": "2021-12-17",
       "id": 12
     }
+  ],
+  "categorias": [
+    {
+      "nombre": "Actualidad",
+      "descripcion": "Temas generales sin categoria en dedicada",
+      "id": 1
+    },
+    {
+      "nombre": "Espectáculos",
+      "descripcion": "Engloba temas referidos al cine, artes visuales, shows, famosos, etc.",
+      "id": 2
+    },
+    {
+      "nombre": "Tecnología",
+      "descripcion": "",
+      "id": 3
+    },
+    {
+      "nombre": "Deportes",
+      "descripcion": "",
+      "id": 4
+    },
+    {
+      "nombre": "Política",
+      "descripcion": "",
+      "id": 5
+    },
+    {
+      "nombre": "Economía",
+      "descripcion": "",
+      "id": 6
+    },
+    {
+      "nombre": "Salud",
+      "descripcion": "Incluye temas sobre medicina, salud pública, vida sana, etc.",
+      "id": 7
+    },
+    {
+      "nombre": "Fotografía",
+      "descripcion": "postales de diferentes situaciones",
+      "id": 8
+    }
   ]
 }

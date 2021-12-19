@@ -8,10 +8,13 @@ import EditarNoticia from "../noticias/EditarNoticia";
 
 const PageHolder = () => {
   const URL = process.env.REACT_APP_API_URL;
+  const URL_CAT = process.env.REACT_APP_API_URL_CAT;
   const [noticias, setNoticias] = useState([]);
+  const [categorias, setCategorias] = useState([]);
 
   useEffect(() => {
     consultaAPI();
+    consultaAPICat();
   }, []);
 
   const consultaAPI = async () => {
@@ -19,11 +22,25 @@ const PageHolder = () => {
       // todo el codigo que quiero ejecutar
       const respuesta = await fetch(URL);
       const datos = await respuesta.json();
+      console.log(datos);
       setNoticias(datos);
     } catch (error) {
       console.log(error);
     }
   };
+  const consultaAPICat = async () => {
+    try {
+      // todo el codigo que quiero ejecutar
+      const respuesta = await fetch(URL_CAT);
+      const datos = await respuesta.json();
+      console.log(datos);
+      setCategorias(datos);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  
+
   return (
     <div className="page-holder bg-gray-100">
       <div className="px-lg-4 px-xl-5 container-fluid" id="page-container">
@@ -36,12 +53,19 @@ const PageHolder = () => {
           <Route
             exact
             path="/CMS/noticias"
-            element={<TablaNoticias noticias={noticias} consultaAPI={consultaAPI}></TablaNoticias>}
+            element={
+              <TablaNoticias
+                noticias={noticias}
+                consultaAPI={consultaAPI}
+              ></TablaNoticias>
+            }
           ></Route>
           <Route
             exact
             path="/CMS/agregarNoticia"
-            element={<AgregarNoticia consultaAPI={consultaAPI}></AgregarNoticia>}
+            element={
+              <AgregarNoticia consultaAPI={consultaAPI}></AgregarNoticia>
+            }
           ></Route>
           <Route
             exact
@@ -51,7 +75,7 @@ const PageHolder = () => {
           <Route
             exact
             path="/CMS/categorias"
-            element={<Categorias></Categorias>}
+            element={<Categorias categorias={categorias} consultaAPICat={consultaAPICat}></Categorias>}
           ></Route>
         </Routes>
       </div>

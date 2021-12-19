@@ -4,8 +4,9 @@ import Form from "react-bootstrap/Form";
 import { DataTable } from "simple-datatables";
 import "simple-datatables/dist/style.css";
 import Table from "react-bootstrap/Table";
+import ItemCategoria from "./ItemCategoria";
 
-const Categorias = () => {
+const Categorias = (props) => {
   const dataTableRef = useRef(false);
   useEffect(() => {
     const dataTable = new DataTable(dataTableRef.current, {
@@ -71,52 +72,9 @@ const Categorias = () => {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <td colSpan="2">Larry the Bird</td>
-                <td>@twitter</td>
-              </tr>
-              <tr>
-                <td colSpan="2">Larry the Bird</td>
-                <td>@twitter</td>
-              </tr>
-              <tr>
-                <td colSpan="2">Larry the Bird</td>
-                <td>@twitter</td>
-              </tr>
-              <tr>
-                <td colSpan="2">Larry the Bird</td>
-                <td>@twitter</td>
-              </tr>
-              <tr>
-                <td colSpan="2">Larry the Bird</td>
-                <td>@twitter</td>
-              </tr>
-              <tr>
-                <td colSpan="2">Larry the Bird</td>
-                <td>@twitter</td>
-              </tr>
-              <tr>
-                <td colSpan="2">Larry the Bird</td>
-                <td>@twitter</td>
-              </tr>
-              <tr>
-                <td colSpan="2">Larry the Bird</td>
-                <td>@twitter</td>
-              </tr>
-              <tr>
-                <td colSpan="2">Larry the Bird</td>
-                <td>@twitter</td>
-              </tr>
+              {props.categorias.map((categorias)=>(
+                <ItemCategoria key={categorias.id} categorias={categorias} consultaAPICat={props.consultaAPICat}></ItemCategoria>
+              ))}
             </tbody>
           </Table>
           <Card.Footer></Card.Footer>
