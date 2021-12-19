@@ -71,16 +71,6 @@
       "id": 7
     },
     {
-      "titulo": "Muy buena  La imperdible Spider-Man: Sin camino a casa, con una superbatalla",
-      "imagen": "https://images.pexels.com/photos/2854693/pexels-photo-2854693.jpeg?auto=compress",
-      "descripcion": "Sin spoilers, cómo es la película de Marvel en la que Peter Parker se enfrenta no a uno, ni a dos, sino a cinco villanos.",
-      "contenido": "<p>Ante todo sepan que en esta crítica de&nbsp;<a href=\"https://www.clarin.com/espectaculos/cine/espectacular-trailer-spider-man-camino-casa-villanos_0_1XSBMwj3g.html\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: rgb(216, 0, 38);\">Spider-Man: Sin camino a casa</a>&nbsp;no habrá spoilers. Bastante cuentan los trailers. Hay guiños o bromas que los fans de la primera (o de la segunda) hora disfrutarán, se les escapará alguna lágrima… Imperdible.&nbsp;</p><p>Habrán notado que las películas de Marvel no son producciones independientes entre sí. No hace falta reunir a todos los personajes en una película con la palabra&nbsp;<a href=\"https://www.clarin.com/espectaculos/cine/critica-avengers-endgame-duelo-legado-melancolia-fanaticos_0_iLLRqB5LR.html\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: rgb(216, 0, 38);\">Avengers</a>&nbsp;en su título para darse cuenta. Sí: últimamente, más que películas, son como episodios de una saga de un ciclo sin fin, que nos mueve a todos.</p><p>Ya aprendimos que en el Universo de&nbsp;<a href=\"https://www.clarin.com/espectaculos/cine/victoria-alonso-historia-argentina-mujer-poderosa-hollywood_0_4ymJ2uqkt.html\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: rgb(216, 0, 38);\">Marvel</a>&nbsp;cualquiera -sí: cualquiera- puede morir, y también que lo que nos podía parecer impensable puede suceder.</p><p><img src=\"https://www.clarin.com/img/2021/12/15/a-volar-con-todo-con___CQSSVteBG_720x0__1.jpg\" alt=\"A volar. Con todo, con Spider-Man y con la imaginación. Foto Sony\"></p><p>A volar. Con todo, con Spider-Man y con la imaginación. Foto Sony</p><p><br></p><p>Y si el chasquido de Thanos y el Blip fue un antes y un después en la historia y las tramas del Universo Cinematográfico de Marvel, con el agregado de que hubo personajes -y personas- que desaparecieron de la faz de la Tierra y luego “revivieron”, el multiverso que propone&nbsp;Spider-Man: Sin camino a casa&nbsp;no es nuevo.</p><p>El encuentro de realidades alternativas no es una novedad con el Hombre Araña, y menos aún si los fans recuerdan&nbsp;Spider-Man: Un nuevo universo, el largometraje que hace tres años ganó el Oscar al mejor filme de animación. En él confluían varios Hombre Araña.</p><p><img src=\"https://www.clarin.com/img/2021/12/05/tres-en-una-misma-foto___rZy2I2NKK_720x0__1.jpg\" alt=\"Tres en una misma foto: Doctor Strange, Spider-Man y Peter Parker. Foto Sony\"></p><p>Tres en una misma foto: Doctor Strange, Spider-Man y Peter Parker. Foto Sony</p><p><br></p><p>Y a estas alturas queda claro que, de no ser porque Christopher Nolan (director de&nbsp;El origen&nbsp;y&nbsp;Tenet) odia las películas de superhéroes, el realizador de la trilogía de Batman parecería de los más indicados para dirigir estas producciones en las que los universos y las realidades alternativas confluyen.</p><p>La película arranca donde terminaba la anterior. En las afueras de la Penn Station en Manhattan, J. Jonah Jameson (J.K. Simmons) editor del&nbsp;Daily Bugle&nbsp;(El Clarín, en la traducción) difunde que Peter Parker (Tom Holland) es Spider-Man. Ya sabemos lo sensacionalista que es Jameson, que llega a tildar de “criminal de guerra” al estudiante, que junto a su amigo Ned (Jacob Batalon) y su novia MJ (Zendaya) no logra ingresar a ninguna universidad.</p>",
-      "autor": "Abel Cordoba Gonzalez",
-      "categoria": "Espectáculos",
-      "fecha": "2021-12-17",
-      "id": 9
-    },
-    {
       "titulo": "Fórmula 1. El deporte que le da a los fanáticos lo que los fanáticos piden.",
       "imagen": "https://images.pexels.com/photos/2712852/pexels-photo-2712852.jpeg?auto=compress",
       "descripcion": "“Uno de los problemas del tenis es que estuvo muchos años preguntándoles a Federer y Nadal qué cambios había que hacer en el deporte.\"",
@@ -151,6 +141,11 @@
       "nombre": "Fotografía",
       "descripcion": "postales de diferentes situaciones",
       "id": 8
+    },
+    {
+      "nombre": "Internacional",
+      "descripcion": "Noticias internacionales",
+      "id": 9
     }
   ]
 }

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Swal from 'sweetalert2'
 
 const ItemCategoria = (props) => {
-    const URL = process.env.REACT_APP_API_URL+'/'+props.categorias.id;
+    const URL_CAT = process.env.REACT_APP_API_URL_CAT+'/'+props.categorias.id;
 
     const eliminarCategoria=  ()=> {
      // console.log('desde borrar')
@@ -22,7 +22,7 @@ const ItemCategoria = (props) => {
           if (result.isConfirmed) {
               //aqui borro la noticia
               try {
-                  const respuesta = await fetch(URL,{ 
+                  const respuesta = await fetch(URL_CAT,{ 
                       method: 'DELETE',
                       headers: {
                      'Content-Type': 'application/json'
@@ -38,7 +38,7 @@ const ItemCategoria = (props) => {
                         'success'
                       )
                       // volver a pedir a la API para recargar la tabla de categorias
-                      props.consultaAPI();
+                      props.consultaAPICat();
                       
                     }else{
                       console.log('mostrar cartel de error')

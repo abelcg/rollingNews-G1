@@ -59,7 +59,6 @@ const AgregarNoticia = (props) => {
       campoRequerido(categoria) &&
       validarFecha(fecha)
     ) {
-      console.log("desde submit");
       // reset el state de error
       setError(false);
       // crear una noticia y enviar a la API
@@ -82,7 +81,7 @@ const AgregarNoticia = (props) => {
           body: JSON.stringify(noticiaNueva),
         };
         const respuesta = await fetch(URL, parametros);
-        console.log(respuesta);
+        //console.log(respuesta);
         if (respuesta.status === 201) {
           console.log("la noticia se creo correctamente");
           // mostrar cartel al usuario
