@@ -128,7 +128,7 @@ const AgregarNoticia = (props) => {
                     id="postTitle"
                     className="mb-4"
                     maxLength="80"
-                    required
+                    
                     onChange={(e) => setTitulo(e.target.value)}
                   ></Form.Control>
                   <Form.Label>URL de la imagen*</Form.Label>
@@ -137,7 +137,7 @@ const AgregarNoticia = (props) => {
                     id="postImg"
                     className="mb-4 form-control"
                     maxLength="80"
-                    required
+                    
                     onChange={(e) => setImagen(e.target.value)}
                   ></Form.Control>
                   <Form.Label>Descripción breve*</Form.Label>
@@ -146,7 +146,7 @@ const AgregarNoticia = (props) => {
                     as="textarea"
                     placeholder="Describa el post brevemente aqui..."
                     maxLength="150"
-                    required
+                    
                     onChange={(e) => setDescripcion(e.target.value)}
                   />
                   <Form.Label>Autor*</Form.Label>
@@ -173,7 +173,7 @@ const AgregarNoticia = (props) => {
                     onChange={setContenido}
                     placeholder="El contenido va aqui..."
                     maxLength="15"
-                    required
+                   
                   />
                 </Form>
               </Card.Body>
@@ -216,13 +216,7 @@ const AgregarNoticia = (props) => {
                 <h4 className="card-heading">Publicar</h4>
               </Card.Header>
               <Card.Body className="text-grey-700">
-                <div className="d-flex flex-lg-column mb-4 justify-content-between">
-                  <button
-                    type="button"
-                    className="mb-2 btn btn-outline-secondary btn-sm"
-                  >
-                    Guardar Borrador
-                  </button>
+                <div className="d-flex flex-lg-column mb-4 justify-content-end">
                   <button
                     type="button"
                     className="mb-2 btn btn-outline-secondary btn-sm"
@@ -244,7 +238,6 @@ const AgregarNoticia = (props) => {
                       type="date"
                       placeholder="15/12/2020"
                       form="formNews"
-                      required
                       onChange={(e) => setFecha(e.target.value)}
                     />
                   </div>

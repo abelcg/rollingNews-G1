@@ -5,6 +5,7 @@ import AgregarNoticia from "../noticias/AgregarNoticia";
 import TablaNoticias from "../noticias/TablaNoticias";
 import Categorias from "../noticias/Categorias";
 import EditarNoticia from "../noticias/EditarNoticia";
+import EditarCategoria from "../noticias/EditarCategoria";
 
 const PageHolder = () => {
   const URL = process.env.REACT_APP_API_URL;
@@ -76,6 +77,11 @@ const PageHolder = () => {
             exact
             path="/CMS/categorias"
             element={<Categorias categorias={categorias} consultaAPICat={consultaAPICat}></Categorias>}
+          ></Route>
+           <Route
+            exact
+            path="/CMS/categorias/editar/:id"
+            element={<EditarCategoria categorias={categorias} consultaAPICat={consultaAPICat}></EditarCategoria>}
           ></Route>
         </Routes>
       </div>

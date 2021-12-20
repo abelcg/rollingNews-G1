@@ -51,7 +51,6 @@ const EditarNoticia = (props) => {
    const tituloRef = useRef("");
    const imagenRef = useRef("");
    const descripcionRef = useRef("");
-   const contenidoRef = useRef("");
    const fechaRef = useRef("");
 
    useEffect(async () => {
@@ -155,7 +154,7 @@ const EditarNoticia = (props) => {
                     id="postTitle"
                     className="mb-4"
                     maxLength="80"
-                    required
+                    
                     defaultValue={noticia.titulo}
                     ref={tituloRef}
                   ></Form.Control>
@@ -165,7 +164,7 @@ const EditarNoticia = (props) => {
                     id="postImg"
                     className="mb-4 form-control"
                     maxLength="80"
-                    required
+                    
                     defaultValue={noticia.imagen}
                     ref={imagenRef}
                   ></Form.Control>
@@ -175,7 +174,7 @@ const EditarNoticia = (props) => {
                     as="textarea"
                     placeholder="Describa el post brevemente aqui..."
                     maxLength="150"
-                    required
+                    
                     defaultValue={noticia.descripcion}
                     ref={descripcionRef}
                   />
@@ -202,7 +201,7 @@ const EditarNoticia = (props) => {
                     // onChange={(e) => setContenido(e.target.value)}
                      onChange={setContenido}
                     placeholder="El contenido va aqui..."
-                    required
+                    
                     defaultValue={noticia.contenido}
                     //ref={contenidoRef}
                   />
@@ -247,13 +246,8 @@ const EditarNoticia = (props) => {
                 <h4 className="card-heading">Publicar</h4>
               </Card.Header>
               <Card.Body className="text-grey-700">
-                <div className="d-flex flex-lg-column mb-4 justify-content-between">
-                  <button
-                    type="button"
-                    className="mb-2 btn btn-outline-secondary btn-sm"
-                  >
-                    Guardar Borrador
-                  </button>
+                <div className="d-flex flex-lg-column mb-4 justify-content-end">
+                  
                   <button
                     type="button"
                     className="mb-2 btn btn-outline-secondary btn-sm"
@@ -275,7 +269,6 @@ const EditarNoticia = (props) => {
                       type="date"
                       placeholder="aaaa/mm/dd"
                       form="formNews"
-                      required
                       defaultValue={noticia.fecha}
                       ref={fechaRef}
                     />
