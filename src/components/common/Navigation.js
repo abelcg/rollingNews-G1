@@ -1,63 +1,142 @@
 import React from "react";
-import { NavDropdown, Navbar, Container, Nav } from "react-bootstrap";
+import {
+  NavDropdown,
+  Navbar,
+  Container,
+  Nav,
+  Offcanvas,
+} from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { AiOutlineLogin } from "react-icons/ai";
 
 const Navigation = () => {
   return (
-      <Navbar bg="dark" variant='dark' expand="lg">
-        <Container>
-          <Link to='/inicio'>
-            <img className='border rounded-circle' src="logo.png" width="65" alt="RollingNews logo"></img>
-          </Link>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="ms-auto">
-                <Link
-                  className="nav-link border justify-content-center my-3 rounded bg-danger mx-2 text-white d-flex align-items-center"
-                  to="/ingresar"
-                >
-                  Ingresar
-                </Link>
-                <Link
-                  className="nav-link border justify-content-center my-3 rounded bg-danger mx-2 text-white d-flex align-items-center"
-                  to="/suscribite"
-                >
-                  Suscribíte
-                </Link>
-                <Link
-                  className="nav-link border justify-content-center my-3 rounded bg-danger mx-2 text-white d-flex align-items-center"
-                  to="/actualidad"
-                >
+    <header>
+      <Container fluid>
+        <Navbar
+          expand={false}
+          className="d-flex flex-lg-row justify-content-start"
+        >
+          <Navbar.Toggle aria-controls="navbar-nav" />
+          <Navbar.Offcanvas id="navbar-nav">
+            <Offcanvas.Header
+              className="ms-auto"
+              closeButton
+            ></Offcanvas.Header>
+            <Offcanvas.Body>
+              <Nav>
+                <Link className="nav-link text-secondary text-center" to="/actualidad">
                   Actualidad
                 </Link>
-                <Link
-                  className="nav-link border justify-content-center my-3 rounded bg-danger mx-2 text-white d-flex align-items-center"
-                  to="/espectaculos"
-                >
+                <Link className="nav-link text-secondary text-center" to="/espectaculos">
                   Espectáculos
                 </Link>
-                <Link
-                  className="nav-link border justify-content-center my-3 rounded bg-danger mx-2 text-white d-flex align-items-center"
-                  to="/tecnologia"
-                >
+                <Link className="nav-link text-secondary text-center" to="/tecnologia">
                   Tecnología
                 </Link>
-                <NavDropdown className='bg-danger border rounded text-center mx-2 my-3' title="Más" id="basic-nav-dropdown">
-                  <Link className='bg-danger nav-link border border-dark text-light text-center' to='/deportes'>
+                <NavDropdown
+                  className="border-0 text-secondary"
+                  title="Más"
+                  id="nav-dropdown"
+                >
+                  <Link className="dropdown-item text-secondary" to="/deportes">
                     Deportes
                   </Link>
-                  <Link className='bg-danger nav-link border border-dark text-light text-center' to='/politica'>
+                  <Link className="dropdown-item text-secondary" to="/politica">
                     Política
                   </Link>
-                  <Link className='bg-danger nav-link border border-dark text-light text-center' to='/economia'>
+                  <Link className="dropdown-item text-secondary" to="/economia">
                     Economía
                   </Link>
-                  <Link className='bg-danger nav-link border border-dark text-light text-center' to='/salud'>Salud</Link>
+                  <Link className="dropdown-item text-secondary" to="/salud">
+                    Salud
+                  </Link>
+                  <Link
+                    className="dropdown-item text-secondary"
+                    to="/fotografia"
+                  >
+                    Fotografia
+                  </Link>
+                  <Link
+                    className="dropdown-item text-secondary"
+                    to="/internacional"
+                  >
+                    Internacional
+                  </Link>
                 </NavDropdown>
               </Nav>
-          </Navbar.Collapse>
+            </Offcanvas.Body>
+          </Navbar.Offcanvas>
+          <div className="d-md-flex d-none flex-row flex-wrap">
+            <Link className="nav-link text-secondary" to="/actualidad">
+              Actualidad
+            </Link>
+            <Link className="nav-link text-secondary" to="/espectaculos">
+              Espectáculos
+            </Link>
+            <Link className="nav-link text-secondary" to="/tecnologia">
+              Tecnología
+            </Link>
+            <Link className="nav-link text-secondary" to="/deportes">
+              Deportes
+            </Link>
+            <Link className="nav-link text-secondary" to="/politica">
+              Política
+            </Link>
+            <Link className="nav-link text-secondary" to="/economia">
+              Economía
+            </Link>
+          </div>
+          <div className="d-flex flex-row ms-auto">
+            <Link
+              className="nav-link"
+              id="login-btn"
+              aria-current="page"
+              to="/admin"
+            >
+              Admin
+            </Link>
+            <Link
+              className="nav-link"
+              id="login-btn"
+              aria-current="page"
+              to="/login"
+            >
+              Login <AiOutlineLogin className="ms-1 fs-5" />
+            </Link>
+            <Link
+              className="btn btn-danger fw-bold rounded-0"
+              id="btn-suscribite"
+              data-bs-toggle="modal"
+              data-bs-target="#ModalSuscripcion"
+              to=""
+            >
+              SUSCRIBITE
+            </Link>
+          </div>
+        </Navbar>
+      </Container>
+      <Navbar className="shadow" bg="white" variant="light" expand="lg">
+        <Container fluid>
+          <Link to="/inicio">
+            <img
+              className="img-fluid"
+              src="logo.png"
+              alt="RollingNews logo"
+            ></img>
+          </Link>
+          <Navbar.Text>
+            <span className="text-danger">Dólar: </span>
+            <span className="text-primary me-2">BNA:</span>
+            <span>$101,00/$107,00</span>
+            <span className="text-primary ms-2">Blue:</span>{" "}
+            <span>$195,00/$199,00</span>
+          </Navbar.Text>
+          <Navbar.Text>nublado, 31°C</Navbar.Text>
+          <Navbar.Text>Martes, 21 de diciembre de 2021</Navbar.Text>
         </Container>
       </Navbar>
+    </header>
   );
 };
 

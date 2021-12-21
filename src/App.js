@@ -10,10 +10,10 @@ const App = () => {
   return (
       <Router>
         <Navigation></Navigation>
-        <Routes>
+        {/* <Routes>
           <Route exact path='/' element={<PaginaPrincipal></PaginaPrincipal>}></Route>
         </Routes>
-        <Footer></Footer>
+        <Footer></Footer> */}
       </Router>
   );
 };
