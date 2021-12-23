@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 
-body, header {
+body, header, footer {
   font-family: "Merriweather", serif;
 }
 
