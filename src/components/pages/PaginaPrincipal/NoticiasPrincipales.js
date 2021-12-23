@@ -1,9 +1,9 @@
 import React from "react";
 import { Card, Container, Row, Col } from "react-bootstrap";
-import noticiaPrincipal from "../img/noticiaPrincipal.jpg";
-import noticia2 from "../img/noticia2.jpg";
-import noticia3 from "../img/noticia3.jpg";
-import publicidad1 from '../img/publicidad1.jpg'
+import noticiaPrincipal from "../../../img/noticiaPrincipal.jpg";
+import noticia2 from "../../../img/noticia2.jpg";
+import noticia3 from "../../../img/noticia2.jpg";
+import publicidad1 from '../../../img/publicidad1.jpg'
 
 const NoticiasPrincipales = () => {
   return (

@@ -8,7 +8,7 @@ import googlePlay from "../../img/google-play.svg";
 
 const Footer = () => {
   return (
-    <footer className="bg-dark text-light fixed-bottom pt-3">
+    <footer className="bg-dark text-light mt-4 pt-3 shadow-footer">
       <div className="container-fluid">
         <div className="row pt-3 pb-4">
           <div className="col-md-2">

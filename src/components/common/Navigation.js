@@ -76,6 +76,33 @@ const Navigation = () => {
                     Internacional
                   </Link>
                 </NavDropdown>
+                <Link class="nav-link text-secondary text-center" to="/contacto">
+                  Contacto
+                </Link>
+
+                <Link class="nav-link  text-secondary text-center" to="/acercadenosotros">
+                  Acerca de nosotros
+                </Link>
+
+                <Link class="nav-link text-secondary text-center" to="/error404">
+                  Mapa del sitio
+                </Link>
+
+                <Link class="nav-link text-secondary text-center" to="/error404">
+                  Ayuda
+                </Link>
+
+                <Link class="nav-link text-secondary text-center" to="/error404">
+                  Términos y condiciones
+                </Link>
+
+                <Link class="nav-link text-secondary text-center" to="/error404">
+                  Política de Privacidad
+                </Link>
+
+                <Link class="nav-link text-secondary text-center" to="/error404">
+                  Anúnciese con nosotros
+                </Link>
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>
