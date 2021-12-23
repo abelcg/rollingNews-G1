@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import CuerpoPag from '../CuerpoPag';
+import CuerpoPag from '../../CuerpoPag';
 
 const PaginaPrincipal = () => {
     return (

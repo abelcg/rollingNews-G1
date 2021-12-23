@@ -8,6 +8,9 @@ import {
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { AiOutlineLogin } from "react-icons/ai";
+import obtenerFecha from "../helpers/fechaLocal"
+import ClimaLocal from "../pages/PaginaPrincipal/ClimaLocal"
+import Cotizaciones from "../pages/Cotizaciones";
 
 const Navigation = () => {
   return (
@@ -125,15 +128,26 @@ const Navigation = () => {
               alt="RollingNews logo"
             ></img>
           </Link>
-          <Navbar.Text>
+          <div className="d-flex flex-column flex-md-row justify-content-center">
+         {/*  <Navbar.Text  className="fw-bold text-center">
             <span className="text-danger">Dólar: </span>
             <span className="text-primary me-2">BNA:</span>
             <span>$101,00/$107,00</span>
-            <span className="text-primary ms-2">Blue:</span>{" "}
+            <span className="text-primary mx-2">Blue:</span>
             <span>$195,00/$199,00</span>
           </Navbar.Text>
-          <Navbar.Text>nublado, 31°C</Navbar.Text>
-          <Navbar.Text>Martes, 21 de diciembre de 2021</Navbar.Text>
+          <Navbar.Text  className="fw-bold text-center">
+           <span className="text-danger mx-2">Euro Oficial: </span>
+            <span>$114,00/$120,00</span>
+            <Cotizaciones></Cotizaciones>
+          </Navbar.Text>
+          <Navbar.Text  className="fw-bold text-center">
+            <span className="text-danger mx-2">Real Oficial: </span>
+            <span>$17,00/$19,00</span>
+          </Navbar.Text> */}<Cotizaciones></Cotizaciones>
+          <Navbar.Text className="text-center"><ClimaLocal></ClimaLocal></Navbar.Text>
+          <Navbar.Text className="text-center fw-bold">{obtenerFecha()}</Navbar.Text>
+          </div>
         </Container>
       </Navbar>
     </header>
