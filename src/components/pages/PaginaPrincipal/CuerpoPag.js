@@ -7,7 +7,6 @@ import TituloPagPrincipal from "./TituloPagPrincipal";
 const CuerpoPag = () => {
   return (
     <Fragment>
-       {/*  <TituloPagPrincipal/> */}
         <NoticiasPrincipales></NoticiasPrincipales>
         <NoticiasXcategoria></NoticiasXcategoria>
     </Fragment>
