@@ -61,42 +61,9 @@ footer,
   border-radius: 1rem;
 }
 
-.card-header {
-  position: relative;
-  padding: 2rem;
-  border-bottom: none;
-  background-color: #fff;
-  -webkit-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-  z-index: 2;
-}
-
-.card-header:first-child {
-  border-radius: 1rem;
-}
-
-.card-heading {
-  margin-bottom: 0;
-  font-size: 0.9rem;
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-}
-
 .card-body {
   flex: 1 1 auto;
   padding: 1.5rem;
-}
-.card-footer,
-.card-header {
-  padding: 1rem 2rem;
-  background-color: rgba(0, 0, 0, 0.03);
-}
-.card-footer {
-  border-top: 1px solid transparent;
-}
-.card-footer:last-child {
-  border-radius: 1rem;
 }
 
 .card-overlay-bottom {
