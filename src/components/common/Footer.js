@@ -123,8 +123,8 @@ const Footer = () => {
           <div class="col-md-6 mb-4">
             <h5 class="mb-4 text-white text-center">Nuestra App</h5>
             <p class="text-muted text-center">
-              Download our App and get the latest Breaking News Alerts and
-              latest headlines and daily articles near you.
+              Baja nuestra App y obtendrás las últimas noticias y
+              titulares, además de artículos de interés para ti.
             </p>
             <div class="row g-2 text-center">
               <div class="col">
