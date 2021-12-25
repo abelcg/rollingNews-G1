@@ -6,13 +6,19 @@
   box-sizing: border-box;
 }
 
-body, header, footer, #root {
+body,
+header,
+footer,
+#root {
   font-family: "Merriweather", serif;
 }
 
-
 .nav-link:hover {
   background: #e9ecef;
+}
+
+.nav-link {
+  font-size: 0.8em;
 }
 
 .dropdown-menu {
@@ -24,25 +30,19 @@ body, header, footer, #root {
 }
 
 .offcanvas-start {
-
-  width: 132px!important;
-}
-
-.nav-link{
-  font-size: 0.8em;
-}
-
-.navbar-text{
-  font-size: 0.65em!important;
-}
-
-.shadow-footer{
-  box-shadow: 1px -6px 13px -5px rgba(0,0,0,0.75);
--webkit-box-shadow: 1px -6px 13px -5px rgba(0,0,0,0.75);
--moz-box-shadow: 1px -6px 13px -5px rgba(0,0,0,0.75);
+  width: 132px !important;
 }
 
 
+.navbar-text {
+  font-size: 0.66em !important;
+}
+
+.shadow-footer {
+  box-shadow: 1px -6px 13px -5px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px -6px 13px -5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px -6px 13px -5px rgba(0, 0, 0, 0.75);
+}
 
 .card {
   border: none;
@@ -87,14 +87,102 @@ body, header, footer, #root {
   flex: 1 1 auto;
   padding: 1.5rem;
 }
-.card-footer, .card-header {
+.card-footer,
+.card-header {
   padding: 1rem 2rem;
-  background-color: rgba(0,0,0,.03);
+  background-color: rgba(0, 0, 0, 0.03);
 }
 .card-footer {
   border-top: 1px solid transparent;
 }
 .card-footer:last-child {
   border-radius: 1rem;
+}
+
+.card-overlay-bottom {
+  overflow: hidden;
+}
+
+.card-overlay-bottom:before {
+  content: "";
+  position: absolute;
+  height: 10%;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: linear-gradient(180deg, transparent, rgba(15, 15, 15, 0.726));
+  z-index: 1;
+}
+
+.card-bg-scale::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  transition: 0.5s ease-in-out!important;
+  z-index: -2;
+}
+
+.card-bg-scale{
+  z-index: 99;
+}
+
+.card-bg-scale:hover::after {
+  transform: scale(1.1);
+  transition: all 1s !important;
+}
+
+.card,
+.overflow-hidden {
+  will-change: transform;
+}
+
+.h-500 {
+  height: 500px !important;
+}
+
+.btn-link {
+  padding-bottom: 0px;
+  background: linear-gradient(to right, currentColor 0%, currentColor 100%);
+  background-size: 0px 6%;
+  background-repeat: no-repeat;
+  background-position: left 100%;
+  transition-duration: 0.5s;
+  font-weight: inherit;
+  padding: 0;
+}
+
+.btn-link:hover {
+  background-size: 100% 6%;
+}
+
+.nav.nav-divider .nav-item {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.avatar {
+  height: 3rem;
+  width: 3rem;
+  position: relative;
+  display: inline-block !important;
+}
+
+.avatar-sm {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 

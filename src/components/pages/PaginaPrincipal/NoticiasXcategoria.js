@@ -2,12 +2,19 @@ import React from "react";
 import { Container, Card, Row, Col } from "react-bootstrap";
 import publicidad3 from '../../../img/publicidad3.jpg';
 import publicidad4 from '../../../img/publicidad4.jpg';
+import publicidad2 from '../../../img/publicidad2.jpg';
 
 const NoticiasXcategoria = () => {
   return (
     <Container>
       <hr className="text-danger" />
       <Row className="my-4">
+        <Col md={12}>
+          <div className="text-center my-3">
+        <img className='w-50 h-auto my-2 border' src={publicidad2} alt="publicidad" />
+          </div>
+        </Col>
+        <hr />
         <Col md={4}>
           <h3>Actualidad</h3>
           <Card>
@@ -97,10 +104,10 @@ const NoticiasXcategoria = () => {
       <Row>
         <hr />
         <Col md={6}>
-          <img className='w-100 my-2' style={{height:'190px'}} src={publicidad3} alt="publicidad" />
+          <img className='w-100 h-auto my-2' src={publicidad3} alt="publicidad" />
         </Col>
         <Col md={6}>
-          <img className='w-100 my-2' style={{height:'190px'}} src={publicidad4} alt="publicidad" />
+          <img className='w-100 h-auto my-2' src={publicidad4} alt="publicidad" />
         </Col>
       </Row>
     </Container>

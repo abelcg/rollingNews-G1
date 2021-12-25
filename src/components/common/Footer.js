@@ -82,37 +82,37 @@ const Footer = () => {
               <div class="col-12">
                 <ul class="nav flex-column text-primary-hover">
                   <li class="nav-item">
-                    <Link class="nav-link pt-0" to="/contacto">
+                    <Link class="pt-0 text-decoration-none" to="/contacto">
                       Contacto
                     </Link>
                   </li>
                   <li class="nav-item">
-                    <Link class="nav-link" to="/acercadenosotros">
+                    <Link class="text-decoration-none" to="/acercadenosotros">
                       Acerca de nosotros
                     </Link>
                   </li>
                   <li class="nav-item">
-                    <Link class="nav-link" to="/error404">
+                    <Link class="text-decoration-none" to="/error404">
                       Mapa del sitio
                     </Link>
                   </li>
                   <li class="nav-item">
-                    <Link class="nav-link" to="/error404">
+                    <Link class="text-decoration-none" to="/error404">
                       Ayuda
                     </Link>
                   </li>
                   <li class="nav-item">
-                    <Link class="nav-link" to="/error404">
+                    <Link class="text-decoration-none" to="/error404">
                       Términos y condiciones
                     </Link>
                   </li>
                   <li class="nav-item">
-                    <Link class="nav-link" to="/error404">
+                    <Link class="text-decoration-none" to="/error404">
                       Política de Privacidad
                     </Link>
                   </li>
                   <li class="nav-item">
-                    <Link class="nav-link" to="/error404">
+                    <Link class="text-decoration-none" to="/error404">
                       Anúnciese con nosotros
                     </Link>
                   </li>
