@@ -5,14 +5,24 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Footer from "./components/common/Footer";
 import PaginaPrincipal from './components/pages/PaginaPrincipal/PaginaPrincipal';
 import "bootstrap/dist/css/bootstrap.min.css";
+import SobreNosotros from "./components/pages/SobreNosotros";
+import Error404 from "./components/pages/Error404";
 
 const App = () => {
   return (
       <Router>
         <Navigation></Navigation>
+        <main>
          <Routes>
           <Route exact path='/inicio' element={<PaginaPrincipal></PaginaPrincipal>}></Route>
         </Routes>
+         <Routes>
+          <Route exact path='/acercadenosotros' element={<SobreNosotros></SobreNosotros>}></Route>
+        </Routes>
+         <Routes>
+          <Route exact path='/error404' element={<Error404></Error404>}></Route>
+        </Routes>
+        </main>
         <Footer></Footer>
       </Router>
   );
