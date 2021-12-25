@@ -1,17 +1,19 @@
 import React from "react";
-import { Card, Container, Row, Col } from "react-bootstrap";
-import noticiaPrincipal from "../../../img/noticiaPrincipal.jpg";
-import noticia2 from "../../../img/noticia2.jpg";
-import noticia3 from "../../../img/noticia3.jpg";
+import { Container, Row, Col } from "react-bootstrap";
+//import noticiaPrincipal from "../../../img/noticiaPrincipal.jpg";
+//import noticia2 from "../../../img/noticia2.jpg";
+//import noticia3 from "../../../img/noticia3.jpg";
 import publicidad1 from "../../../img/publicidad1.jpg";
-import { BsFillRecordCircleFill } from "react-icons/bs";
+import CardConImg from "../../common/CardConImg";
+import CardPrincipal from "../../common/CardPrincipal";
+//import { BsFillRecordCircleFill } from "react-icons/bs";
 
 const NoticiasPrincipales = () => {
   return (
     <Container fluid>
       <Row>
         <Col md={9}>
-          <Card
+         {/*  <Card
             className="card card-overlay-bottom card-grid-lg card-bg-scale h-500 mt-5 mb-4"
             style={{
               backgroundImage: `url(${noticiaPrincipal})`,
@@ -68,7 +70,8 @@ const NoticiasPrincipales = () => {
                 </ul>
               </div>
             </div>
-          </Card>
+          </Card> */}
+          <CardPrincipal></CardPrincipal>
         </Col>
         <Col md={3}>
           <img
@@ -80,7 +83,7 @@ const NoticiasPrincipales = () => {
       </Row>
       <Row className="g-4">
         <Col md={6}>
-          <Card className="card bg-transparent h-100 my-4">
+         {/*  <Card className="card bg-transparent h-100 my-4">
             <div className="position-relative h-100">
               <img
                 className="card-img w-100 h-100"
@@ -140,10 +143,11 @@ const NoticiasPrincipales = () => {
                 <li className="nav-item">| Enero 22, 2021</li>
               </ul>
             </Card.Body>
-          </Card>
+          </Card> */}
+          <CardConImg></CardConImg>
         </Col>
         <Col md={6}>
-          <Card className="card bg-transparent h-100 my-4">
+         {/*  <Card className="card bg-transparent h-100 my-4">
             <div className="position-relative h-100">
               <img
                 className="card-img w-100 h-100"
@@ -204,7 +208,8 @@ const NoticiasPrincipales = () => {
                 <li className="nav-item">| Agosto 15, 2021</li>
               </ul>
             </Card.Body>
-          </Card>
+          </Card> */}
+          <CardConImg></CardConImg>
         </Col>
       </Row>
     </Container>

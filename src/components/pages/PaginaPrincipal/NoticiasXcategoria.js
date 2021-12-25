@@ -1,14 +1,13 @@
 import React from "react";
-import { Container, Card, Row, Col } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import publicidad3 from "../../../img/publicidad3.jpg";
 import publicidad4 from "../../../img/publicidad4.jpg";
 import publicidad2 from "../../../img/publicidad2.jpg";
-import { BsFillRecordCircleFill } from "react-icons/bs";
+import CardSinImg from "../../common/CardSinImg";
 
 const NoticiasXcategoria = () => {
   return (
     <Container>
-      <hr className="text-danger" />
       <Row className="my-4 g-2">
         <Col md={12}>
           <div className="text-center my-3">
@@ -22,7 +21,7 @@ const NoticiasXcategoria = () => {
         <hr className="text-danger" />
         <Col md={4}>
           <h3 className="text-center">Actualidad</h3>
-          <Card className="card mb-4">
+          {/* <Card className="card mb-4">
             <Card.Body className="p-4 border rounded-3">
               <Card.Link href="#" className="badge bg-danger mb-2 text-decoration-none">
               <BsFillRecordCircleFill className="me-2 small fw-bold"></BsFillRecordCircleFill>
@@ -63,8 +62,9 @@ const NoticiasXcategoria = () => {
                 <li className="nav-item">Octubre 22, 2021</li>
               </ul>
             </Card.Body>
-          </Card>
-           <Card className="card mb-4">
+          </Card> */}
+          <CardSinImg></CardSinImg>
+          {/*  <Card className="card mb-4">
             <Card.Body className="p-4 border rounded-3">
               <Card.Link href="#" className="badge bg-danger mb-2 text-decoration-none">
               <BsFillRecordCircleFill className="me-2 small fw-bold"></BsFillRecordCircleFill>
@@ -103,12 +103,13 @@ const NoticiasXcategoria = () => {
                 <li className="nav-item">Octubre 22, 2021</li>
               </ul>
             </Card.Body>
-          </Card>
+          </Card> */}
+           <CardSinImg></CardSinImg>
         </Col>
 
         <Col md={4}>
           <h3 className="text-center">Espectáculos</h3>
-           <Card className="card mb-4">
+          {/*  <Card className="card mb-4">
             <Card.Body className="p-4 border rounded-3">
               <Card.Link href="#" className="badge bg-danger mb-2 text-decoration-none">
               <BsFillRecordCircleFill className="me-2 small fw-bold"></BsFillRecordCircleFill>
@@ -147,8 +148,8 @@ const NoticiasXcategoria = () => {
                 <li className="nav-item">Octubre 22, 2021</li>
               </ul>
             </Card.Body>
-          </Card>
-          <Card className="card mb-4">
+          </Card> */}
+          {/* <Card className="card mb-4">
             <Card.Body className="p-4 border rounded-3">
               <Card.Link href="#" className="badge bg-danger mb-2 text-decoration-none">
               <BsFillRecordCircleFill className="me-2 small fw-bold"></BsFillRecordCircleFill>
@@ -188,12 +189,14 @@ const NoticiasXcategoria = () => {
                 <li className="nav-item">Octubre 22, 2021</li>
               </ul>
             </Card.Body>
-          </Card>
+          </Card> */}
+           <CardSinImg></CardSinImg>
+           <CardSinImg></CardSinImg>
         </Col>
 
         <Col md={4}>
           <h3 className="text-center">Tecnología</h3>
-           <Card className="card mb-4">
+           {/* <Card className="card mb-4">
             <Card.Body className="p-4 border rounded-3">
               <Card.Link href="#" className="badge bg-danger mb-2 text-decoration-none">
               <BsFillRecordCircleFill className="me-2 small fw-bold"></BsFillRecordCircleFill>
@@ -233,8 +236,8 @@ const NoticiasXcategoria = () => {
                 <li className="nav-item">Octubre 22, 2021</li>
               </ul>
             </Card.Body>
-          </Card>
-          <Card className="card mb-4">
+          </Card> */}
+          {/* <Card className="card mb-4">
             <Card.Body className="p-4 border rounded-3">
               <Card.Link href="#" className="badge bg-danger mb-2 text-decoration-none">
               <BsFillRecordCircleFill className="me-2 small fw-bold"></BsFillRecordCircleFill>
@@ -275,7 +278,9 @@ const NoticiasXcategoria = () => {
                 <li className="nav-item">Octubre 22, 2021</li>
               </ul>
             </Card.Body>
-          </Card>
+          </Card> */}
+           <CardSinImg></CardSinImg>
+           <CardSinImg></CardSinImg>
         </Col>
       </Row>
       <Row>
