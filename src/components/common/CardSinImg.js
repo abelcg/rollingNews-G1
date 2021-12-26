@@ -2,21 +2,22 @@ import React from 'react';
 import { Card } from "react-bootstrap";
 import { BsFillRecordCircleFill } from "react-icons/bs";
 import publicidad2 from "../../img/publicidad2.jpg"
+import { Link } from "react-router-dom";
 
 const CardSinImg = () => {
     return (
         <>
             <Card className="card mb-4">
             <Card.Body className="p-4 border rounded-3">
-              <Card.Link href="#" className="badge bg-danger mb-2 text-decoration-none">
+              <Link to="#" className="card-link badge bg-danger mb-2 text-decoration-none">
               <BsFillRecordCircleFill className="me-2 small fw-bold"></BsFillRecordCircleFill>
                 Actualidad
-              </Card.Link>
+              </Link>
               <Card.Title>
-                <Card.Link href="#" className="btn-link text-reset fw-bold text-decoration-none">
+                <Link to="#" className="card-link btn-link text-reset fw-bold text-decoration-none">
                 Nominan al canciller mexicano Marcelo Ebrard como "persona del
                 año" por su demanda contra fabricantes de armas en EE.UU.
-                </Card.Link>
+                </Link>
               </Card.Title>
               <Card.Text className="m-0 text-decoration-none">
                 El Gobierno mexicano señala a 11 empresas estadounidenses de
@@ -37,9 +38,9 @@ const CardSinImg = () => {
                       </div>
                       <span className="ms-3">
                         Por{" "}
-                        <a href="#" className="stretched-link text-reset btn-link">
+                        <Link to="/acercadenosotros" className="stretched-link text-reset btn-link">
                           Esteban Marquez
-                        </a>
+                        </Link>
                       </span>
                     </div>
                   </div>

@@ -3,6 +3,7 @@ import noticia2 from "../../img/noticia2.jpg";
 import publicidad1 from "../../img/publicidad1.jpg";
 import { Card } from "react-bootstrap";
 import { BsFillRecordCircleFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const CardConImg = () => {
     return (
@@ -16,24 +17,24 @@ const CardConImg = () => {
               />
               <div className="card-img-overlay d-flex align-items-start flex-column p-3">
                 <div className="w-100 mt-auto">
-                  <Card.Link
-                    href="#"
-                    className="badge bg-warning mb-2 text-decoration-none"
+                  <Link
+                    to="/tecnologia"
+                    className="card-link badge bg-warning mb-2 text-decoration-none"
                   >
                     <BsFillRecordCircleFill className="me-2 small fw-bold"></BsFillRecordCircleFill>
                     Tecnología
-                  </Card.Link>
+                  </Link>
                 </div>
               </div>
             </div>
             <Card.Body className="px-1 pt-3">
               <Card.Title className="card-title">
-                <Card.Link
-                  href="#"
-                  className="btn-link text-reset fw-bold text-decoration-none"
+                <Link
+                  to="#"
+                  className="card-link btn-link text-reset fw-bold text-decoration-none"
                 >
                   ¿Cómo optimizar el tiempo para mejorar la productividad?
-                </Card.Link>
+                </Link>
               </Card.Title>
               <Card.Text>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
@@ -54,12 +55,12 @@ const CardConImg = () => {
                       </div>
                       <span className="ms-3">
                         Por{" "}
-                        <a
-                          href="#"
+                        <Link
+                          to="#"
                           className="stretched-link text-reset btn-link text-decoration-none"
                         >
                           Juan Alaniz
-                        </a>
+                        </Link>
                       </span>
                     </div>
                   </div>

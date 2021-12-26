@@ -3,6 +3,7 @@ import { Card } from "react-bootstrap";
 import noticiaPrincipal from "../../img/noticiaPrincipal.jpg";
 import publicidad1 from "../../img/publicidad1.jpg";
 import { BsFillRecordCircleFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const CardPrincipal = () => {
     return (
@@ -17,21 +18,21 @@ const CardPrincipal = () => {
           >
             <div className="card-img-overlay d-flex align-items-center p-3 p-sm-4">
               <div className="w-100 mt-auto">
-                <Card.Link
-                  href="#"
-                  className="badge bg-danger mb-2 text-decoration-none"
+                <Link
+                  to="#"
+                  className="card-link badge bg-danger mb-2 text-decoration-none"
                 >
                   <BsFillRecordCircleFill className="me-2 small fw-bold"></BsFillRecordCircleFill>
                   Actualidad
-                </Card.Link>
+                </Link>
                 <Card.Title className="text-white fs-2">
-                  <Card.Link
-                    href="#"
-                    className="btn-link stretched-link text-reset text-decoration-none"
+                  <Link
+                    to="#"
+                    className="card-link btn-link stretched-link text-reset text-decoration-none"
                   >
                     Pfizer y BioNTech dijeron que su vacuna es "eficaz" contra
                     Ómicron luego de tres dosis.
-                  </Card.Link>
+                  </Link>
                 </Card.Title>
                 <Card.Text className="text-white">
                   "Probablemente, no queda suficientemente neutralizada después
@@ -50,12 +51,12 @@ const CardPrincipal = () => {
                         </div>
                         <span className="ms-3">
                           Por{" "}
-                          <a
-                            href="#"
+                          <Link
+                            to="/acercadenosotros"
                             className="stretched-link text-reset btn-link text-decoration-none"
                           >
                             Abel Córdoba
-                          </a>
+                          </Link>
                         </span>
                       </div>
                     </div>
