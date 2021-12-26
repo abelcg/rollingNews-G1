@@ -8,6 +8,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import SobreNosotros from "./components/pages/SobreNosotros";
 import Error404 from "./components/pages/Error404";
 import Contacto from "./components/pages/Contacto";
+import AdminPage from "./components/pages/AdminPage";
+
 
 const App = () => {
   return (
@@ -26,6 +28,9 @@ const App = () => {
          <Routes>
           <Route exact path='/error404' element={<Error404></Error404>}></Route>
         </Routes>
+         <Routes>
+          <Route exact path='/admin' element={<AdminPage></AdminPage>}></Route>
+        </Routes>
         </main>
         <Footer></Footer>
       </Router>
@@ -33,3 +38,4 @@ const App = () => {
 };
 
 export default App;
+
