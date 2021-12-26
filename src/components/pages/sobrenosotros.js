@@ -43,7 +43,7 @@ const SobreNosotros = () => {
                             <BiHomeCircle></BiHomeCircle> Inicio
                           </Link>
                         </li>
-                        <li className="breadcrumb-item active">About us</li>
+                        <li className="breadcrumb-item active">Acerca de nosotros</li>
                       </ol>
                     </nav>
                   </div>

@@ -7,6 +7,7 @@ import PaginaPrincipal from './components/pages/PaginaPrincipal/PaginaPrincipal'
 import "bootstrap/dist/css/bootstrap.min.css";
 import SobreNosotros from "./components/pages/SobreNosotros";
 import Error404 from "./components/pages/Error404";
+import Contacto from "./components/pages/Contacto";
 
 const App = () => {
   return (
@@ -18,6 +19,9 @@ const App = () => {
         </Routes>
          <Routes>
           <Route exact path='/acercadenosotros' element={<SobreNosotros></SobreNosotros>}></Route>
+        </Routes>
+         <Routes>
+          <Route exact path='/contacto' element={<Contacto></Contacto>}></Route>
         </Routes>
          <Routes>
           <Route exact path='/error404' element={<Error404></Error404>}></Route>
