@@ -1,5 +1,5 @@
 import React from "react";
-import pillow from "../../img/pillow.jpg";
+import pillow from "../img/pillow.jpg";
 import { Container, Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
@@ -31,7 +31,7 @@ const Error404 = () => {
                     Hubo un problema o la página no existe más.
                   </Card.Text>
                   <div className="d-flex justify-content-center">
-                    <Link to="/inicio" className="btn btn-danger mt-3">
+                    <Link to="/" className="btn btn-danger mt-3">
                       <AiOutlineSwapLeft className="me-3"></AiOutlineSwapLeft>
                       Volver al inicio
                     </Link>

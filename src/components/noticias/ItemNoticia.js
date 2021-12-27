@@ -113,7 +113,7 @@ const ItemNoticia = (props) => {
                     <ButtonGroup>
                     <Link
                       className="btn btn-warning ms-2"
-                      to={`/CMS/noticias/editar/${props.noticias.id}`}
+                      to={`/rn/noticias/editar/${props.noticias.id}`}
                     >
                       <i className="bi bi-pencil mb-2"></i>
                     </Link>

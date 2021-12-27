@@ -2,9 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaFacebook, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
 import { Image, Form, Button } from "react-bootstrap";
-import logo2 from "../../img/logo2.png";
-import appStore from "../../img/app-store.svg";
-import googlePlay from "../../img/google-play.svg";
+import logo2 from "../img/logo2.png";
+import appStore from "../img/app-store.svg";
+import googlePlay from "../img/google-play.svg";
 
 const Footer = () => {
   return (
@@ -12,7 +12,7 @@ const Footer = () => {
       <div className="container-fluid">
         <div className="row pt-3 pb-4">
           <div className="col-md-2">
-            <Link to="/inicio">
+            <Link to="/">
             <Image fluid src={logo2} alt="RollingNews logo"></Image>
             </Link>
           </div>

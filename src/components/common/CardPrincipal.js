@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card } from "react-bootstrap";
-import noticiaPrincipal from "../../img/noticiaPrincipal.jpg";
-import publicidad1 from "../../img/publicidad1.jpg";
+import noticiaPrincipal from "../img/noticiaPrincipal.jpg";
+import publicidad1 from "../img/publicidad1.jpg";
 import { BsFillRecordCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 

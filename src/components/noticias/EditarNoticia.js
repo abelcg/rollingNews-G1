@@ -121,7 +121,7 @@ const EditarNoticia = (props) => {
           // volver a pedir a la API
           props.consultaAPI();
           // redireccion a la pagina de lista de noticias
-          navigation("/CMS/noticias");
+          navigation("admin/CMS/noticias");
           // volver a pedir a la API
           props.consultaAPI();
         } 
@@ -233,7 +233,7 @@ const EditarNoticia = (props) => {
                   </Form.Select>
                 </div>
                 <Link
-                  to="/CMS/categorias"
+                  to="/rn/admin/CMS/categorias"
                   className="btn btn-link"
                   role="button"
                 >

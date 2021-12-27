@@ -7,9 +7,9 @@ const Sidebar = (props) => {
   const [isActive, setActive] = useState("");
   const [activeLink, setActiveLink] = useState(null);
   const listOptions = [
-    { text: "Noticias", route: "/CMS/noticias" },
-    { text: "Agregar Noticia", route: "/CMS/agregarNoticia" },
-    { text: "Categorias", route: "/CMS/categorias" }
+    { text: "Noticias", route: "admin/CMS/noticias" },
+    { text: "Agregar Noticia", route: "admin/CMS/noticias/agregarNoticia" },
+    { text: "Categorias", route: "admin/CMS/categorias" }
   ];
  
   return (
@@ -33,7 +33,7 @@ const Sidebar = (props) => {
             </Link>
           </li>
           <li>
-            <Link key="1" to="/admin" onClick={() => setActive('1')}>
+            <Link key="1" to="admin/" onClick={() => setActive('1')}>
               <i
                 className={
                   isActive === '1' ? "bi bi-speedometer2 text-muted active" : "bi bi-speedometer2 text-muted"
@@ -47,7 +47,7 @@ const Sidebar = (props) => {
           <li id="sidebarMenu" onClick={() => setActive('3')}>
             <Link
               key="3"         
-              to="/CMS/noticias"
+              to="admin/CMS/noticias"
               role="button"
               aria-controls="cmsDropdown"
               aria-expanded={open}
@@ -90,19 +90,19 @@ const Sidebar = (props) => {
             </Collapse>
           </li>
           <li>
-            <Link key="7" to="/error404" onClick={() => setActive('7')}>
+            <Link key="7" to="admin/error404" onClick={() => setActive('7')}>
               <i className={isActive === '7' ? "bi bi-archive text-muted active" : "bi bi-archive text-muted"}></i>
               <span className={isActive === '7' ? "links_name text-muted active" : "links_name text-muted"}>Archivos</span>
             </Link>
           </li>
           <li>
-            <Link key="8" to="/error404" onClick={() => setActive('8')}>
+            <Link key="8" to="admin/error404" onClick={() => setActive('8')}>
               <i className={isActive === '8' ? "bi bi-heart text-muted active" : "bi bi-heart text-muted"}></i>
               <span className={isActive === '8' ? "links_name text-muted active" : "links_name text-muted"}>Guardados</span>
             </Link>
           </li>
           <li>
-            <Link key="9" to="/error404" onClick={() => setActive('9')}>
+            <Link key="9" to="admin/error404" onClick={() => setActive('9')}>
               <i className={isActive === '9' ? "bi bi-gear text-muted active" : "bi bi-gear text-muted"}></i>
               <span className={isActive === '9' ? "links_name text-muted active" : "links_name text-muted"}>Configuración</span>
             </Link>

@@ -63,7 +63,7 @@ const ItemCategoria = (props) => {
                     <ButtonGroup>
                     <Link
                       className="btn btn-warning ms-2"
-                      to={`/CMS/categorias/editar/${props.categorias.id}`}
+                      to={`/rn/categorias/editar/${props.categorias.id}`}
                     >
                       <i className="bi bi-pencil mb-2"></i>
                     </Link>

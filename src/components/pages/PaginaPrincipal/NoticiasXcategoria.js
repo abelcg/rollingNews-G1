@@ -1,8 +1,8 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import publicidad3 from "../../../img/publicidad3.jpg";
-import publicidad4 from "../../../img/publicidad4.jpg";
-import publicidad2 from "../../../img/publicidad2.jpg";
+import publicidad3 from "../../img/publicidad3.jpg";
+import publicidad4 from "../../img/publicidad4.jpg";
+import publicidad2 from "../../img/publicidad2.jpg";
 import CardSinImg from "../../common/CardSinImg";
 
 const NoticiasXcategoria = () => {

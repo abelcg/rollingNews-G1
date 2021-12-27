@@ -13,7 +13,7 @@ const Contacto = () => {
             <nav className="d-flex justify-content-center" aria-label="breadcrumb">
               <ol className="breadcrumb breadcrumb-dots mb-0">
                 <li className="breadcrumb-item">
-                  <Link className="text-decoration-none" to="/inicio">
+                  <Link className="text-decoration-none" to="/">
                     <BiHomeCircle></BiHomeCircle> Inicio
                   </Link>
                 </li>

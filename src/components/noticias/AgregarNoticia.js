@@ -202,8 +202,8 @@ const AgregarNoticia = (props) => {
                     <option value="Fotografía">Fotografía</option>
                   </Form.Select>
                 </div>
-                <Link
-                  to="/CMS/categorias"
+                <Link 
+                  to="/rn/admin/CMS/categorias"
                   className="btn btn-link"
                   role="button"
                 >

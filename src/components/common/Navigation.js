@@ -170,7 +170,7 @@ const Navigation = () => {
                 className="nav-link"
                 id="login-btn"
                 aria-current="page"
-                to="/admin"
+                to="rn/admin"
               >
                 Admin
               </Link>
@@ -195,7 +195,7 @@ const Navigation = () => {
         </Container>
         <Navbar className="shadow" bg="white" variant="light" expand="lg">
           <Container fluid>
-            <Link to="/inicio">
+            <Link to="/">
               <img
                 className="img-fluid"
                 src="logo.png"

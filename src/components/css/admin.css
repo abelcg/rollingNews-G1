@@ -179,12 +179,14 @@ a {
   background-color: #f8f9fa !important;
 }
 
+
 .bg-404{
-  background-image: url(../img/error-404.jpg);
+  background-image: url(../img/ErrorAlienSpaceship.svg);
   overflow: visible;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  object-fit: contain;
   width: 100%;
   height: 80vh;
 }
@@ -198,7 +200,7 @@ a {
 
 .card-widget {
   padding: 1.5rem;
-  border-radius: 50rem;
+  border-radius: 20px;
   background: #fff;
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
@@ -217,12 +219,36 @@ a {
   flex-shrink: 0;
 }
 
+.bg-primary-light {
+  background-color: #dadcf8!important;
+}
+
+.bg-green-light {
+  background-color: #d7f0dd!important;
+}
+
+.bg-danger-light {
+  background-color: #f8d7da!important;
+}
+
 .bg-indigo {
   background-color: #6610f2 !important;
 }
 
 .text-gray-500 {
   color: #adb5bd !important;
+}
+
+.text-green {
+  color: #35b653!important;
+}
+
+.text-blue {
+  color: #0d6efd!important;
+}
+
+.text-primary, .text-primary-hover:hover {
+  color: #4650dd!important;
 }
 
 .icon {
@@ -249,6 +275,10 @@ a {
 
 .bg-red {
   background-color: #dc3545 !important;
+}
+
+.bg-blue-light {
+  background-color: #cfe2ff!important;
 }
 
 .section-heading {
@@ -322,17 +352,6 @@ a {
   border-radius: 1rem;
 }
 
-.form-check {
-  display: block;
-  min-height: 1.35rem;
-  padding-left: 1.5em;
-  margin-bottom: .125rem;
-}
-
-.form-check-input:checked {
-  background-color: #4650dd;
-  border-color: #4650dd;
-}
 .btn-primary {
   color: #fff;
   background-color: #4650dd;
@@ -360,66 +379,6 @@ a {
 .text-reset {
   --bs-text-opacity: 1;
   color: inherit !important;
-}
-.bg-hover-gradient-primary {
-  position: relative;
-  overflow: hidden;
-  z-index: 2;
-}
-
-.bg-hover-gradient-primary:before,
-.bg-hover-primary {
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-}
-
-.bg-hover-gradient-primary::before {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  content: "";
-  opacity: 0;
-  background: -webkit-gradient(
-    linear,
-    right top,
-    left top,
-    from(#4650dd),
-    to(#1d26a0)
-  ) !important;
-  background: -webkit-linear-gradient(right, rgb(70, 80, 221), rgb(29, 38, 160)) !important;
-  background: linear-gradient(270deg, rgb(70, 80, 221), rgb(29, 38, 160)) !important;
-  z-index: -1;
-}
-
-.bg-hover-gradient-primary:hover,
-.bg-hover-gradient-primary:hover [class*="text-"]:not(.exclude) {
-  color: #fff !important;
-  background: -webkit-gradient(
-    linear,
-    right top,
-    left top,
-    from(#4650dd),
-    to(#1d26a0)
-  ) !important;
-  background: -webkit-linear-gradient(right, #4650dd, #1d26a0) !important;
-  background: linear-gradient(270deg, #4650dd, #1d26a0) !important;
-}
-
-.avatar {
-  display: inline-block;
-  position: relative;
-  width: 3rem;
-  height: 3rem;
-  text-align: center;
-  border: #dee2e6;
-  border-radius: 50%;
-  background: #fff;
-  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  line-height: 3rem;
 }
 
 .text-sm {
@@ -450,34 +409,3 @@ a {
 }
 }
 
-/*------ Media Queries para dispositivos extra small ---*/
-/* @media all and (min-width: 319px) and (max-width: 575px) {
-  .sidebar{
-    -webkit-transition: all 0.4s ease;
-    transition:all 0.4s ease;
-  }
-  
-  .sidebar.show {
-    width: 0;
-   }
-   
-   .sidebar.shrink {
-    width: 0;
-   }
-} */
-
-/* ----------- Samsung Galaxy-Fold----------- */
-/* @media (max-device-width: 280px) and (max-device-height: 653px) {
-  .sidebar{
-    -webkit-transition: all 0.4s ease;
-    transition:all 0.4s ease;
-  }
-  
-  .sidebar.show {
-    width: 0;
-   }
-   
-   .sidebar.shrink {
-    width: 0; 
-   }
-} */

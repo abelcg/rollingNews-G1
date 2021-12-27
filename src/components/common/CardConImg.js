@@ -1,6 +1,6 @@
 import React from 'react';
-import noticia2 from "../../img/noticia2.jpg";
-import publicidad1 from "../../img/publicidad1.jpg";
+import noticia2 from "../img/noticia2.jpg";
+import publicidad1 from "../img/publicidad1.jpg";
 import { Card } from "react-bootstrap";
 import { BsFillRecordCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";

@@ -2,14 +2,14 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 import { Container, Card } from "react-bootstrap";
-import ceodiario from "../../img/ceodiario.jpg";
-import editores from "../../img/editores.jpg";
-import sobrenosotros from "../../img/sobrenosotros.jpg";
-import garciaAndy from "../../img/garciaAndy.png";
-import alanizJuan from "../../img/alanizJuan.png";
-import cordobaAbel from "../../img/cordobaAbel.png";
-import marquezEsteban from "../../img/marquezEsteban.jpg";
-import barazzuttiGuillermo from "../../img/barazzuttiGuillermo.png";
+import ceodiario from "../img/ceodiario.jpg";
+import editores from "../img/editores.jpg";
+import sobrenosotros from "../img/sobrenosotros.jpg";
+import garciaAndy from "../img/garciaAndy.png";
+import alanizJuan from "../img/alanizJuan.png";
+import cordobaAbel from "../img/cordobaAbel.png";
+import marquezEsteban from "../img/marquezEsteban.jpg";
+import barazzuttiGuillermo from "../img/barazzuttiGuillermo.png";
 import { BiHomeCircle } from "react-icons/bi";
 
 const SobreNosotros = () => {
@@ -39,7 +39,7 @@ const SobreNosotros = () => {
                     >
                       <ol className="breadcrumb breadcrumb-dark breadcrumb-dots mb-0">
                         <li className="breadcrumb-item">
-                          <Link to="/inicio">
+                          <Link to="/">
                             <BiHomeCircle></BiHomeCircle> Inicio
                           </Link>
                         </li>

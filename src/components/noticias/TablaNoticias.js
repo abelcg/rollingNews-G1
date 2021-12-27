@@ -29,7 +29,7 @@ const TablaNoticias = (props) => {
         <h1 className="page-heading">Noticias</h1>
         <div>
           <Link
-            to="/CMS/agregarNoticia"
+            to="agregarNoticia"
             className="text-uppercase btn btn-primary fs-5"
           >
             <i className="bi bi-plus fs-5 fw-bold"></i>

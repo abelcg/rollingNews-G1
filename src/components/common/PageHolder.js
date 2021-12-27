@@ -6,6 +6,7 @@ import TablaNoticias from "../noticias/TablaNoticias";
 import Categorias from "../noticias/Categorias";
 import EditarNoticia from "../noticias/EditarNoticia";
 import EditarCategoria from "../noticias/EditarCategoria";
+import Dashboard from "../pages/Dashboard";
 
 const PageHolder = () => {
   const URL = process.env.REACT_APP_API_URL;
@@ -48,12 +49,17 @@ const PageHolder = () => {
         <Routes>
           <Route
             exact
-            path="/error404"
+            path="/admin/error404"
             element={<AdminError404></AdminError404>}
           ></Route>
           <Route
             exact
-            path="/CMS/noticias"
+            path="/admin/"
+            element={<Dashboard></Dashboard>}
+          ></Route>
+          <Route
+            exact
+            path="/admin/CMS/noticias"
             element={
               <TablaNoticias
                 noticias={noticias}
@@ -63,24 +69,24 @@ const PageHolder = () => {
           ></Route>
           <Route
             exact
-            path="/CMS/agregarNoticia"
+            path="/admin/CMS/noticias/agregarNoticia"
             element={
               <AgregarNoticia consultaAPI={consultaAPI}></AgregarNoticia>
             }
           ></Route>
           <Route
             exact
-            path="/CMS/noticias/editar/:id"
+            path="/noticias/editar/:id"
             element={<EditarNoticia consultaAPI={consultaAPI}></EditarNoticia>}
           ></Route>
           <Route
             exact
-            path="/CMS/categorias"
+            path="/admin/CMS/categorias"
             element={<Categorias categorias={categorias} consultaAPICat={consultaAPICat}></Categorias>}
           ></Route>
            <Route
             exact
-            path="/CMS/categorias/editar/:id"
+            path="/categorias/editar/:id"
             element={<EditarCategoria categorias={categorias} consultaAPICat={consultaAPICat}></EditarCategoria>}
           ></Route>
         </Routes>
