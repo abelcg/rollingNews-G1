@@ -127,7 +127,7 @@ const AgregarNoticia = (props) => {
                     type="text"
                     id="postTitle"
                     className="mb-4"
-                    maxLength="80"
+                    maxLength="100"
                     
                     onChange={(e) => setTitulo(e.target.value)}
                   ></Form.Control>
@@ -136,7 +136,7 @@ const AgregarNoticia = (props) => {
                     type="text"
                     id="postImg"
                     className="mb-4 form-control"
-                    maxLength="120"
+                    maxLength="180"
                     
                     onChange={(e) => setImagen(e.target.value)}
                   ></Form.Control>
@@ -145,7 +145,7 @@ const AgregarNoticia = (props) => {
                     className="mb-4"
                     as="textarea"
                     placeholder="Describa el post brevemente aqui..."
-                    maxLength="150"
+                    maxLength="200"
                     
                     onChange={(e) => setDescripcion(e.target.value)}
                   />

@@ -164,7 +164,7 @@ const EditarNoticia = (props) => {
                     type="text"
                     id="postImg"
                     className="mb-4 form-control"
-                    maxLength="120"
+                    maxLength="180"
                     
                     defaultValue={noticia.imagen}
                     ref={imagenRef}

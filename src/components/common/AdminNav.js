@@ -34,7 +34,7 @@ const AdminNav = () => {
             >
               <box-icon name={(clicked) ? "menu" : "menu-alt-left"} id="btn"></box-icon>
             </button>
-            <Link to="/admin" className="navbar-brand fs-5 fw-bold" >
+            <Link to="admin/" className="navbar-brand fs-5 fw-bold" >
               ADMIN PANEL
             </Link>
             <button
