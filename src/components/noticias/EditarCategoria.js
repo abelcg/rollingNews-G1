@@ -27,10 +27,10 @@ const EditarCategoria = (props) => {
     try {
       // realizar una consulta GET
       const respuesta = await fetch(URL_CAT);
-      console.log(respuesta);
+     
       if (respuesta.status === 200) {
         const dato = await respuesta.json();
-        console.log(dato);
+       
         setCategoria(dato);
       }
     } catch (error) {
@@ -40,13 +40,13 @@ const EditarCategoria = (props) => {
   }, []);
 
   const handleSubmit = async (e) => {
-    console.log('desde editar')
+   
   e.preventDefault();
   //validar los datos del form
   if (
     campoRequerido(nombreRef.current.value)
   ) {
-    console.log("desde submit");
+    
     // reset el state de error
     setError(false);
     // construir el objeto a enviar a la API
@@ -54,7 +54,7 @@ const EditarCategoria = (props) => {
       nombre: nombreRef.current.value,
       descripcion: descripcionRef.current.value,
     };
-    console.log(categoriaModificada);
+   
     try {
         //consulta PUT para modificar valores en la API
         const respuesta = await fetch(URL_CAT, {
@@ -62,9 +62,9 @@ const EditarCategoria = (props) => {
           headers: { "content-Type": "application/json" },
           body: JSON.stringify(categoriaModificada),
         });
-        console.log(respuesta);
+       
       if (respuesta.status === 200) {
-        console.log("la categoria se modifico correctamente");
+       
         // mostrar cartel al usuario
         Swal.fire(
           "Categoria Modificada!",

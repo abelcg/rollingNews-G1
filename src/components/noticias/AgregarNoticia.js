@@ -71,7 +71,7 @@ const AgregarNoticia = (props) => {
         categoria: categoria,
         fecha: fecha,
       };
-      //console.log(noticiaNueva);
+    
       try {
         const parametros = {
           method: "POST",
@@ -81,9 +81,9 @@ const AgregarNoticia = (props) => {
           body: JSON.stringify(noticiaNueva),
         };
         const respuesta = await fetch(URL, parametros);
-        //console.log(respuesta);
+       
         if (respuesta.status === 201) {
-          console.log("la noticia se creo correctamente");
+       
           // mostrar cartel al usuario
           Swal.fire(
             "Noticia Creada!",
@@ -95,7 +95,7 @@ const AgregarNoticia = (props) => {
           // volver a pedir a la API
           props.consultaAPI();
           // redireccion a la pagina de lista de noticias
-          navigation("/CMS/noticias");
+          navigation("/rn/admin/CMS/noticias");
         } else {
           console.log("mostrar cartel de error");
         }
@@ -136,7 +136,7 @@ const AgregarNoticia = (props) => {
                     type="text"
                     id="postImg"
                     className="mb-4 form-control"
-                    maxLength="80"
+                    maxLength="120"
                     
                     onChange={(e) => setImagen(e.target.value)}
                   ></Form.Control>

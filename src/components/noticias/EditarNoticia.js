@@ -35,7 +35,7 @@ const modules = {
 
 const EditarNoticia = (props) => {
     const { id } = useParams();
-    // console.log(id);
+   
   const [open, setOpen] = useState(false);
   const [noticia, setNoticia] = useState({});
   const [autor, setAutor] = useState("");
@@ -58,15 +58,15 @@ const EditarNoticia = (props) => {
     try {
       // realizar una consulta GET
       const respuesta = await fetch(URL);
-      console.log(respuesta);
+     
       if (respuesta.status === 200) {
         const dato = await respuesta.json();
-        console.log(dato);
+       
         setNoticia(dato);
         setCategoria(dato.categoria);
-        console.log(categoria);
+       
         setAutor(dato.autor);
-        console.log(autor);
+       
         setContenido(dato.contenido);
       }
     } catch (error) {
@@ -76,7 +76,7 @@ const EditarNoticia = (props) => {
   }, []);
 
   const handleSubmit = async (e) => {
-      console.log('desde editar')
+     
     e.preventDefault();
     //validar los datos del form
     if (
@@ -88,7 +88,8 @@ const EditarNoticia = (props) => {
       campoRequerido(categoria) &&
       validarFecha(fechaRef.current.value)
     ) {
-      console.log("desde submit");
+      
+    
       // reset el state de error
       setError(false);
       // construir el objeto a enviar a la API
@@ -101,7 +102,7 @@ const EditarNoticia = (props) => {
         categoria: categoria,
         fecha: fechaRef.current.value,
       };
-      console.log(noticiaModificada);
+     
       try {
           //consulta PUT para modificar valores en la API
           const respuesta = await fetch(URL, {
@@ -109,9 +110,9 @@ const EditarNoticia = (props) => {
             headers: { "content-Type": "application/json" },
             body: JSON.stringify(noticiaModificada),
           });
-          console.log(respuesta);
+         
         if (respuesta.status === 200) {
-          console.log("la noticia se modifico correctamente");
+         
           // mostrar cartel al usuario
           Swal.fire(
             "Noticia Modificada!",
@@ -121,7 +122,7 @@ const EditarNoticia = (props) => {
           // volver a pedir a la API
           props.consultaAPI();
           // redireccion a la pagina de lista de noticias
-          navigation("admin/CMS/noticias");
+          navigation("/rn/admin/CMS/noticias");
           // volver a pedir a la API
           props.consultaAPI();
         } 
@@ -153,7 +154,7 @@ const EditarNoticia = (props) => {
                     type="text"
                     id="postTitle"
                     className="mb-4"
-                    maxLength="80"
+                    maxLength="100"
                     
                     defaultValue={noticia.titulo}
                     ref={tituloRef}
@@ -163,7 +164,7 @@ const EditarNoticia = (props) => {
                     type="text"
                     id="postImg"
                     className="mb-4 form-control"
-                    maxLength="80"
+                    maxLength="120"
                     
                     defaultValue={noticia.imagen}
                     ref={imagenRef}
@@ -173,7 +174,7 @@ const EditarNoticia = (props) => {
                     className="mb-4"
                     as="textarea"
                     placeholder="Describa el post brevemente aqui..."
-                    maxLength="150"
+                    maxLength="200"
                     
                     defaultValue={noticia.descripcion}
                     ref={descripcionRef}

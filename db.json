@@ -99,12 +99,22 @@
       "categoria": "Actualidad",
       "fecha": "2021-12-17",
       "id": 12
+    },
+    {
+      "titulo": "Pfizer y BioNTech dijeron que su vacuna es \"eficaz\" contra Ómicron luego de tres",
+      "imagen": "https://cdnuploads.aa.com.tr/uploads/Contents/2021/10/21/thumbs_b_c_7e8a67473d30a07c47703c1eb0a82e09.jpg?v=181635",
+      "descripcion": "\"Probablemente, no queda suficientemente neutralizada después de dos dosis\", comunicó BioNTech sobre la nueva variante.",
+      "contenido": "<p>Los laboratorios Pfizer/BioNTech aclararon hoy que su vacuna contra el coronavirus es \"eficaz\" ante la variante Ómicron después de \"tres dosis\".\"La vacuna sigue siendo eficaz contra el coronavirus, incluyendo la variante Ómicron si se han administrado tres dosis\", informó BioNTech en un comunicado.</p><p>Sin embargo, aclaró que \"probablemente no queda suficientemente neutralizada (la nueva variante) después de dos dosis\".BioNTech señaló que prevé preparar una vacuna más adaptada a esta variante de la covid-19 \"hacia marzo\", consignó Télam con base en información de la agencia de noticias AFP.</p>",
+      "autor": "Abel Cordoba Gonzalez",
+      "categoria": "Actualidad",
+      "fecha": "2021-12-08",
+      "id": 13
     }
   ],
   "categorias": [
     {
       "nombre": "Actualidad",
-      "descripcion": "Temas generales sin categoria en dedicada",
+      "descripcion": "Temas generales",
       "id": 1
     },
     {
