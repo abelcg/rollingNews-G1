@@ -359,6 +359,16 @@
       "categoria": "Fotografía",
       "fecha": "2021-12-04",
       "id": 38
+    },
+    {
+      "titulo": "Waiheke, el equipo argentino que subió a Primera en Nueva Zelanda y afronta su mayor desafío",
+      "imagen": "https://images.ole.com.ar/2021/11/10/0zoR746XJ_1256x620__2.jpg#1636551510050",
+      "descripcion": "Los jugadores son inmigrantes que arrancaron a jugar por hobby y subieron siete categorías en ocho años.",
+      "contenido": "<p><span style=\"color: rgb(85, 85, 85);\">Si nos ponemos a pensar en lo cotidiano de la vida, diríamos que una isla del océano Pacífico y una pelota de fútbol parecen no tener demasiadas cosas en común, que no hay un lazo fuerte que los una, ni siquiera algo parecido. Sin embargo, un equipo formado&nbsp;en su gran mayoría por argentinos&nbsp;hizo esto posible. Ubicados a 40 kilómetros de una de las ciudades más destacadas de&nbsp;</span><a href=\"https://www.ole.com.ar/tema/nueva-zelanda.html\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: rgb(148, 190, 31);\"><strong>Nueva Zelanda</strong></a><span style=\"color: rgb(85, 85, 85);\">, Auckland, y en un pueblo con sólo 9.000 habitantes, lograron llegar a la cima del futbol neozelandés, siendo toda una novedad y consiguiendo siete ascensos en tan sólo ocho años.&nbsp;</span><strong style=\"color: rgb(51, 51, 51);\">En&nbsp;</strong><a href=\"https://www.ole.com.ar/tema/ole.html\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: rgb(51, 51, 51); background-color: transparent;\"><strong>Olé</strong></a><strong style=\"color: rgb(51, 51, 51);\">&nbsp;te contamos la historia del&nbsp;</strong><a href=\"https://www.ole.com.ar/tema/waiheke.html\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: rgb(51, 51, 51); background-color: transparent;\"><strong>Waiheke</strong></a><strong style=\"color: rgb(51, 51, 51);\">, el equipo conformado en su mayoría por&nbsp;argentino&nbsp;que arrancó como un pasatiempo,&nbsp;se convirtió en algo semiprofesional y hoy afronta su mayor desafío.</strong></p>",
+      "autor": "Andy Garcia",
+      "categoria": "Deportes",
+      "fecha": "2021-12-26",
+      "id": 39
     }
   ],
   "categorias": [
@@ -404,8 +414,13 @@
     },
     {
       "nombre": "Internacional",
-      "descripcion": "Noticias Internacionales",
+      "descripcion": "Noticias internacionales",
       "id": 9
+    },
+    {
+      "nombre": "Gastronomía",
+      "descripcion": "Cocina y recetas",
+      "id": 10
     }
   ]
 }

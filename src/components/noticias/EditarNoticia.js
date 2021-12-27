@@ -223,14 +223,14 @@ const EditarNoticia = (props) => {
                     onChange={(e) => setCategoria(e.target.value)}
                   >
                     <option value="">Seleccione un Categoria</option>
-                    <option value="Actualidad">Actualidad</option>
-                    <option value="Espectáculos">Espectáculos</option>
-                    <option value="Tecnología">Tecnología</option>
-                    <option value="Deportes">Deportes</option>
-                    <option value="Política">Política</option>
-                    <option value="Economía">Economía</option>
-                    <option value="Salud">Salud</option>
-                    <option value="Fotografía">Fotografía</option>
+                    {props.categorias.map((categoria) => (
+                      <option
+                        key={props.categorias.id}
+                        value={categoria.nombre}
+                      >
+                        {categoria.nombre}
+                      </option>
+                    ))}
                   </Form.Select>
                 </div>
                 <Link

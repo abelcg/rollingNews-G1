@@ -71,7 +71,7 @@ const AgregarNoticia = (props) => {
         categoria: categoria,
         fecha: fecha,
       };
-    
+
       try {
         const parametros = {
           method: "POST",
@@ -81,9 +81,8 @@ const AgregarNoticia = (props) => {
           body: JSON.stringify(noticiaNueva),
         };
         const respuesta = await fetch(URL, parametros);
-       
+
         if (respuesta.status === 201) {
-       
           // mostrar cartel al usuario
           Swal.fire(
             "Noticia Creada!",
@@ -128,7 +127,6 @@ const AgregarNoticia = (props) => {
                     id="postTitle"
                     className="mb-4"
                     maxLength="100"
-                    
                     onChange={(e) => setTitulo(e.target.value)}
                   ></Form.Control>
                   <Form.Label>URL de la imagen*</Form.Label>
@@ -137,7 +135,6 @@ const AgregarNoticia = (props) => {
                     id="postImg"
                     className="mb-4 form-control"
                     maxLength="180"
-                    
                     onChange={(e) => setImagen(e.target.value)}
                   ></Form.Control>
                   <Form.Label>Descripción breve*</Form.Label>
@@ -146,7 +143,6 @@ const AgregarNoticia = (props) => {
                     as="textarea"
                     placeholder="Describa el post brevemente aqui..."
                     maxLength="200"
-                    
                     onChange={(e) => setDescripcion(e.target.value)}
                   />
                   <Form.Label>Autor*</Form.Label>
@@ -156,7 +152,9 @@ const AgregarNoticia = (props) => {
                     onChange={(e) => setAutor(e.target.value)}
                   >
                     <option value="">Seleccione un Autor</option>
-                    <option value="Abel Cordoba Gonzalez">Abel Córdoba González</option>
+                    <option value="Abel Cordoba Gonzalez">
+                      Abel Córdoba González
+                    </option>
                     <option value="Juan Alaniz">Juan Alaniz</option>
                     <option value="Andy Garcia">Andy Garcia</option>
                     <option value="Guillermo Barazzutti">
@@ -173,7 +171,6 @@ const AgregarNoticia = (props) => {
                     onChange={setContenido}
                     placeholder="El contenido va aqui..."
                     maxLength="15"
-                   
                   />
                 </Form>
               </Card.Body>
@@ -192,17 +189,17 @@ const AgregarNoticia = (props) => {
                     onChange={(e) => setCategoria(e.target.value)}
                   >
                     <option value="">Seleccione un Categoria</option>
-                    <option value="Actualidad">Actualidad</option>
-                    <option value="Espectáculos">Espectáculos</option>
-                    <option value="Tecnología">Tecnología</option>
-                    <option value="Deportes">Deportes</option>
-                    <option value="Política">Política</option>
-                    <option value="Economía">Economía</option>
-                    <option value="Salud">Salud</option>
-                    <option value="Fotografía">Fotografía</option>
+                    {props.categorias.map((categoria) => (
+                      <option
+                        key={props.categorias.id}
+                        value={categoria.nombre}
+                      >
+                        {categoria.nombre}
+                      </option>
+                    ))}
                   </Form.Select>
                 </div>
-                <Link 
+                <Link
                   to="/rn/admin/CMS/categorias"
                   className="btn btn-link"
                   role="button"

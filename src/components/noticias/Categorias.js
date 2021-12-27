@@ -29,7 +29,6 @@ const Categorias = (props) => {
         nombre: nombre,
         descripcion: descripcion,
       };
-      console.log(categoriaNueva);
       try {
         const respuesta = await fetch(URL_CAT, {
           method: "POST",
@@ -40,7 +39,7 @@ const Categorias = (props) => {
         });
         console.log(respuesta);
         if (respuesta.status === 201) {
-          console.log("la categoria se creo correctamente");
+          
           // mostrar cartel al usuario
           Swal.fire(
             "Categoria Creada!",
