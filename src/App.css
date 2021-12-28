@@ -268,6 +268,24 @@ footer,
   height: 300px !important;
 }
 
+.post-description  img{
+  width: 50%;
+  height: auto;
+  border-radius: 20px;
+  float: left;
+  margin: 10px;
+}
+
+.dropcap {
+  font-size: 4em;
+  font-weight: bold;
+  display: block;
+  float: left;
+  margin: 0.04em 0.2em 0 0;
+  color: #191a1f;
+  line-height: 1;
+}
+
 /*media queries*/
 
 @media (min-width: 768px) {

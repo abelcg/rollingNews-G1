@@ -5,6 +5,7 @@ import SobreNosotros from "./../pages/SobreNosotros";
 import Contacto from "./../pages/Contacto";
 import Error404 from "./../pages/Error404";
 import PostsXCategoria from "../pages/PostsXCategoria";
+import PostSolo from "../pages/PostSolo";
 
 const InicioMain = () => {
   return (
@@ -22,6 +23,7 @@ const InicioMain = () => {
       ></Route>
 
       <Route exact path="/actualidad" element={<PostsXCategoria></PostsXCategoria>}></Route>
+      <Route exact path="/deportes" element={<PostSolo></PostSolo>}></Route>
 
       <Route exact path="/contacto" element={<Contacto></Contacto>}></Route>
       <Route exact path="/error404" element={<Error404></Error404>}></Route>
