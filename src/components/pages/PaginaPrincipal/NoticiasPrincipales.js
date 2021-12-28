@@ -3,48 +3,22 @@ import { Container, Row, Col } from "react-bootstrap";
 import publicidad1 from "../../img/publicidad1.jpg";
 import CardConImg from "../../common/CardConImg";
 import CardPrincipal from "../../common/CardPrincipal";
-import garciaAndy from "../../img/garciaAndy.png";
-import alanizJuan from "../../img/alanizJuan.png";
-import cordobaAbel from "../../img/cordobaAbel.png";
-import marquezEsteban from "../../img/marquezEsteban.jpg";
-import barazzuttiGuillermo from "../../img/barazzuttiGuillermo.png";
+
 
 const NoticiasPrincipales = () => {
-  const URL =
+  const URL1 =
     process.env.REACT_APP_API_URL +
-    "?_sort=categoria&_order=desc&categoria=Política&categoria=Economía&categoria=Deportes";
-  const [noticias, setNoticias] = useState([]);
-  const [avatar, setAvatar] = useState("");
+    "?_sort=categoria&_order=desc&categoria=Política";
+  const URL2 =
+    process.env.REACT_APP_API_URL +
+    "?_sort=categoria&_order=desc&categoria=Economía";
+  const URL3 =
+    process.env.REACT_APP_API_URL +
+    "?_sort=categoria&_order=desc&categoria=Deportes";
+  const [noticia1, setNoticia1] = useState([]);
+  const [noticia2, setNoticia2] = useState([]);
+  const [noticia3, setNoticia3] = useState([]);
   const [error, setError] = useState(true);
-
-  const getAvatar = (autor) => {
-    let avatarImg = "";
-   
-    switch (autor) {
-      case "Abel Cordoba Gonzalez":
-        avatarImg = cordobaAbel;
-        setAvatar(avatarImg);
-        break;
-      case "Juan Alaniz":
-        avatarImg = alanizJuan;
-        setAvatar(avatarImg);
-        break;
-      case "Andy Garcia":
-        avatarImg = garciaAndy;
-        setAvatar(avatarImg);
-        break;
-      case "Guillermo Barazzutti":
-        avatarImg = barazzuttiGuillermo;
-        setAvatar(avatarImg);
-        break;
-      case "Esteban-Marquez":
-        avatarImg = marquezEsteban;
-        setAvatar(avatarImg);
-        break;
-      default:
-        break;
-    }
-  };
 
   useEffect(() => {
     consultaAPI();
@@ -53,12 +27,22 @@ const NoticiasPrincipales = () => {
   const consultaAPI = async () => {
     try {
       // todo el codigo que quiero ejecutar
-      const respuesta = await fetch(URL);
-      const datos = await respuesta.json();
-      console.log(datos);
-      setNoticias(datos);
-      getAvatar(datos[0].autor)
-      setError(false)
+      const respuesta1 = await fetch(URL1);
+      const dato1 = await respuesta1.json();
+
+      setNoticia1(dato1);
+     // getAvatar(dato1[0].autor);
+      const respuesta2 = await fetch(URL2);
+      const dato2 = await respuesta2.json();
+
+      setNoticia2(dato2);
+     // getAvatar(dato2[0].autor);
+      const respuesta3 = await fetch(URL3);
+      const dato3 = await respuesta3.json();
+
+      setNoticia3(dato3);
+     // getAvatar(dato3[0].autor);
+      setError(false);
     } catch (error) {
       console.log(error);
       setError(true);
@@ -69,7 +53,9 @@ const NoticiasPrincipales = () => {
     <Container fluid>
       <Row>
         <Col md={9}>
-          {!error ? (<CardPrincipal noticias={noticias} avatar={avatar}></CardPrincipal>) : null}
+          {!error ? (
+            <CardPrincipal noticia1={noticia1}></CardPrincipal>
+          ) : null}
         </Col>
         <Col md={3}>
           <img
@@ -81,10 +67,22 @@ const NoticiasPrincipales = () => {
       </Row>
       <Row className="g-4">
         <Col md={6}>
-          {!error ? (<CardConImg noticias={noticias} avatar={avatar}></CardConImg>) : null}
+          {!error ? (
+            noticia2.categoria === "Economía" ? (
+              <CardConImg noticia={noticia2}></CardConImg>
+            ) : (
+              <CardConImg noticia={noticia3}></CardConImg>
+            )
+          ) : null}
         </Col>
         <Col md={6}>
-        {!error ? (<CardConImg noticias={noticias} avatar={avatar}></CardConImg>) : null}
+          {!error ? (
+            noticia3.categoria === "Deportes" ? (
+              <CardConImg noticia={noticia3}></CardConImg>
+            ) : (
+              <CardConImg noticia={noticia2}></CardConImg>
+            )
+          ) : null}
         </Col>
       </Row>
     </Container>

@@ -1,11 +1,53 @@
-import React from 'react';
-import noticia2 from "../img/noticia2.jpg";
-import publicidad1 from "../img/publicidad1.jpg";
+import React, { useState, useEffect} from 'react';
 import { Card } from "react-bootstrap";
 import { BsFillRecordCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import garciaAndy from "../img/garciaAndy.png";
+import alanizJuan from "../img/alanizJuan.png";
+import cordobaAbel from "../img/cordobaAbel.png";
+import marquezEsteban from "../img/marquezEsteban.jpg";
+import barazzuttiGuillermo from "../img/barazzuttiGuillermo.png";
+
 
 const CardConImg = (props) => {
+  
+  
+  const [avatar, setAvatar] = useState("");
+  let autor = props.noticia[0].autor;
+
+  const getAvatar = (autor) => {
+    let avatarImg = "";
+
+    switch (autor) {
+      case "Abel Cordoba Gonzalez":
+        avatarImg = cordobaAbel;
+        setAvatar(avatarImg);
+        break;
+      case "Juan Alaniz":
+        avatarImg = alanizJuan;
+        setAvatar(avatarImg);
+        break;
+      case "Andy Garcia":
+        avatarImg = garciaAndy;
+        setAvatar(avatarImg);
+        break;
+      case "Guillermo Barazzutti":
+        avatarImg = barazzuttiGuillermo;
+        setAvatar(avatarImg);
+        break;
+      case "Esteban-Marquez":
+        avatarImg = marquezEsteban;
+        setAvatar(avatarImg);
+        break;
+      default:
+        break;
+    }
+  };
+   
+  useEffect(() => {
+    getAvatar(autor);
+  }, []);
+ 
 
     return (
         <>
@@ -13,8 +55,8 @@ const CardConImg = (props) => {
             <div className="position-relative h-100">
               <img
                 className="card-img w-100 h-100"
-                src={noticia2}
-                alt="hombre estresado"
+                src={`${props.noticia[0].imagen}`}
+                alt={props.noticia[0].titulo}
               />
               <div className="card-img-overlay d-flex align-items-start flex-column p-3">
                 <div className="w-100 mt-auto">
@@ -23,7 +65,7 @@ const CardConImg = (props) => {
                     className="card-link badge bg-warning mb-2 text-decoration-none"
                   >
                     <BsFillRecordCircleFill className="me-2 small fw-bold"></BsFillRecordCircleFill>
-                    Tecnología
+                    {props.noticia[0].categoria}
                   </Link>
                 </div>
               </div>
@@ -34,14 +76,11 @@ const CardConImg = (props) => {
                   to="#"
                   className="card-link btn-link text-reset fw-bold text-decoration-none"
                 >
-                  ¿Cómo optimizar el tiempo para mejorar la productividad?
+                  {props.noticia[0].titulo}
                 </Link>
               </Card.Title>
               <Card.Text>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
-                assumenda eum voluptatem quibusdam, minus veritatis sequi dolor
-                voluptate beatae nostrum accusantium expedita asperiores hic
-                velit commodi? Ipsa quae tempora ducimus!
+              {props.noticia[0].descripcion}
               </Card.Text>
               <ul className="nav nav-divider align-items-center d-none d-sm-inline-block">
                 <li className="nav-item">
@@ -50,7 +89,7 @@ const CardConImg = (props) => {
                       <div className="avatar avatar-xs">
                         <img
                           className="avatar-img rounded-circle"
-                          src={publicidad1}
+                          src={avatar}
                           alt="avatar"
                         />
                       </div>
@@ -60,13 +99,13 @@ const CardConImg = (props) => {
                           to="#"
                           className="stretched-link text-reset btn-link text-decoration-none"
                         >
-                          Juan Alaniz
+                           {props.noticia[0].autor}
                         </Link>
                       </span>
                     </div>
                   </div>
                 </li>
-                <li className="nav-item">| Enero 22, 2021</li>
+                <li className="nav-item">|  {props.noticia[0].fecha}</li>
               </ul>
             </Card.Body>
           </Card>  
