@@ -4,7 +4,8 @@ import { BsFillRecordCircleFill } from "react-icons/bs";
 import publicidad2 from "../img/publicidad2.jpg"
 import { Link } from "react-router-dom";
 
-const CardSinImg = () => {
+const CardSinImg = (props) => {
+  
     return (
         <>
             <Card className="card mb-4">

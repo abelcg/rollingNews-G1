@@ -12,7 +12,7 @@ const PostsXCategoria = () => {
           <div className="row">
             <div className="col-12">
               <div className="bg-primary-soft text-center rounded-3 p-4">
-                <h1 className="text-primary">Categoria</h1>
+                <h1 className="text-primary">Actualidad</h1>
                 <nav
                   className="d-flex justify-content-center"
                   aria-label="breadcrumb"

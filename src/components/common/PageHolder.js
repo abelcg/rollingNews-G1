@@ -24,7 +24,7 @@ const PageHolder = () => {
       // todo el codigo que quiero ejecutar
       const respuesta = await fetch(URL);
       const datos = await respuesta.json();
-      console.log(datos);
+    
       setNoticias(datos);
     } catch (error) {
       console.log(error);
@@ -35,7 +35,7 @@ const PageHolder = () => {
       // todo el codigo que quiero ejecutar
       const respuesta = await fetch(URL_CAT);
       const datos = await respuesta.json();
-      console.log(datos);
+    
       setCategorias(datos);
     } catch (error) {
       console.log(error);

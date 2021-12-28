@@ -31,17 +31,16 @@ const NoticiasPrincipales = () => {
       const dato1 = await respuesta1.json();
 
       setNoticia1(dato1);
-     // getAvatar(dato1[0].autor);
       const respuesta2 = await fetch(URL2);
       const dato2 = await respuesta2.json();
 
       setNoticia2(dato2);
-     // getAvatar(dato2[0].autor);
+   
       const respuesta3 = await fetch(URL3);
       const dato3 = await respuesta3.json();
 
       setNoticia3(dato3);
-     // getAvatar(dato3[0].autor);
+    
       setError(false);
     } catch (error) {
       console.log(error);
