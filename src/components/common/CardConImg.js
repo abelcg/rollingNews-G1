@@ -5,7 +5,8 @@ import { Card } from "react-bootstrap";
 import { BsFillRecordCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
-const CardConImg = () => {
+const CardConImg = (props) => {
+
     return (
         <>
            <Card className="card bg-transparent h-100 my-4">

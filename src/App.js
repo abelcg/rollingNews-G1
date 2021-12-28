@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import AdminPage from "./components/pages/AdminPage";
 import Inicio from "./components/common/Inicio";
 
+
 const App = () => {
   return (
     <>

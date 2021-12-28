@@ -31,73 +31,73 @@ const PostsXCategoria = () => {
           </div>
         </Container>
       </section>
-      <section class="position-relative pt-0">
+      <section className="position-relative pt-0">
         <Container>
-          <div class="row">
-            <div class="col-sm-6 col-lg-3">
+          <div className="row">
+            <div className="col-sm-6 col-lg-3">
               <CardFold></CardFold>
             </div>
-          <div class="col-sm-6 col-lg-3">
+          <div className="col-sm-6 col-lg-3">
               <CardFold></CardFold>
             </div>
-            <div class="col-sm-6 col-lg-3">
+            <div className="col-sm-6 col-lg-3">
               <CardFold></CardFold>
             </div>
-            <div class="col-sm-6 col-lg-3">
+            <div className="col-sm-6 col-lg-3">
               <CardFold></CardFold>
             </div>
-            <div class="col-sm-6 col-lg-3">
+            <div className="col-sm-6 col-lg-3">
               <CardFold></CardFold>
             </div>
-            <div class="col-sm-6 col-lg-3">
+            <div className="col-sm-6 col-lg-3">
               <CardFold></CardFold>
             </div>
-            <div class="col-sm-6 col-lg-3">
+            <div className="col-sm-6 col-lg-3">
               <CardFold></CardFold>
             </div>
-            <div class="col-sm-6 col-lg-3">
+            <div className="col-sm-6 col-lg-3">
               <CardFold></CardFold>
             </div> 
           </div>
           <nav
-            class="mb-5 d-flex justify-content-center"
+            className="mb-5 d-flex justify-content-center"
             aria-label="navigation"
           >
-            <ul class="pagination pagination-bordered ">
-              <li class="page-item disabled">
-                <a
-                  class="page-link"
-                  href="#"
+            <ul className="pagination pagination-bordered ">
+              <li className="page-item disabled">
+                <Link
+                  className="page-link"
+                  to="#"
                   tabindex="-1"
                   aria-disabled="true"
                 >
                   Prev
-                </a>
+                </Link>
               </li>
-              <li class="page-item">
-                <a class="page-link" href="#">
+              <li className="page-item">
+                <Link className="page-link" to="#">
                   1
-                </a>
+                </Link>
               </li>
-              <li class="page-item active">
-                <a class="page-link" href="#">
+              <li className="page-item active">
+                <Link className="page-link" to="#">
                   2
-                </a>
+                </Link>
               </li>
-              <li class="page-item disabled">
-                <a class="page-link" href="#">
+              <li className="page-item disabled">
+                <Link className="page-link" to="#">
                   ..
-                </a>
+                </Link>
               </li>
-              <li class="page-item">
-                <a class="page-link" href="#">
+              <li className="page-item">
+                <Link className="page-link" to="#">
                   15
-                </a>
+                </Link>
               </li>
-              <li class="page-item">
-                <a class="page-link" href="#">
+              <li className="page-item">
+                <Link className="page-link" to="#">
                   Next
-                </a>
+                </Link>
               </li>
             </ul>
           </nav> 

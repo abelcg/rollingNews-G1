@@ -199,12 +199,10 @@ const EditarNoticia = (props) => {
                     modules={modules}
                     theme="snow"
                     value={`${contenido}`}
-                    // onChange={(e) => setContenido(e.target.value)}
                      onChange={setContenido}
                     placeholder="El contenido va aqui..."
                     
                     defaultValue={noticia.contenido}
-                    //ref={contenidoRef}
                   />
                 </Form>
               </Card.Body>

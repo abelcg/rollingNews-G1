@@ -8,6 +8,8 @@ import PostsXCategoria from "../pages/PostsXCategoria";
 import PostSolo from "../pages/PostSolo";
 
 const InicioMain = () => {
+  
+
   return (
     <Routes>
       <Route
@@ -22,7 +24,11 @@ const InicioMain = () => {
         element={<SobreNosotros></SobreNosotros>}
       ></Route>
 
-      <Route exact path="/actualidad" element={<PostsXCategoria></PostsXCategoria>}></Route>
+      <Route
+        exact
+        path="/actualidad"
+        element={<PostsXCategoria></PostsXCategoria>}
+      ></Route>
       <Route exact path="/deportes" element={<PostSolo></PostSolo>}></Route>
 
       <Route exact path="/contacto" element={<Contacto></Contacto>}></Route>

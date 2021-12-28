@@ -1,17 +1,17 @@
 import React from 'react';
 import { Card } from "react-bootstrap";
-import noticiaPrincipal from "../img/noticiaPrincipal.jpg";
-import publicidad1 from "../img/publicidad1.jpg";
 import { BsFillRecordCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
-const CardPrincipal = () => {
+
+const CardPrincipal = (props) => {
+     
     return (
         <>
-             <Card
+            <Card
             className="card card-overlay-bottom card-grid-lg card-bg-scale h-500 mt-5 mb-4"
             style={{
-              backgroundImage: `url(${noticiaPrincipal})`,
+              backgroundImage: `url("${props.noticias[0].imagen}")`,
               backgroundPosition: "center left",
               backgroundSize: "cover",
             }}
@@ -19,24 +19,22 @@ const CardPrincipal = () => {
             <div className="card-img-overlay d-flex align-items-center p-3 p-sm-4">
               <div className="w-100 mt-auto">
                 <Link
-                  to="#"
+                  to={`"/${props.noticias[0].categoria}"`}
                   className="card-link badge bg-danger mb-2 text-decoration-none"
                 >
                   <BsFillRecordCircleFill className="me-2 small fw-bold"></BsFillRecordCircleFill>
-                  Actualidad
+                  {props.noticias[0].categoria}
                 </Link>
                 <Card.Title className="text-white fs-2">
                   <Link
-                    to="#"
+                    to=""
                     className="card-link btn-link stretched-link text-reset text-decoration-none"
                   >
-                    Pfizer y BioNTech dijeron que su vacuna es "eficaz" contra
-                    Ómicron luego de tres dosis.
+                   {props.noticias[0].titulo}
                   </Link>
                 </Card.Title>
                 <Card.Text className="text-white">
-                  "Probablemente, no queda suficientemente neutralizada después
-                  de dos dosis", comunicó BioNTech sobre la nueva variante.
+               { props.noticias[0].descripcion}
                 </Card.Text>
                 <ul className="nav nav-divider text-white-force align-items-center d-none d-sm-inline-block">
                   <li className="nav-item">
@@ -45,7 +43,7 @@ const CardPrincipal = () => {
                         <div className="avatar avatar-sm">
                           <img
                             className="avatar-img rounded-circle"
-                            src={publicidad1}
+                            src={props.avatar}
                             alt="avatar"
                           />
                         </div>
@@ -55,17 +53,17 @@ const CardPrincipal = () => {
                             to="/acercadenosotros"
                             className="stretched-link text-reset btn-link text-decoration-none"
                           >
-                            Abel Córdoba
+                          {props.noticias[0].autor}
                           </Link>
                         </span>
                       </div>
                     </div>
                   </li>
-                  <li className="nav-item text-white ms-2">| Nov 15, 2021</li>
+                  <li className="nav-item text-white ms-2">| {props.noticias[0].fecha}</li>
                 </ul>
               </div>
             </div>
-          </Card>
+          </Card> 
         </>
     );
 };
