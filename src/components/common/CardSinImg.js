@@ -1,13 +1,13 @@
 import React, { useState, useEffect} from 'react';
 import { Card } from "react-bootstrap";
 import { BsFillRecordCircleFill } from "react-icons/bs";
-import publicidad2 from "../img/publicidad2.jpg"
 import { Link } from "react-router-dom";
 import garciaAndy from "../img/garciaAndy.png";
 import alanizJuan from "../img/alanizJuan.png";
 import cordobaAbel from "../img/cordobaAbel.png";
 import marquezEsteban from "../img/marquezEsteban.jpg";
 import barazzuttiGuillermo from "../img/barazzuttiGuillermo.png";
+import { DateTime } from "luxon";
 
 const CardSinImg = (props) => {
 
@@ -34,7 +34,7 @@ const CardSinImg = (props) => {
         avatarImg = barazzuttiGuillermo;
         setAvatar(avatarImg);
         break;
-      case "Esteban-Marquez":
+      case "Esteban Marquez":
         avatarImg = marquezEsteban;
         setAvatar(avatarImg);
         break;
@@ -47,7 +47,10 @@ const CardSinImg = (props) => {
     getAvatar(autor);
   }, []);
  
-  
+  const parseDate = (date) => {
+    return DateTime.fromISO(date).setLocale('sp').toFormat('MMMM dd, yyyy');
+   }
+
     return (
         <>
             <Card className="card mb-4">
@@ -84,7 +87,7 @@ const CardSinImg = (props) => {
                     </div>
                   </div>
                 </li>
-                <li className="nav-item"> {props.noticias.fecha}</li>
+                <li className="nav-item small">{parseDate(props.noticias.fecha)}</li>
               </ul>
             </Card.Body>
           </Card>

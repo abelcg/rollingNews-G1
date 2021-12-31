@@ -7,10 +7,10 @@ import alanizJuan from "../img/alanizJuan.png";
 import cordobaAbel from "../img/cordobaAbel.png";
 import marquezEsteban from "../img/marquezEsteban.jpg";
 import barazzuttiGuillermo from "../img/barazzuttiGuillermo.png";
+import { DateTime } from "luxon";
 
 
 const CardConImg = (props) => {
-  
   
   const [avatar, setAvatar] = useState("");
   let autor = props.noticia[0].autor;
@@ -35,7 +35,7 @@ const CardConImg = (props) => {
         avatarImg = barazzuttiGuillermo;
         setAvatar(avatarImg);
         break;
-      case "Esteban-Marquez":
+      case "Esteban Marquez":
         avatarImg = marquezEsteban;
         setAvatar(avatarImg);
         break;
@@ -48,6 +48,9 @@ const CardConImg = (props) => {
     getAvatar(autor);
   }, []);
  
+   const parseDate = (date) => {
+    return DateTime.fromISO(date).setLocale('sp').toFormat('MMMM dd, yyyy');
+   }
 
     return (
         <>
@@ -105,7 +108,7 @@ const CardConImg = (props) => {
                     </div>
                   </div>
                 </li>
-                <li className="nav-item">|  {props.noticia[0].fecha}</li>
+                <li className="nav-item">|  {parseDate(props.noticia[0].fecha)}</li>
               </ul>
             </Card.Body>
           </Card>  

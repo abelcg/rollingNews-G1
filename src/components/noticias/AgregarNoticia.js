@@ -160,14 +160,14 @@ const AgregarNoticia = (props) => {
                     <option value="Guillermo Barazzutti">
                       Guillermo Barazzutti
                     </option>
-                    <option value="Esteban-Marquez">Esteban Marquez</option>
+                    <option value="Esteban Marquez">Esteban Marquez</option>
                   </Form.Select>
                   <Form.Label>Contenido*</Form.Label>
                   <ReactQuill
                     modules={modules}
                     theme="snow"
                     value={contenido}
-                    // onChange={(e) => setContenido(e.target.value)}
+                   
                     onChange={setContenido}
                     placeholder="El contenido va aqui..."
                     maxLength="15"
