@@ -65,23 +65,17 @@ const NoticiasXcategoria = () => {
         <hr className="text-danger" />
         <Col md={4}>
           <h3 className="text-center">Actualidad</h3>
-          {/*  if(!error){
-             ( actualidadNews.map((noticias) => (<CardSinImg key={noticias.id} noticias={noticias}></CardSinImg>)) )
-           }else { null} */}
-            <CardSinImg></CardSinImg>
-           <CardSinImg></CardSinImg> 
+           {!error ? (actualidadNews.map((noticias) => (<CardSinImg key={noticias.id} noticias={noticias}></CardSinImg>))) : null}
         </Col>
 
         <Col md={4}>
           <h3 className="text-center">Espectáculos</h3>
-           <CardSinImg></CardSinImg>
-           <CardSinImg></CardSinImg>
+          {!error ? (espectaculosNews.map((noticias) => (<CardSinImg key={noticias.id} noticias={noticias}></CardSinImg>))) : null}
         </Col>
 
         <Col md={4}>
           <h3 className="text-center">Tecnología</h3>
-           <CardSinImg></CardSinImg>
-           <CardSinImg></CardSinImg>
+          {!error ? (tecnologiaNews.map((noticias) => (<CardSinImg key={noticias.id} noticias={noticias}></CardSinImg>))) : null}
         </Col>
       </Row>
       <Row>

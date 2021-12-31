@@ -1,10 +1,52 @@
-import React from 'react';
+import React, { useState, useEffect} from 'react';
 import { Card } from "react-bootstrap";
 import { BsFillRecordCircleFill } from "react-icons/bs";
 import publicidad2 from "../img/publicidad2.jpg"
 import { Link } from "react-router-dom";
+import garciaAndy from "../img/garciaAndy.png";
+import alanizJuan from "../img/alanizJuan.png";
+import cordobaAbel from "../img/cordobaAbel.png";
+import marquezEsteban from "../img/marquezEsteban.jpg";
+import barazzuttiGuillermo from "../img/barazzuttiGuillermo.png";
 
 const CardSinImg = (props) => {
+
+  const [avatar, setAvatar] = useState("");
+  let autor = props.noticias.autor;
+
+  const getAvatar = (autor) => {
+    let avatarImg = "";
+
+    switch (autor) {
+      case "Abel Cordoba Gonzalez":
+        avatarImg = cordobaAbel;
+        setAvatar(avatarImg);
+        break;
+      case "Juan Alaniz":
+        avatarImg = alanizJuan;
+        setAvatar(avatarImg);
+        break;
+      case "Andy Garcia":
+        avatarImg = garciaAndy;
+        setAvatar(avatarImg);
+        break;
+      case "Guillermo Barazzutti":
+        avatarImg = barazzuttiGuillermo;
+        setAvatar(avatarImg);
+        break;
+      case "Esteban-Marquez":
+        avatarImg = marquezEsteban;
+        setAvatar(avatarImg);
+        break;
+      default:
+        break;
+    }
+  };
+   
+  useEffect(() => {
+    getAvatar(autor);
+  }, []);
+ 
   
     return (
         <>
@@ -12,19 +54,15 @@ const CardSinImg = (props) => {
             <Card.Body className="p-4 border rounded-3">
               <Link to="#" className="card-link badge bg-danger mb-2 text-decoration-none">
               <BsFillRecordCircleFill className="me-2 small fw-bold"></BsFillRecordCircleFill>
-                Actualidad
+                {props.noticias.categoria}
               </Link>
               <Card.Title>
                 <Link to="#" className="card-link btn-link text-reset fw-bold text-decoration-none">
-                Nominan al canciller mexicano Marcelo Ebrard como "persona del
-                año" por su demanda contra fabricantes de armas en EE.UU.
+                {props.noticias.titulo}
                 </Link>
               </Card.Title>
               <Card.Text className="m-0 text-decoration-none">
-                El Gobierno mexicano señala a 11 empresas estadounidenses de
-                promover prácticas comerciales que facilitan el tráfico ilegal
-                de armamento y alimentan la violencia en el país
-                latinoamericano.
+              {props.noticias.descripcion}
               </Card.Text>
               <ul className="nav nav-divider align-items-center d-none d-sm-inline-block">
                 <li className="nav-item">
@@ -33,20 +71,20 @@ const CardSinImg = (props) => {
                       <div className="avatar avatar-xs">
                         <img
                           className="avatar-img rounded-circle"
-                          src={publicidad2}
+                          src={avatar}
                           alt="avatar"
                         />
                       </div>
                       <span className="ms-3">
                         Por{" "}
                         <Link to="/acercadenosotros" className="stretched-link text-reset btn-link">
-                          Esteban Marquez
+                        {props.noticias.autor}
                         </Link>
                       </span>
                     </div>
                   </div>
                 </li>
-                <li className="nav-item">Octubre 22, 2021</li>
+                <li className="nav-item"> {props.noticias.fecha}</li>
               </ul>
             </Card.Body>
           </Card>

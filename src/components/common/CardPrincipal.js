@@ -67,7 +67,7 @@ const CardPrincipal = (props) => {
                   <BsFillRecordCircleFill className="me-2 small fw-bold"></BsFillRecordCircleFill>
                   {props.noticia1[0].categoria}
                 </Link>
-                <Card.Title className="text-white fs-2">
+                <Card.Title className="text-dark fs-2">
                   <Link
                     to=""
                     className="card-link btn-link stretched-link text-reset text-decoration-none"
@@ -75,7 +75,7 @@ const CardPrincipal = (props) => {
                    {props.noticia1[0].titulo}
                   </Link>
                 </Card.Title>
-                <Card.Text className="text-white">
+                <Card.Text className="text-dark">
                { props.noticia1[0].descripcion}
                 </Card.Text>
                 <ul className="nav nav-divider text-white-force align-items-center d-none d-sm-inline-block">
