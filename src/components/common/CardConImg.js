@@ -64,7 +64,7 @@ const CardConImg = (props) => {
               <div className="card-img-overlay d-flex align-items-start flex-column p-3">
                 <div className="w-100 mt-auto">
                   <Link
-                    to="/tecnologia"
+                    to={"/"+props.noticia[0].categoria}
                     className="card-link badge bg-warning mb-2 text-decoration-none"
                   >
                     <BsFillRecordCircleFill className="me-2 small fw-bold"></BsFillRecordCircleFill>

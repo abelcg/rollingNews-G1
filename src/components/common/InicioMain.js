@@ -26,7 +26,7 @@ const InicioMain = () => {
 
       <Route
         exact
-        path="/actualidad"
+        path="/:categoria"
         element={<PostsXCategoria></PostsXCategoria>}
       ></Route>
       <Route exact path="/deportes" element={<PostSolo></PostSolo>}></Route>

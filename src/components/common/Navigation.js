@@ -39,19 +39,19 @@ const Navigation = () => {
                 <Nav>
                   <Link
                     className="nav-link text-secondary text-center"
-                    to="/actualidad"
+                    to="/Actualidad"
                   >
                     Actualidad
                   </Link>
                   <Link
                     className="nav-link text-secondary text-center"
-                    to="/espectaculos"
+                    to="/Espectáculos"
                   >
                     Espectáculos
                   </Link>
                   <Link
                     className="nav-link text-secondary text-center"
-                    to="/tecnologia"
+                    to="/Tecnología"
                   >
                     Tecnología
                   </Link>
@@ -62,34 +62,34 @@ const Navigation = () => {
                   >
                     <Link
                       className="dropdown-item text-secondary"
-                      to="/deportes"
+                      to="/Deportes"
                     >
                       Deportes
                     </Link>
                     <Link
                       className="dropdown-item text-secondary"
-                      to="/politica"
+                      to="/Política"
                     >
                       Política
                     </Link>
                     <Link
                       className="dropdown-item text-secondary"
-                      to="/economia"
+                      to="/Economía"
                     >
                       Economía
                     </Link>
-                    <Link className="dropdown-item text-secondary" to="/salud">
+                    <Link className="dropdown-item text-secondary" to="/Salud">
                       Salud
                     </Link>
                     <Link
                       className="dropdown-item text-secondary"
-                      to="/fotografia"
+                      to="/Fotografía"
                     >
                       Fotografia
                     </Link>
                     <Link
                       className="dropdown-item text-secondary"
-                      to="/internacional"
+                      to="/Internacional"
                     >
                       Internacional
                     </Link>
@@ -146,22 +146,22 @@ const Navigation = () => {
               </Offcanvas.Body>
             </Navbar.Offcanvas>
             <div className="d-md-flex d-none flex-row flex-wrap">
-              <Link className="nav-link text-secondary" to="/actualidad">
+              <Link className="nav-link text-secondary" to="/Actualidad">
                 Actualidad
               </Link>
-              <Link className="nav-link text-secondary" to="/espectaculos">
+              <Link className="nav-link text-secondary" to="/Espectáculos">
                 Espectáculos
               </Link>
-              <Link className="nav-link text-secondary" to="/tecnologia">
+              <Link className="nav-link text-secondary" to="/Tecnología">
                 Tecnología
               </Link>
-              <Link className="nav-link text-secondary" to="/deportes">
+              <Link className="nav-link text-secondary" to="/Deportes">
                 Deportes
               </Link>
-              <Link className="nav-link text-secondary" to="/politica">
+              <Link className="nav-link text-secondary" to="/Política">
                 Política
               </Link>
-              <Link className="nav-link text-secondary" to="/economia">
+              <Link className="nav-link text-secondary" to="/Economía">
                 Economía
               </Link>
             </div>

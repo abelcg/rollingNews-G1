@@ -6,7 +6,7 @@ const AdminFooter = () => {
       <div class="container-fluid">
         <div class="row">
           <div class="text-center text-md-start fw-bold col-md-6">
-            <p class="mb-2 mb-md-0">RollerNews © 2021</p>
+            <p class="mb-2 mb-md-0">RollingNews © 2021</p>
           </div>
           <div class="text-center text-md-end text-gray-400 col-md-6">
             <p class="mb-0">Version 1.0.0</p>

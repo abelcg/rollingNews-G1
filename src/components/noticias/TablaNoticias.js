@@ -21,8 +21,12 @@ const TablaNoticias = (props) => {
         info: "Mostrando del {start} al {end} de {rows} entradas",
       },
     });
+   
   }, []);
    
+
+  
+
   return (
     <>
       <div className="page-header d-flex justify-content-between align-items-center">

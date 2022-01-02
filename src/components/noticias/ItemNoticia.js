@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Swal from 'sweetalert2'
 
 const ItemNoticia = (props) => {
+    
     const URL = process.env.REACT_APP_API_URL+'/'+props.noticias.id;
 
     const eliminarNoticia=  ()=> {
