@@ -45,7 +45,7 @@ const PostSolo = () => {
     <>
       <section>
         <Container>
-          <div className="row">
+          <div className="row mt-4">
             <div className="col-lg-9 mx-auto pt-md-5">
               <Link
                to={!error ? ("/" + noticiaId[0].categoria) : ""}

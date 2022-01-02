@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from "react";
-import { Container } from "react-bootstrap";
+import { Container, Pagination } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { BiHomeCircle } from "react-icons/bi";
@@ -68,43 +68,28 @@ const PostsXCategoria = () => {
             className="mb-5 d-flex justify-content-center"
             aria-label="navigation"
           >
-            <ul className="pagination pagination-bordered ">
-              <li className="page-item disabled">
-                <Link
-                  className="page-link"
-                  to="#"
-                  tabindex="-1"
-                  aria-disabled="true"
-                >
-                  Prev
-                </Link>
-              </li>
-              <li className="page-item">
-                <Link className="page-link" to="#">
+            <Pagination>
+            <Pagination.First />
+            <Pagination.Prev />
+              <Pagination.Item active>
+                <Link className="text-white" to="#">
                   1
                 </Link>
-              </li>
-              <li className="page-item active">
-                <Link className="page-link" to="#">
+              </Pagination.Item>
+              <Pagination.Item>
+                <Link to="#">
                   2
                 </Link>
-              </li>
-              <li className="page-item disabled">
-                <Link className="page-link" to="#">
-                  ..
+              </Pagination.Item>
+              <Pagination.Ellipsis />
+              <Pagination.Item className="page-item">
+                <Link to="#">
+                  10
                 </Link>
-              </li>
-              <li className="page-item">
-                <Link className="page-link" to="#">
-                  15
-                </Link>
-              </li>
-              <li className="page-item">
-                <Link className="page-link" to="#">
-                  Next
-                </Link>
-              </li>
-            </ul>
+              </Pagination.Item>
+              <Pagination.Next />
+              <Pagination.Last />
+            </Pagination>
           </nav> 
         </Container>
       </section>
