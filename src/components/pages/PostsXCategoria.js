@@ -23,7 +23,7 @@ const PostsXCategoria = () => {
       // todo el codigo que quiero ejecutar
       const respuesta = await fetch(URL);
       const dato = await respuesta.json();
-      console.log(dato);
+     
       setNoticiasXcategoria(dato);
       setError(false);
       
@@ -63,30 +63,6 @@ const PostsXCategoria = () => {
         <Container>
           <div className="row">
           {!error ? (noticiasXcategoria.map((noticias) => (<div className="col-sm-6 col-lg-3"><CardFold key={noticias.id} noticias={noticias}></CardFold></div>))) : null}
-         {/*    <div className="col-sm-6 col-lg-3">
-              <CardFold></CardFold>
-            </div>
-          <div className="col-sm-6 col-lg-3">
-              <CardFold></CardFold>
-            </div>
-            <div className="col-sm-6 col-lg-3">
-              <CardFold></CardFold>
-            </div>
-            <div className="col-sm-6 col-lg-3">
-              <CardFold></CardFold>
-            </div>
-            <div className="col-sm-6 col-lg-3">
-              <CardFold></CardFold>
-            </div>
-            <div className="col-sm-6 col-lg-3">
-              <CardFold></CardFold>
-            </div>
-            <div className="col-sm-6 col-lg-3">
-              <CardFold></CardFold>
-            </div>
-            <div className="col-sm-6 col-lg-3">
-              <CardFold></CardFold>
-            </div>  */}
           </div>
           <nav
             className="mb-5 d-flex justify-content-center"
