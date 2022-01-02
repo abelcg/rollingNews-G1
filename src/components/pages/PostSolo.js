@@ -84,7 +84,7 @@ const PostSolo = () => {
       <section className="pt-0 mt-5 post-description">
         <div className="container position-relative">
           <div className="row">
-            <div className="col-lg-9 mx-auto"  dangerouslySetInnerHTML={createMarkup()}>
+            <div className="col-lg-9 mx-auto dropcap"  dangerouslySetInnerHTML={createMarkup()}>
             
             {/*   <p>
                 <span className="dropcap bg-primary-soft text-primary px-2">R</span>

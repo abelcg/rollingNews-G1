@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from "react";
-import { Container, Pagination } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { BiHomeCircle } from "react-icons/bi";
@@ -64,33 +64,7 @@ const PostsXCategoria = () => {
           <div className="row">
           {!error ? (noticiasXcategoria.map((noticias) => (<div className="col-sm-6 col-lg-3"><CardFold key={noticias.id} noticias={noticias}></CardFold></div>))) : null}
           </div>
-          <nav
-            className="mb-5 d-flex justify-content-center"
-            aria-label="navigation"
-          >
-            <Pagination>
-            <Pagination.First />
-            <Pagination.Prev />
-              <Pagination.Item active>
-                <Link className="text-white" to="#">
-                  1
-                </Link>
-              </Pagination.Item>
-              <Pagination.Item>
-                <Link to="#">
-                  2
-                </Link>
-              </Pagination.Item>
-              <Pagination.Ellipsis />
-              <Pagination.Item className="page-item">
-                <Link to="#">
-                  10
-                </Link>
-              </Pagination.Item>
-              <Pagination.Next />
-              <Pagination.Last />
-            </Pagination>
-          </nav> 
+         
         </Container>
       </section>
     </>

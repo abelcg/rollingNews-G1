@@ -54,7 +54,7 @@ const EditarNoticia = (props) => {
    const fechaRef = useRef("");
 
    useEffect(async () => {
-    // consultar a la API el producto que tiene el id
+    // consultar a la API la noticia que tiene el id
     try {
       // realizar una consulta GET
       const respuesta = await fetch(URL);

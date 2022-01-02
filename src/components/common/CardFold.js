@@ -12,7 +12,7 @@ const CardFold = (props) => {
     <>
       <Card className="rounded my-4">
         <div className="card-fold position-relative">
-          <img className="card-img" src={props.noticias.imagen} alt="Card image" />
+          <img className="card-img w-100 h-auto" src={props.noticias.imagen} alt={props.noticias.titulo} />
         </div>
         <Card.Body className="px-2 pt-3">
           <Card.Title className="text-center text-primary small">

@@ -13,7 +13,7 @@ footer,
 #root {
   font-family: "Merriweather", serif;
 }
-
+/*------- estilos del navbar--------- */
 .nav-link:hover {
   background: #e9ecef;
 }
@@ -37,13 +37,14 @@ footer,
 .navbar-text {
   font-size: 0.66em !important;
 }
+/*-------Fin estilos del navbar--------- */
 
 .shadow-footer {
   box-shadow: 1px -6px 13px -5px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 1px -6px 13px -5px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 1px -6px 13px -5px rgba(0, 0, 0, 0.75);
 }
-
+/*------- estilos de las cards--------- */
 .card {
   border: none;
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
@@ -220,10 +221,12 @@ footer,
   height: 100%;
   z-index: -1;
 }
-
+/*------- fin estilos de las cards--------- */
+/*------- bannner en pág. categorias--------- */
 .bg-primary-soft {
   background-color: #d2d6ffec !important;
 }
+/*------- fin bannner en pág. categorias--------- */
 
 .breadcrumb-item {
   font-size: 0.8125rem;
@@ -276,14 +279,18 @@ footer,
   margin: 10px;
 }
 
-.dropcap {
+/* ---Estilo de la 1era letra del 1er párrafo de la noticia */
+.dropcap::first-letter {
   font-size: 4em;
   font-weight: bold;
   display: block;
   float: left;
   margin: 0.04em 0.2em 0 0;
-  color: #191a1f;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  color: #3b4ca5;
   line-height: 1;
+  background-color: #d2d6ffec;
 }
 
 /*media queries*/
