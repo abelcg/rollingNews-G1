@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   NavDropdown,
   Navbar,
@@ -17,9 +17,60 @@ import Cotizaciones from "../pages/Cotizaciones";
 
 const Navigation = () => {
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [navCategorias, setNavcategorias] = useState([]);
+  const [sidebarCategorias, setSidebarCategorias] = useState([]);
+  const [sidebaDropCategorias, setSidebaDropCategorias] = useState([]);
+  const [categoriasTotal, setCategoriasTotal] = useState([]);
+  const [error, setError] = useState(true);
+  const [error2, setError2] = useState(true);
+  const [error3, setError3] = useState(true);
+
+  const URL = process.env.REACT_APP_API_URL_CAT + "?_start=0&_end=6";
+
+  const URL2 = process.env.REACT_APP_API_URL_CAT + "?_start=0&_end=3";
+
+  const URL3 = process.env.REACT_APP_API_URL_CAT;
+
+  const URL4 =
+    process.env.REACT_APP_API_URL_CAT +
+    "?_start=3&_end=" +
+    categoriasTotal.length;
+
+  useEffect(() => {
+    consultaAPI();
+  }, [error, error2, error3]);
+
+  const consultaAPI = async () => {
+    try {
+      // todo el codigo que quiero ejecutar
+      const respuesta = await fetch(URL);
+      const dato = await respuesta.json();
+      const respuesta2 = await fetch(URL2);
+      const dato2 = await respuesta2.json();
+      const respuesta3 = await fetch(URL3);
+      const dato3 = await respuesta3.json();
+      const respuesta4 = await fetch(URL4);
+      const dato4 = await respuesta4.json();
+      
+      setNavcategorias(dato);
+      setError(false);
+
+      setSidebarCategorias(dato2);
+      setError2(false);
+
+      setCategoriasTotal(dato3);
+
+      setSidebaDropCategorias(dato4);
+      setError3(false);
+    } catch (error) {
+      console.log(error);
+      setError(true);
+      setError2(true);
+      setError3(true);
+    }
+  };
 
   return (
     <>
@@ -37,62 +88,33 @@ const Navigation = () => {
               ></Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav>
-                  <Link
-                    className="nav-link text-secondary text-center"
-                    to="/Actualidad"
-                  >
-                    Actualidad
-                  </Link>
-                  <Link
-                    className="nav-link text-secondary text-center"
-                    to="/Espectáculos"
-                  >
-                    Espectáculos
-                  </Link>
-                  <Link
-                    className="nav-link text-secondary text-center"
-                    to="/Tecnología"
-                  >
-                    Tecnología
-                  </Link>
+                  {!error2
+                    ? sidebarCategorias.map((categorias) => (
+                        <Link
+                          className="nav-link text-secondary text-center"
+                          key={categorias.id}
+                          to={`/${categorias.nombre}`}
+                        >
+                          {categorias.nombre}
+                        </Link>
+                      ))
+                    : null}
                   <NavDropdown
                     className="border-0 text-secondary"
                     title="Más"
                     id="nav-dropdown"
                   >
-                    <Link
-                      className="dropdown-item text-secondary"
-                      to="/Deportes"
-                    >
-                      Deportes
-                    </Link>
-                    <Link
-                      className="dropdown-item text-secondary"
-                      to="/Política"
-                    >
-                      Política
-                    </Link>
-                    <Link
-                      className="dropdown-item text-secondary"
-                      to="/Economía"
-                    >
-                      Economía
-                    </Link>
-                    <Link className="dropdown-item text-secondary" to="/Salud">
-                      Salud
-                    </Link>
-                    <Link
-                      className="dropdown-item text-secondary"
-                      to="/Fotografía"
-                    >
-                      Fotografia
-                    </Link>
-                    <Link
-                      className="dropdown-item text-secondary"
-                      to="/Internacional"
-                    >
-                      Internacional
-                    </Link>
+                    {!error3
+                      ? sidebaDropCategorias.map((categorias) => (
+                          <Link
+                            className="dropdown-item text-secondary"
+                            key={categorias.id}
+                            to={`/${categorias.nombre}`}
+                          >
+                            {categorias.nombre}
+                          </Link>
+                        ))
+                      : null}
                   </NavDropdown>
                   <Link
                     class="nav-link text-secondary text-center"
@@ -146,24 +168,17 @@ const Navigation = () => {
               </Offcanvas.Body>
             </Navbar.Offcanvas>
             <div className="d-md-flex d-none flex-row flex-wrap">
-              <Link className="nav-link text-secondary" to="/Actualidad">
-                Actualidad
-              </Link>
-              <Link className="nav-link text-secondary" to="/Espectáculos">
-                Espectáculos
-              </Link>
-              <Link className="nav-link text-secondary" to="/Tecnología">
-                Tecnología
-              </Link>
-              <Link className="nav-link text-secondary" to="/Deportes">
-                Deportes
-              </Link>
-              <Link className="nav-link text-secondary" to="/Política">
-                Política
-              </Link>
-              <Link className="nav-link text-secondary" to="/Economía">
-                Economía
-              </Link>
+              {!error
+                ? navCategorias.map((categorias) => (
+                    <Link
+                      className="nav-link text-secondary"
+                      key={categorias.id}
+                      to={`/${categorias.nombre}`}
+                    >
+                      {categorias.nombre}
+                    </Link>
+                  ))
+                : null}
             </div>
             <div className="d-flex flex-row ms-auto">
               <Link
@@ -223,24 +238,24 @@ const Navigation = () => {
             <span class="text-danger">Únete a nuestro Newsletters</span>
           </p>
           <Form class="row row-cols-lg-auto g-2 align-items-center justify-content-end">
-              <div class="col-12 mb-3">
-                <Form.Control type="email" placeholder="Ingrese su email" />
-              </div>
-              <div class="col-12 text-center">
-                <Button variant="primary" type="submit">
-                  Enviar
-                </Button>
-              </div>
-              <div class="form-text mt-2 text-center">
-                Al subscribirse usted está de acuerdo con nuestra
-                <Link
-                  to="/error404"
-                  class="text-decoration-underline text-reset ms-2"
-                >
-                  Política de Privacidad
-                </Link>
-              </div>
-            </Form>
+            <div class="col-12 mb-3">
+              <Form.Control type="email" placeholder="Ingrese su email" />
+            </div>
+            <div class="col-12 text-center">
+              <Button variant="primary" type="submit">
+                Enviar
+              </Button>
+            </div>
+            <div class="form-text mt-2 text-center">
+              Al subscribirse usted está de acuerdo con nuestra
+              <Link
+                to="/error404"
+                class="text-decoration-underline text-reset ms-2"
+              >
+                Política de Privacidad
+              </Link>
+            </div>
+          </Form>
         </Modal.Body>
       </Modal>
     </>
