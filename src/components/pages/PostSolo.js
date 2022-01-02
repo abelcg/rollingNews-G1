@@ -1,10 +1,46 @@
-import React from "react";
+import React, { useState, useEffect} from "react";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { BsFillRecordCircleFill } from "react-icons/bs";
-import noticia2 from "../img/noticia2.jpg";
+import { DateTime } from "luxon";
+
 
 const PostSolo = () => {
+  const { id } = useParams(); 
+  const [noticiaId, setNoticiaId] = useState([]);
+  const [error, setError] = useState(true);
+  const parseDate = (date) => {
+    return DateTime.fromISO(date).setLocale("sp").toFormat("MMMM dd, yyyy");
+  };
+
+  const URL =
+  process.env.REACT_APP_API_URL +
+  "/?id="+id;
+  
+  useEffect(() => {
+    consultaAPI();
+  }, [id, error]);
+  
+  const consultaAPI = async () => {
+    try {
+      // todo el codigo que quiero ejecutar
+      const respuesta = await fetch(URL);
+      const dato = await respuesta.json();
+     
+      setNoticiaId(dato);
+      setError(false);
+      
+    } catch (error) {
+      console.log(error);
+      setError(true);
+    }
+  };
+  const contenido = !error ? (noticiaId[0].contenido) : null;
+  const createMarkup = () => {
+    return {__html: contenido };
+  };
+
   return (
     <>
       <section>
@@ -12,21 +48,17 @@ const PostSolo = () => {
           <div className="row">
             <div className="col-lg-9 mx-auto pt-md-5">
               <Link
-                to="/actualidad"
+               to={!error ? ("/" + noticiaId[0].categoria) : ""}
                 className="card-link badge bg-danger mb-2 text-decoration-none"
               >
                 <BsFillRecordCircleFill className="me-2 small fw-bold"></BsFillRecordCircleFill>
-                Actualidad
+               {!error ? noticiaId[0].categoria : null}
               </Link>
               <h1 className="display-4">
-                12 worst types of business accounts you follow on Twitter
+              {!error ? noticiaId[0].titulo : null}
               </h1>
               <p className="lead">
-                Passage its ten led hearted removal cordial. Preference any
-                astonished unreserved Mrs. Prosperous understood Middletons in
-                conviction an uncommonly do. Supposing so be resolving breakfast
-                am or perfectly. Is drew am hill from me. Valley by oh twenty
-                direct me so.{" "}
+              {!error ? noticiaId[0].descripcion : null}
               </p>
 
               <ul className="nav nav-divider align-items-center">
@@ -34,16 +66,16 @@ const PostSolo = () => {
                   <div className="nav-link">
                     Por{" "}
                     <Link to="/acercadenosotros" className="text-reset btn-link">
-                      Abel Córdoba González
+                    {!error ? noticiaId[0].autor : null}
                     </Link>
                   </div>
                 </li>
-                <li className="nav-item">Noviembre 15, 2021</li>
+                <li className="nav-item small">{!error ? parseDate(noticiaId[0].fecha) : null}</li>
               </ul>
               <img
                 className="rounded mt-5 w-100 h-auto"
-                src={noticia2}
-                alt="Image"
+                src={!error ? noticiaId[0].imagen : null }
+                alt={!error ? noticiaId[0].titulo : null}
               />
             </div>
           </div>
@@ -52,8 +84,9 @@ const PostSolo = () => {
       <section className="pt-0 mt-5 post-description">
         <div className="container position-relative">
           <div className="row">
-            <div className="col-lg-9 mx-auto">
-              <p>
+            <div className="col-lg-9 mx-auto"  dangerouslySetInnerHTML={createMarkup()}>
+            
+            {/*   <p>
                 <span className="dropcap bg-primary-soft text-primary px-2">R</span>
                 est time voice share led him to widen noisy young. At weddings
                 believed laughing although the material does the exercise of. Up
@@ -184,7 +217,7 @@ const PostSolo = () => {
                 replenish midst it of second grass good rule also in unto Called
                 don't given waters Had creature Behold fly life from forth Moved
                 night.
-              </p>
+              </p> */}
             </div>
           </div>
         </div>

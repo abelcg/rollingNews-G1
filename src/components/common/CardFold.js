@@ -19,7 +19,7 @@ const CardFold = (props) => {
           {props.noticias.categoria}
           </Card.Title>
           <Card.Title>
-            <Link to="/" className="btn-link text-reset stretched-link fw-bold">
+            <Link to={"/noticia/" + props.noticias.id} className="btn-link text-reset stretched-link fw-bold">
             {props.noticias.titulo}
             </Link>
           </Card.Title>

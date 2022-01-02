@@ -29,7 +29,7 @@ const InicioMain = () => {
         path="/:categoria"
         element={<PostsXCategoria></PostsXCategoria>}
       ></Route>
-      <Route exact path="/deportes" element={<PostSolo></PostSolo>}></Route>
+      <Route exact path="/noticia/:id" element={<PostSolo></PostSolo>}></Route>
 
       <Route exact path="/contacto" element={<Contacto></Contacto>}></Route>
       <Route exact path="/error404" element={<Error404></Error404>}></Route>

@@ -55,12 +55,12 @@ const CardSinImg = (props) => {
         <>
             <Card className="card mb-4">
             <Card.Body className="p-4 border rounded-3">
-              <Link to={"/"+props.noticias.categoria} className="card-link badge bg-danger mb-2 text-decoration-none">
+              <Link to={"/"+ props.noticias.categoria} className="card-link badge bg-danger mb-2 text-decoration-none">
               <BsFillRecordCircleFill className="me-2 small fw-bold"></BsFillRecordCircleFill>
                 {props.noticias.categoria}
               </Link>
               <Card.Title>
-                <Link to="#" className="card-link btn-link text-reset fw-bold text-decoration-none">
+                <Link  to={"/noticia/" + props.noticias.id} className="card-link btn-link text-reset fw-bold text-decoration-none">
                 {props.noticias.titulo}
                 </Link>
               </Card.Title>
