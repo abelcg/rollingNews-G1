@@ -8,9 +8,13 @@ import {
   Modal,
   Button,
   Form,
+  Tabs,
+  Tab,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { AiOutlineLogin } from "react-icons/ai";
+import { BsEyeFill } from "react-icons/bs";
+import { BsEyeSlashFill } from "react-icons/bs";
 import obtenerFecha from "../helpers/fechaLocal";
 import ClimaLocal from "../pages/PaginaPrincipal/ClimaLocal";
 import Cotizaciones from "../pages/Cotizaciones";
@@ -19,6 +23,11 @@ const Navigation = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [mostrar, setMostrar] = useState(false);
+  const handleCerrar = () => setMostrar(false);
+  const handleMostrar = () => setMostrar(true);
+  const [key, setKey] = useState("login");
+  const [passwordShown, setPasswordShown] = useState(false);
   const [navCategorias, setNavcategorias] = useState([]);
   const [sidebarCategorias, setSidebarCategorias] = useState([]);
   const [sidebaDropCategorias, setSidebaDropCategorias] = useState([]);
@@ -53,7 +62,7 @@ const Navigation = () => {
       const dato3 = await respuesta3.json();
       const respuesta4 = await fetch(URL4);
       const dato4 = await respuesta4.json();
-      
+
       setNavcategorias(dato);
       setError(false);
 
@@ -70,6 +79,10 @@ const Navigation = () => {
       setError2(true);
       setError3(true);
     }
+  };
+
+  const togglePassword = () => {
+    setPasswordShown(!passwordShown);
   };
 
   return (
@@ -117,49 +130,49 @@ const Navigation = () => {
                       : null}
                   </NavDropdown>
                   <Link
-                    class="nav-link text-secondary text-center"
+                    className="nav-link text-secondary text-center"
                     to="/contacto"
                   >
                     Contacto
                   </Link>
 
                   <Link
-                    class="nav-link  text-secondary text-center"
+                    className="nav-link  text-secondary text-center"
                     to="/acercadenosotros"
                   >
                     Acerca de nosotros
                   </Link>
 
                   <Link
-                    class="nav-link text-secondary text-center"
+                    className="nav-link text-secondary text-center"
                     to="/error404"
                   >
                     Mapa del sitio
                   </Link>
 
                   <Link
-                    class="nav-link text-secondary text-center"
+                    className="nav-link text-secondary text-center"
                     to="/error404"
                   >
                     Ayuda
                   </Link>
 
                   <Link
-                    class="nav-link text-secondary text-center"
+                    className="nav-link text-secondary text-center"
                     to="/error404"
                   >
                     Términos y condiciones
                   </Link>
 
                   <Link
-                    class="nav-link text-secondary text-center"
+                    className="nav-link text-secondary text-center"
                     to="/error404"
                   >
                     Política de Privacidad
                   </Link>
 
                   <Link
-                    class="nav-link text-secondary text-center"
+                    className="nav-link text-secondary text-center"
                     to="/error404"
                   >
                     Anúnciese con nosotros
@@ -189,14 +202,13 @@ const Navigation = () => {
               >
                 Admin
               </Link>
-              <Link
-                className="nav-link"
+              <a
+                className="nav-link btn-sm"
                 id="login-btn"
-                aria-current="page"
-                to="/login"
+                onClick={handleMostrar}
               >
                 Login <AiOutlineLogin className="ms-1 fs-5" />
-              </Link>
+              </a>
               <Button
                 variant="danger"
                 className="fw-bold rounded-0"
@@ -234,29 +246,182 @@ const Navigation = () => {
           <Modal.Title>Suscribete</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <p class="fw-bold">
-            <span class="text-danger">Únete a nuestro Newsletters</span>
+          <p ClassName="fw-bold">
+            <span className="text-danger">Únete a nuestro Newsletters</span>
           </p>
-          <Form class="row row-cols-lg-auto g-2 align-items-center justify-content-end">
-            <div class="col-12 mb-3">
+          <Form className="row  g-2 align-items-center justify-content-end">
+            <div className="col-12 mb-3">
               <Form.Control type="email" placeholder="Ingrese su email" />
             </div>
-            <div class="col-12 text-center">
+            <div className="col-12 text-center">
               <Button variant="primary" type="submit">
                 Enviar
               </Button>
             </div>
-            <div class="form-text mt-2 text-center">
+            <div className="form-text mt-2 text-center">
               Al subscribirse usted está de acuerdo con nuestra
               <Link
                 to="/error404"
-                class="text-decoration-underline text-reset ms-2"
+                className="text-decoration-underline text-reset ms-2"
               >
                 Política de Privacidad
               </Link>
             </div>
           </Form>
         </Modal.Body>
+      </Modal>
+      <Modal show={mostrar} onHide={handleCerrar}>
+        <Modal.Header closeButton>Login de Administrador</Modal.Header>
+        <Tabs id="tab" activeKey={key} onSelect={(k) => setKey(k)}>
+          <Tab
+            eventKey="login"
+            title="Iniciar sesión"
+            className="bg-transparent fw-medium border-0"
+          >
+            <Modal.Body className="card-body py-4">
+              <Form>
+                <div className="mb-3">
+                  <Form.Label>Email</Form.Label>
+                  <Form.Control
+                    type="email"
+                    placeholder="juanperez@ejemplo.com"
+                    maxlength="30"
+                    required=""
+                  />
+                  <div className="invalid-feedback">
+                    Por favor ingrese un email valido.
+                  </div>
+                </div>
+                <div className="mb-3">
+                  <Form.Label>Password</Form.Label>
+                  <div className="password-toggle">
+                    <Form.Control
+                      type={passwordShown ? "text" : "password"}
+                      maxlength="30"
+                      required=""
+                    />
+                    <button
+                      className="password-toggle-btn text-primary btn"
+                      type="button"
+                      onClick={togglePassword}
+                    >
+                      {passwordShown ? (
+                        <BsEyeSlashFill></BsEyeSlashFill>
+                      ) : (
+                        <BsEyeFill></BsEyeFill>
+                      )}
+                    </button>
+                  </div>
+                </div>
+                <div className="mb-3 d-flex justify-content-end">
+                  <a
+                    className="fs-sm text-secondary text-decoration-none btn"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="bottom"
+                    title="Presione para el envio del email de recuperacion"
+                  >
+                    ¿Olvidó su password?
+                  </a>
+                </div>
+                <button
+                  className="btn btn-primary btn-shadow d-block w-100"
+                  type="submit"
+                  onsubmit="login()"
+                >
+                  Iniciar Sesión
+                </button>
+                <span className="text-danger" id="login-error"></span>
+              </Form>
+            </Modal.Body>
+          </Tab>
+          <Tab
+            eventKey="signup"
+            title="Regístrate"
+            className="bg-transparent fw-medium border-0"
+          >
+            <Modal.Body className="card-body py-4">
+              <Form>
+                <div className="mb-3">
+                  <Form.Label>Nombre Completo</Form.Label>
+                  <Form.Control
+                    className="form-control"
+                    type="text"
+                    id="su-name"
+                    placeholder="Juan Perez"
+                    maxlength="30"
+                    required=""
+                  />
+                  <div className="invalid-feedback">
+                    Por favor ingrese su nombre.
+                  </div>
+                </div>
+                <div className="mb-3">
+                  <Form.Label>Email</Form.Label>
+                  <Form.Control
+                    type="email"
+                    placeholder="juanperez@ejemplo.com"
+                    maxlength="30"
+                    required=""
+                  />
+                  <div className="invalid-feedback">
+                    Por favor ingrese un email valido.
+                  </div>
+                </div>
+                <div className="mb-3">
+                  <Form.Label>Password</Form.Label>
+                  <div className="password-toggle">
+                    <Form.Control
+                      type={passwordShown ? "text" : "password"}
+                      id="su-password"
+                      maxlength="30"
+                      required=""
+                    />
+                    <a
+                      className="password-toggle-btn text-primary btn"
+                      type="button"
+                      onClick={togglePassword}
+                    >
+                      {passwordShown ? (
+                        <BsEyeSlashFill></BsEyeSlashFill>
+                      ) : (
+                        <BsEyeFill></BsEyeFill>
+                      )}
+                    </a>
+                  </div>
+                </div>
+                <div className="mb-3">
+                  <Form.Label>Confirmar password</Form.Label>
+                  <div className="password-toggle">
+                    <Form.Control
+                      type={passwordShown ? "text" : "password"}
+                      maxlength="30"
+                      required=""
+                    />
+                    <a
+                      className="password-toggle-btn text-primary btn"
+                      type="button"
+                      onClick={togglePassword}
+                    >
+                      {passwordShown ? (
+                        <BsEyeSlashFill></BsEyeSlashFill>
+                      ) : (
+                        <BsEyeFill></BsEyeFill>
+                      )}
+                    </a>
+                  </div>
+                </div>
+                <button
+                  className="btn btn-primary btn-shadow d-block w-100"
+                  type="submit"
+                  onsubmit="registerUser()"
+                >
+                  Regístrate
+                </button>
+                <span className="text-danger" id="register-error"></span>
+              </Form>
+            </Modal.Body>
+          </Tab>
+        </Tabs>
       </Modal>
     </>
   );

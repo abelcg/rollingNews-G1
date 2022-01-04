@@ -293,6 +293,23 @@ footer,
   background-color: #d2d6ffec;
 }
 
+.password-toggle {
+  position: relative;
+}
+
+.password-toggle-btn{
+  position: absolute;
+  top: 50%;
+  right: .625rem;
+  margin-bottom: 0;
+  padding: .5rem;
+  transform: translateY(-50%);
+  font-size: 1.0625rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 4;
+}
+
 /*media queries*/
 
 @media (min-width: 768px) {
