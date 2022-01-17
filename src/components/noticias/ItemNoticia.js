@@ -6,7 +6,7 @@ import Swal from 'sweetalert2'
 
 const ItemNoticia = (props) => {
     
-    const URL = process.env.REACT_APP_API_URL+'/'+props.noticias.id;
+    const URL = process.env.REACT_APP_API_URL+'/noticias/'+props.noticias._id;
 
     const eliminarNoticia=  ()=> {
      // console.log('desde borrar')
@@ -53,7 +53,7 @@ const ItemNoticia = (props) => {
     
     return (
         <>
-             <tr key={props.noticias.id}>
+             <tr key={props.noticias._id}>
                   <td>
                     <div
                       className="d-inline-block me-3"
@@ -114,7 +114,7 @@ const ItemNoticia = (props) => {
                     <ButtonGroup>
                     <Link
                       className="btn btn-warning ms-2"
-                      to={`/rn/noticias/editar/${props.noticias.id}`}
+                      to={`/rn/noticias/editar/${props.noticias._id}`}
                     >
                       <i className="bi bi-pencil mb-2"></i>
                     </Link>

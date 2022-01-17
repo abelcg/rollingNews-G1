@@ -10,6 +10,7 @@ const NoticiasPrincipales = () => {
     process.env.REACT_APP_API_URL +
     "?_sort=categoria&_order=desc&categoria=Política";
   const URL2 =
+  
     process.env.REACT_APP_API_URL +
     "?_sort=categoria&_order=desc&categoria=Economía";
   const URL3 =

@@ -60,7 +60,7 @@ const CardSinImg = (props) => {
                 {props.noticias.categoria}
               </Link>
               <Card.Title>
-                <Link  to={"/noticia/" + props.noticias.id} className="card-link btn-link text-reset fw-bold text-decoration-none">
+                <Link  to={"/noticia/" + props.noticias._id} className="card-link btn-link text-reset fw-bold text-decoration-none">
                 {props.noticias.titulo}
                 </Link>
               </Card.Title>

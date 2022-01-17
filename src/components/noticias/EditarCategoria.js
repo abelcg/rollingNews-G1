@@ -16,7 +16,7 @@ const EditarCategoria = (props) => {
     const [err, setError] = useState(false);
     const [categoria, setCategoria] = useState({});
 
-    const URL_CAT = process.env.REACT_APP_API_URL_CAT + "/" + id;
+    const URL_CAT = process.env.REACT_APP_API_URL + "/categorias/" + id;
 
      // crear variables ref
    const nombreRef = useRef("");
@@ -27,10 +27,10 @@ const EditarCategoria = (props) => {
     try {
       // realizar una consulta GET
       const respuesta = await fetch(URL_CAT);
-     
+      console.log(respuesta);
       if (respuesta.status === 200) {
         const dato = await respuesta.json();
-       
+        console.log(dato)
         setCategoria(dato);
       }
     } catch (error) {
@@ -115,7 +115,7 @@ const EditarCategoria = (props) => {
                     placeholder="Ingrese el nombre de la categoria"
                     defaultValue={categoria.nombre}
                     ref={nombreRef}
-                    maxLength="20"
+                    maxLength="30"
                   />
 
                   <Form.Label className="mb-4">Descripción</Form.Label>
@@ -161,7 +161,7 @@ const EditarCategoria = (props) => {
                 <tbody>
                   {props.categorias.map((categorias) => (
                     <ItemCategoria
-                      key={categorias.id}
+                      key={categorias._id}
                       categorias={categorias}
                       consultaAPICat={props.consultaAPICat}
                     ></ItemCategoria>

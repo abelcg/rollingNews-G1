@@ -8,16 +8,16 @@ import {
   Modal,
   Button,
   Form,
-  Tabs,
-  Tab,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { AiOutlineLogin } from "react-icons/ai";
-import { BsEyeFill } from "react-icons/bs";
-import { BsEyeSlashFill } from "react-icons/bs";
+import { AiOutlineLogout } from "react-icons/ai";
 import obtenerFecha from "../helpers/fechaLocal";
 import ClimaLocal from "../pages/PaginaPrincipal/ClimaLocal";
 import Cotizaciones from "../pages/Cotizaciones";
+import ModalLoginRegistro from "./ModalLoginRegistro";
+
 
 const Navigation = () => {
   const [show, setShow] = useState(false);
@@ -26,8 +26,6 @@ const Navigation = () => {
   const [mostrar, setMostrar] = useState(false);
   const handleCerrar = () => setMostrar(false);
   const handleMostrar = () => setMostrar(true);
-  const [key, setKey] = useState("login");
-  const [passwordShown, setPasswordShown] = useState(false);
   const [navCategorias, setNavcategorias] = useState([]);
   const [sidebarCategorias, setSidebarCategorias] = useState([]);
   const [sidebaDropCategorias, setSidebaDropCategorias] = useState([]);
@@ -35,16 +33,35 @@ const Navigation = () => {
   const [error, setError] = useState(true);
   const [error2, setError2] = useState(true);
   const [error3, setError3] = useState(true);
+  const navigation = useNavigate();
+  
+  //verifico si el usuario esta logueado
+  const [currentUser, setCurrentUser] = useState(undefined);
 
-  const URL = process.env.REACT_APP_API_URL_CAT + "?_start=0&_end=6";
+  useEffect(() => {
+    const user =  localStorage.getItem('accessToken');
+   //console.log(user);
+    if (user) {
+      setCurrentUser(user);
+    }
+  }, []);
 
-  const URL2 = process.env.REACT_APP_API_URL_CAT + "?_start=0&_end=3";
+  const logout = ()=>{
+    localStorage.removeItem('accessToken');
+    navigation("/");
+    window.location.reload();
+  }
 
-  const URL3 = process.env.REACT_APP_API_URL_CAT;
+  //consulta a la API
+  const URL = process.env.REACT_APP_API_URL + "/categoria/?_start=0&_end=6";
+
+  const URL2 = process.env.REACT_APP_API_URL + "/categoria/?_start=0&_end=3";
+
+  const URL3 = process.env.REACT_APP_API_URL + "/categoria/";
 
   const URL4 =
-    process.env.REACT_APP_API_URL_CAT +
-    "?_start=3&_end=" +
+    process.env.REACT_APP_API_URL +
+    "/categoria/?_start=3&_end=" +
     categoriasTotal.length;
 
   useEffect(() => {
@@ -81,9 +98,7 @@ const Navigation = () => {
     }
   };
 
-  const togglePassword = () => {
-    setPasswordShown(!passwordShown);
-  };
+ 
 
   return (
     <>
@@ -194,21 +209,31 @@ const Navigation = () => {
                 : null}
             </div>
             <div className="d-flex flex-row ms-auto">
-              <Link
+              {currentUser &&  (<Link
                 className="nav-link"
                 id="login-btn"
                 aria-current="page"
                 to="rn/admin"
               >
                 Admin
-              </Link>
-              <a
+              </Link>)}
+              {currentUser ?
+              (<a
                 className="nav-link btn-sm"
+                type="button"
+                id="login-btn"
+                onClick={logout}
+              >
+                Logout <AiOutlineLogout className="ms-1 fs-5" />
+              </a>) :
+              (<a
+                className="nav-link btn-sm"
+                type="button"
                 id="login-btn"
                 onClick={handleMostrar}
               >
                 Login <AiOutlineLogin className="ms-1 fs-5" />
-              </a>
+              </a>)}
               <Button
                 variant="danger"
                 className="fw-bold rounded-0"
@@ -270,159 +295,11 @@ const Navigation = () => {
           </Form>
         </Modal.Body>
       </Modal>
-      <Modal show={mostrar} onHide={handleCerrar}>
-        <Modal.Header closeButton>Login de Administrador</Modal.Header>
-        <Tabs id="tab" activeKey={key} onSelect={(k) => setKey(k)}>
-          <Tab
-            eventKey="login"
-            title="Iniciar sesión"
-            className="bg-transparent fw-medium border-0"
-          >
-            <Modal.Body className="card-body py-4">
-              <Form>
-                <div className="mb-3">
-                  <Form.Label>Email</Form.Label>
-                  <Form.Control
-                    type="email"
-                    placeholder="juanperez@ejemplo.com"
-                    maxlength="30"
-                    required=""
-                  />
-                  <div className="invalid-feedback">
-                    Por favor ingrese un email valido.
-                  </div>
-                </div>
-                <div className="mb-3">
-                  <Form.Label>Password</Form.Label>
-                  <div className="password-toggle">
-                    <Form.Control
-                      type={passwordShown ? "text" : "password"}
-                      maxlength="30"
-                      required=""
-                    />
-                    <button
-                      className="password-toggle-btn text-primary btn"
-                      type="button"
-                      onClick={togglePassword}
-                    >
-                      {passwordShown ? (
-                        <BsEyeSlashFill></BsEyeSlashFill>
-                      ) : (
-                        <BsEyeFill></BsEyeFill>
-                      )}
-                    </button>
-                  </div>
-                </div>
-                <div className="mb-3 d-flex justify-content-end">
-                  <a
-                    className="fs-sm text-secondary text-decoration-none btn"
-                    data-bs-toggle="tooltip"
-                    data-bs-placement="bottom"
-                    title="Presione para el envio del email de recuperacion"
-                  >
-                    ¿Olvidó su password?
-                  </a>
-                </div>
-                <button
-                  className="btn btn-primary btn-shadow d-block w-100"
-                  type="submit"
-                  onsubmit="login()"
-                >
-                  Iniciar Sesión
-                </button>
-                <span className="text-danger" id="login-error"></span>
-              </Form>
-            </Modal.Body>
-          </Tab>
-          <Tab
-            eventKey="signup"
-            title="Regístrate"
-            className="bg-transparent fw-medium border-0"
-          >
-            <Modal.Body className="card-body py-4">
-              <Form>
-                <div className="mb-3">
-                  <Form.Label>Nombre Completo</Form.Label>
-                  <Form.Control
-                    className="form-control"
-                    type="text"
-                    id="su-name"
-                    placeholder="Juan Perez"
-                    maxlength="30"
-                    required=""
-                  />
-                  <div className="invalid-feedback">
-                    Por favor ingrese su nombre.
-                  </div>
-                </div>
-                <div className="mb-3">
-                  <Form.Label>Email</Form.Label>
-                  <Form.Control
-                    type="email"
-                    placeholder="juanperez@ejemplo.com"
-                    maxlength="30"
-                    required=""
-                  />
-                  <div className="invalid-feedback">
-                    Por favor ingrese un email valido.
-                  </div>
-                </div>
-                <div className="mb-3">
-                  <Form.Label>Password</Form.Label>
-                  <div className="password-toggle">
-                    <Form.Control
-                      type={passwordShown ? "text" : "password"}
-                      id="su-password"
-                      maxlength="30"
-                      required=""
-                    />
-                    <a
-                      className="password-toggle-btn text-primary btn"
-                      type="button"
-                      onClick={togglePassword}
-                    >
-                      {passwordShown ? (
-                        <BsEyeSlashFill></BsEyeSlashFill>
-                      ) : (
-                        <BsEyeFill></BsEyeFill>
-                      )}
-                    </a>
-                  </div>
-                </div>
-                <div className="mb-3">
-                  <Form.Label>Confirmar password</Form.Label>
-                  <div className="password-toggle">
-                    <Form.Control
-                      type={passwordShown ? "text" : "password"}
-                      maxlength="30"
-                      required=""
-                    />
-                    <a
-                      className="password-toggle-btn text-primary btn"
-                      type="button"
-                      onClick={togglePassword}
-                    >
-                      {passwordShown ? (
-                        <BsEyeSlashFill></BsEyeSlashFill>
-                      ) : (
-                        <BsEyeFill></BsEyeFill>
-                      )}
-                    </a>
-                  </div>
-                </div>
-                <button
-                  className="btn btn-primary btn-shadow d-block w-100"
-                  type="submit"
-                  onsubmit="registerUser()"
-                >
-                  Regístrate
-                </button>
-                <span className="text-danger" id="register-error"></span>
-              </Form>
-            </Modal.Body>
-          </Tab>
-        </Tabs>
-      </Modal>
+      <ModalLoginRegistro
+        mostrar={mostrar}
+        setMostrar={setMostrar}
+        handleCerrar={handleCerrar}
+      ></ModalLoginRegistro>
     </>
   );
 };

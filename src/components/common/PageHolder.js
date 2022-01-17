@@ -9,8 +9,8 @@ import EditarCategoria from "../noticias/EditarCategoria";
 import Dashboard from "../pages/Dashboard";
 
 const PageHolder = () => {
-  const URL = process.env.REACT_APP_API_URL;
-  const URL_CAT = process.env.REACT_APP_API_URL_CAT;
+  const URL = process.env.REACT_APP_API_URL+"/noticias/";
+  const URL_CAT = process.env.REACT_APP_API_URL+"/categorias/";
   const [noticias, setNoticias] = useState([]);
   const [categorias, setCategorias] = useState([]);
 

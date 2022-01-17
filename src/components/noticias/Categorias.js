@@ -14,7 +14,7 @@ const Categorias = (props) => {
   const [nombre, setNombre] = useState("");
   const [descripcion, setDescripcion] = useState("");
 
-  const URL_CAT = process.env.REACT_APP_API_URL_CAT;
+  const URL_CAT = process.env.REACT_APP_API_URL + "/categorias/";
 
   const dataTableRef = useRef(false);
 
@@ -92,7 +92,7 @@ const Categorias = (props) => {
                     type="text"
                     placeholder="Ingrese el nombre de la categoria"
                     //defaultValue="Actualidad"
-                    maxLength="20"
+                    maxLength="30"
                     required
                     onChange={(e) => setNombre(e.target.value)}
                   />

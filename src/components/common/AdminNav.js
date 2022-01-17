@@ -1,13 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../css/admin.css";
 import { Nav, Container } from "react-bootstrap";
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+
 
 
 import Main from "./Main";
 
 const AdminNav = () => {
   const [clicked, setClicked] = useState(false);
+  //verifico si el usuario esta logueado
+  const [currentUser, setCurrentUser] = useState(undefined);
+  const navigation = useNavigate();
+
+  useEffect(() => {
+    const user =  localStorage.getItem('accessToken');
+   //console.log(user);
+    if (user) {
+      setCurrentUser(user);
+    }
+  }, []);
+
+  const logout = ()=>{
+    localStorage.removeItem('accessToken');
+    navigation("/");
+  }
 
   const handleToggle = () => {
     setClicked(!clicked);
@@ -40,7 +58,7 @@ const AdminNav = () => {
             <button
               className="btn"
               type="button"
-             
+              onClick={logout}
             >
               <box-icon name="log-out"></box-icon>
             </button>

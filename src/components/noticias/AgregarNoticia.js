@@ -44,7 +44,7 @@ const AgregarNoticia = (props) => {
   const [fecha, setFecha] = useState("");
   const [error, setError] = useState(false);
 
-  const URL = process.env.REACT_APP_API_URL;
+  const URL = process.env.REACT_APP_API_URL+"/noticias/";
   const navigation = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -134,7 +134,7 @@ const AgregarNoticia = (props) => {
                     type="text"
                     id="postImg"
                     className="mb-4 form-control"
-                    maxLength="180"
+                    maxLength="200"
                     onChange={(e) => setImagen(e.target.value)}
                   ></Form.Control>
                   <Form.Label>Descripción breve*</Form.Label>
@@ -170,7 +170,6 @@ const AgregarNoticia = (props) => {
                    
                     onChange={setContenido}
                     placeholder="El contenido va aqui..."
-                    maxLength="15"
                   />
                 </Form>
               </Card.Body>

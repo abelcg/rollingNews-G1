@@ -71,7 +71,7 @@ const CardPrincipal = (props) => {
             </Link>
             <Card.Title className="text-dark fs-2 position-relative">
               <Link
-                 to={"/noticia/" + props.noticia1[0].id}
+                 to={"/noticia/" + props.noticia1[0]._id}
                 className="card-link btn-link stretched-link text-reset text-decoration-none"
               >
                 {props.noticia1[0].titulo}

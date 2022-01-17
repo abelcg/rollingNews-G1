@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Swal from 'sweetalert2'
 
 const ItemCategoria = (props) => {
-    const URL_CAT = process.env.REACT_APP_API_URL_CAT+'/'+props.categorias.id;
+    const URL_CAT = process.env.REACT_APP_API_URL+'/categorias/'+props.categorias._id;
 
     const eliminarCategoria=  ()=> {
      // console.log('desde borrar')
@@ -52,7 +52,7 @@ const ItemCategoria = (props) => {
     
     return (
         <>
-             <tr key={props.categorias.id}>
+             <tr key={props.categorias._id}>
                   <td>
                     <strong className="d-block text-wrap">
                       {props.categorias.nombre}
@@ -63,7 +63,7 @@ const ItemCategoria = (props) => {
                     <ButtonGroup>
                     <Link
                       className="btn btn-warning ms-2"
-                      to={`/rn/categorias/editar/${props.categorias.id}`}
+                      to={`/rn/categorias/editar/${props.categorias._id}`}
                     >
                       <i className="bi bi-pencil mb-2"></i>
                     </Link>

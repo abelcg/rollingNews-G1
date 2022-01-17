@@ -76,7 +76,7 @@ const CardConImg = (props) => {
             <Card.Body className="px-1 pt-3">
               <Card.Title className="card-title">
                 <Link
-                   to={"/noticia/" + props.noticia[0].id}
+                   to={"/noticia/" + props.noticia[0]._id}
                   className="card-link btn-link text-reset fw-bold text-decoration-none"
                 >
                   {props.noticia[0].titulo}

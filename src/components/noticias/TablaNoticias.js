@@ -59,7 +59,7 @@ const TablaNoticias = (props) => {
             </thead>
             <tbody>
               {props.noticias.map((noticias) => (
-               <ItemNoticia key={noticias.id} noticias={noticias} consultaAPI={props.consultaAPI}></ItemNoticia>
+               <ItemNoticia key={noticias._id} noticias={noticias} consultaAPI={props.consultaAPI}></ItemNoticia>
               ))}
             </tbody>
           </Table>

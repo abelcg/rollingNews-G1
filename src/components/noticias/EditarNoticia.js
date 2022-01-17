@@ -43,7 +43,7 @@ const EditarNoticia = (props) => {
   const [error, setError] = useState(false);
   const [contenido, setContenido] = useState("");
 
-  const URL = process.env.REACT_APP_API_URL + "/" + id;
+  const URL = process.env.REACT_APP_API_URL + "/noticias/" + id;
   const navigation = useNavigate();
 
 
@@ -58,7 +58,7 @@ const EditarNoticia = (props) => {
     try {
       // realizar una consulta GET
       const respuesta = await fetch(URL);
-     
+      console.log(respuesta);
       if (respuesta.status === 200) {
         const dato = await respuesta.json();
        
@@ -164,7 +164,7 @@ const EditarNoticia = (props) => {
                     type="text"
                     id="postImg"
                     className="mb-4 form-control"
-                    maxLength="180"
+                    maxLength="200"
                     
                     defaultValue={noticia.imagen}
                     ref={imagenRef}
@@ -223,7 +223,7 @@ const EditarNoticia = (props) => {
                     <option value="">Seleccione un Categoria</option>
                     {props.categorias.map((categoria) => (
                       <option
-                        key={props.categorias.id}
+                        key={props.categorias._id}
                         value={categoria.nombre}
                       >
                         {categoria.nombre}

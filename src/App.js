@@ -6,6 +6,7 @@ import "boxicons";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AdminPage from "./components/pages/AdminPage";
 import Inicio from "./components/common/Inicio";
+import PrivateRoute from "./components/common/PrivateRoute";
 
 
 const App = () => {
@@ -19,7 +20,7 @@ const App = () => {
           <Route>
             <Route
               path="rn/*"
-              element={<AdminPage></AdminPage>}
+              element={<PrivateRoute><AdminPage></AdminPage></PrivateRoute>}
             ></Route>
           </Route>
         </Routes>
