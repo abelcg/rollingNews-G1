@@ -1,8 +1,7 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useState } from "react";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import Alert from "react-bootstrap/Alert";
-import { DataTable } from "simple-datatables";
 import "simple-datatables/dist/style.css";
 import Table from "react-bootstrap/Table";
 import ItemCategoria from "./ItemCategoria";
@@ -16,7 +15,6 @@ const Categorias = (props) => {
 
   const URL_CAT = process.env.REACT_APP_API_URL + "/categorias/";
 
-  const dataTableRef = useRef(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -62,19 +60,6 @@ const Categorias = (props) => {
     }
   };
 
-  useEffect(() => {
-    const dataTable = new DataTable(dataTableRef.current, {
-      searchable: true,
-      fixedHeight: true,
-      sortable: true,
-      labels: {
-        placeholder: "Buscar...",
-        perPage: "{select} entradas por página",
-        noRows: "Ninguna entrada fue encontrada",
-        info: "Mostrando del {start} al {end} de {rows} entradas",
-      },
-    });
-  }, []);
   return (
     <>
       <div className="page-header">
@@ -91,7 +76,6 @@ const Categorias = (props) => {
                     className="mb-4"
                     type="text"
                     placeholder="Ingrese el nombre de la categoria"
-                    //defaultValue="Actualidad"
                     maxLength="30"
                     required
                     onChange={(e) => setNombre(e.target.value)}
@@ -127,7 +111,6 @@ const Categorias = (props) => {
               <Table
                 className=" mb-1 table-borderless table-hover table-light table-striped w-100"
                 responsive
-                ref={dataTableRef}
               >
                 <thead className="table-dark text-light">
                   <tr>

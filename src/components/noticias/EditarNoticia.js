@@ -58,7 +58,6 @@ const EditarNoticia = (props) => {
     try {
       // realizar una consulta GET
       const respuesta = await fetch(URL);
-      console.log(respuesta);
       if (respuesta.status === 200) {
         const dato = await respuesta.json();
        

@@ -1,32 +1,12 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
-import { DataTable } from "simple-datatables";
 import "simple-datatables/dist/style.css";
 import Table from "react-bootstrap/Table";
 import ItemNoticia from "./ItemNoticia";
 
 const TablaNoticias = (props) => {
-  const dataTableRef = useRef(false);
-
-  useEffect(() => {
-    const dataTable = new DataTable(dataTableRef.current, { 
-      searchable: true,
-      fixedHeight: true,
-      sortable: true,
-      labels: {
-        placeholder: "Buscar...",
-        perPage: "{select} entradas por página",
-        noRows: "Ninguna entrada fue encontrada",
-        info: "Mostrando del {start} al {end} de {rows} entradas",
-      },
-    });
-   
-  }, []);
-   
-
   
-
   return (
     <>
       <div className="page-header d-flex justify-content-between align-items-center">
@@ -46,7 +26,6 @@ const TablaNoticias = (props) => {
           <Table
             className=" mb-1 table-borderless table-hover table-light table-striped w-100"
             responsive
-            ref={dataTableRef}
           >
             <thead className="table-dark text-light">
               <tr>
