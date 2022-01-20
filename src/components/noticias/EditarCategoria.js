@@ -2,8 +2,6 @@ import React, { useRef, useEffect, useState } from "react";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import Alert from "react-bootstrap/Alert";
-import { DataTable } from "simple-datatables";
-import "simple-datatables/dist/style.css";
 import Table from "react-bootstrap/Table";
 import ItemCategoria from "./ItemCategoria";
 import {campoRequerido} from "../helpers/helpers";
@@ -11,7 +9,6 @@ import Swal from "sweetalert2";
 import { useParams } from "react-router-dom";
 
 const EditarCategoria = (props) => {
-    const dataTableRef = useRef(false);
     const { id } = useParams();
     const [err, setError] = useState(false);
     const [categoria, setCategoria] = useState({});
@@ -83,20 +80,6 @@ const EditarCategoria = (props) => {
   }
 };
   
-
-  useEffect(() => {
-    const dataTable = new DataTable(dataTableRef.current, {
-      searchable: true,
-      fixedHeight: true,
-      sortable: true,
-      labels: {
-        placeholder: "Buscar...",
-        perPage: "{select} entradas por página",
-        noRows: "Ninguna entrada fue encontrada",
-        info: "Mostrando del {start} al {end} de {rows} entradas",
-      },
-    });
-  }, []);
   return (
     <>
       <div className="page-header">
@@ -149,7 +132,6 @@ const EditarCategoria = (props) => {
               <Table
                 className=" mb-1 table-borderless table-hover table-light table-striped w-100"
                 responsive
-                ref={dataTableRef}
               >
                 <thead className="table-dark text-light">
                   <tr>
