@@ -5,7 +5,7 @@ import SobreNosotros from "./../pages/SobreNosotros";
 import Contacto from "./../pages/Contacto";
 import Error404 from "./../pages/Error404";
 import PostsXCategoria from "../pages/PostsXCategoria";
-import PostSolo from "../pages/PostSolo";
+import PostSolo from "./../pages/PostSolo";
 
 const InicioMain = () => {
   
