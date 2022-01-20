@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import PaginaPrincipal from "./../pages/PaginaPrincipal/PaginaPrincipal";
-import SobreNosotros from "./../pages/SobreNosotros";
+import SobreNosotros from "../pages/SobreNosotros";
 import Contacto from "./../pages/Contacto";
 import Error404 from "./../pages/Error404";
 import PostsXCategoria from "../pages/PostsXCategoria";
