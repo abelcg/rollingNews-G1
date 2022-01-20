@@ -1,7 +1,6 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
-import "simple-datatables/dist/style.css";
 import Table from "react-bootstrap/Table";
 import ItemNoticia from "./ItemNoticia";
 
