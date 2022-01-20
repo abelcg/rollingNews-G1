@@ -4,7 +4,7 @@
 <p>
 
 ## Descripción
-> Rollingnews es un proyecto de un portal de noticias digital fullstack con un frontend realizado con React. Cuenta con una página principal, página de noticias por categorias, post individual y login/registro para administrador con autorización de usuarios con JWT, página de admin con un diseño de dashboard y una sección para el CRUD de noticias y categorias. Con una API REST realizada en este proyecto de backend con node.js, Express y mongoDB.
+> Rollingnews es un proyecto de un portal de noticias digital fullstack con un frontend realizado con React. Cuenta con una página principal, página de noticias por categorias, post individual y login/registro para administrador con autorización de usuarios con JWT, página de admin con un diseño de dashboard y una sección para el CRUD de noticias y categorias. Con una API REST realizada en este proyecto de [backend](https://github.com/abelcg/rollingNews-G1-Backend) con node.js, Express y mongoDB.
  ## ✨ [Demo](<%= projectDemoUrl %>)
 <br>
 
